@@ -18,6 +18,8 @@ Class Route
 
         $routers = explode('/', parse_url($_SERVER['REQUEST_URI'])['path']); // РАЗДЕЛИЛИ ЮРЛЬ
 
+        //если после разделения урли у нас есть несколько елементов для маршрута, то подставляем єти значения
+        //в контроллер и екшн соответсвенно
         if (!empty($routers[1])) {
             $controller_name = $routers[1];
         }
@@ -42,6 +44,7 @@ Class Route
         $controller_file = strtolower($controller_name) . '.php';
         $controller_path = $_SERVER['DOCUMENT_ROOT'] . "/application/controllers/" . $controller_file;
 
+        //если существует файл контроллера, подключаем, иначе кидаем исключение что не существует контроллера
         if (file_exists($controller_path)) {
             include $controller_path;
         } else {
@@ -52,6 +55,9 @@ Class Route
         $controller = new $controller_name;
         $action = $action_name;
 
+        //если существует метод контроллера - используем его
+        //также если визивается один из разрешенних в if имен контроллера он также визовется, к остальним доступ дается
+        //при наличии токена
         if (method_exists($controller, $action)) {
             if (self::checkAuth() == true || $controller_name == 'Controller_authoriz' || $controller_name == 'Controller_reg') {
                 // вызываем действие контроллера
@@ -66,7 +72,11 @@ Class Route
         }
     }
 
-    ////5. Перед любым действием (action) кроме логина и обработчика формы логина - нужно проверить есть ли у поьзователя доступ.
+    ////5. Перед любым действием (action) кроме логина и обработчика формы логина - нужно проверить есть ли у пользователя доступ.
+    /// проверка доступа проверяется следующим образом
+    /// 1 - проверка на то, что существует в куки вообще какой то токен, куки расчитани на час.
+    /// 2 - если ето так, тогда идем в бд и ищем запись с похожим токеном, и получаем его
+    /// 3 - получив значение токена проверяем с кукой если все норм доступ откривается
     static function checkAuth()
     {
         //de($_COOKIE['token']);
@@ -87,9 +97,10 @@ Class Route
         }
     }
 
+    //проверить соотвествующий токен в БД
     static function checkInDb($token)
     {
-        $access = sql::selectOne('persone', ['token' => $token]);
+        $access = sql::selectOne('person', ['token' => $token]);
         if ($access) {
             return $access['token'];
         } else {
@@ -97,6 +108,7 @@ Class Route
         }
     }
 
+    //совсем неиспользующаяся функция по странице 404
     function ErrorPage404()
     {
         $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';

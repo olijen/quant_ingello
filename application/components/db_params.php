@@ -4,7 +4,7 @@ return array(
     'host' => 'localhost',
     'dbname' => 'product',
     'user' => 'root',
-    'password' => 'root',
+    'password' => '',
     'dbport' => 3306,
 );
 

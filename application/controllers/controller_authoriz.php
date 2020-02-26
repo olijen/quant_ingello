@@ -2,16 +2,19 @@
 
 class Controller_authoriz extends Controller
 {
-
+    //метод для форми авторизации
     function action_authoriz_form()
     {
         $this->view->generate('authoriz_view.php', 'template_view.php');
     }
 
+    //результат аутентификации
     function action_authoriz()
     {
         $person = $this->getPerson();
 
+
+        // если запрос по получению человека ничего не видал, тогда предлагаем перейти обратно на форму авторизации
         if (empty($person)) {
             echo "Аунтефикация не пройдена <a href=\"/authoriz/authoriz_form\">Аутентификация</a>";
             echo '<a href="/authoriz/authoriz_form">Аутентификация</a>';
@@ -21,7 +24,7 @@ class Controller_authoriz extends Controller
             $token = rand(1000000, 9999999) . rand(1000000, 9999999);
 
             //3. Этот токен записываем в БД
-            $this->setPerson($token);
+            $this->setPerson($token, $person['id']);
             //de($this->setPerson($token));
             //4. "Отдаём" токен пользователю - через куки
             setcookie("token", $token, time()+3600, "/");
@@ -30,13 +33,15 @@ class Controller_authoriz extends Controller
         }
     }
 
+    //получить человека
     public function getPerson()
     {
-        return sql::selectOne('persone', $_POST);
+        return sql::selectOne('person', $_POST);
     }
 
-    public function setPerson($token)
+    //изменить токен человека
+    public function setPerson($token, $id)
     {
-        return sql::update('persone', ['token' => $token]);
+        return sql::update('person', ['token' => $token], $id);
     }
 }

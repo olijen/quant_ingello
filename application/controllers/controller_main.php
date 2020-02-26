@@ -6,6 +6,7 @@ class Controller_Main extends Controller
 {
     function action_index()
     {
+
         $product = new Model_Product();
         $products = $product->findAll();
         //$products = SQL::select('product', []);

@@ -2,6 +2,8 @@
 
 class sql
 {
+    //todo nibkjnok
+    //nkjnoijknmlk
 
     /**
      * @param $table
@@ -38,6 +40,7 @@ class sql
         $db = Db::getConnection();
 
         $sql = "INSERT INTO $table (" . $fields1 . ") VALUES (" . $values1 . ")";
+        echo $sql;
         $query = $db->query($sql);
 
 
@@ -61,12 +64,13 @@ class sql
 
     public static function select($table, $columnValue = [], $one = false)
     {
+        //подключение к БД
         $db = Db::getConnection();
 
         // $condition = self::each($columnValue);
 
         $condition = [];
-
+        //построение запроса в инструкции where
         foreach ($columnValue as $key => $value) {
             if (is_numeric($value)) {
                 $condition[] = " AND " . $key . " = " . $value;
@@ -77,8 +81,13 @@ class sql
 
         $condition = implode(" ", $condition);
 
+        //составление окончательного запроса
         $sql = "SELECT * FROM $table ";
         $sql .= "WHERE 1=1 " . $condition;
+
+        echo $sql;
+
+        //проверка на то, что нужно витащить либо одну запись из таблици либо все
         if ($one) {
             $sql .= ' LIMIT 1';
         }
@@ -88,9 +97,11 @@ class sql
             echo $sql . '<br>';
         }
 
+        //получаем результат запроса
         $result = $db->query($sql);
 
         //  de($sql);
+        //составляем массив из полученних данних
         $rows = [];
         if ($result == false) {
             $rows = false;
@@ -104,7 +115,7 @@ class sql
             var_dump($rows);
             echo '<hr>';
         }
-
+        //возвращаем результат
         return $rows;
     }
 
@@ -144,6 +155,7 @@ class sql
         }
 
             $sql = "UPDATE $table SET " . $values . "  WHERE 1=1 " . $condition;
+            echo $sql;
             $result = $db->query($sql);
             //de($sql);
             if ($result == false) {
