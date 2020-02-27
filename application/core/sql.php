@@ -10,6 +10,7 @@ class sql
      * @param $fieldValue массив ['title'=>'батарея для телефона', 'price'] батарея для телефона
      */
 
+    //не использующаяся функция each
     static function each($columnValue)
     {
         $condition = [];
@@ -25,7 +26,12 @@ class sql
 
     public static function insert($table, $fieldValue)
     {
+        $db = Db::getConnection();
         //de($fieldValue);
+        //из переданного массива
+        $values = [];
+        $fields = [];
+        //собираем поля и их значения для запроса insert из переданного в параметре массива
         foreach ($fieldValue as $key => $value) {
             if (is_numeric($value)) {
                 $values[] = $value;
@@ -37,13 +43,12 @@ class sql
         }
         $values1 = implode(" , ", $values);
         $fields1 = implode(" , ", $fields);
-        $db = Db::getConnection();
 
+        //строим запрос и виполняем его
         $sql = "INSERT INTO $table (" . $fields1 . ") VALUES (" . $values1 . ")";
-        echo $sql;
         $query = $db->query($sql);
 
-
+        //если запрос виполнен успешно - возвращаем последний id ( insert_id - встроенное свойство класса mysqli)
         if ($query) {
             $db->insert_id;
             return $db->insert_id;
@@ -52,8 +57,10 @@ class sql
         }
     }
 
+    //метод для виборки единой записи
     public static function selectOne($table, $columnValue = [])
     {
+        //если виборка одной записи успешна - возвращаем запись
         $result = self::select($table, $columnValue, true);
         if (!empty($result)) {
             return $result[0];
@@ -129,6 +136,7 @@ class sql
 //            $columnValue = $fieldValue;
 //        }
 //de($columnValue);
+        //формируем поля и значения, которие будем менять в запросе
         $values = [];
         foreach ($fieldValue as $key => $value) {
             if (is_numeric($value)) {
@@ -139,6 +147,8 @@ class sql
         }
         $values = implode(" , ", $values);
 
+
+        //формирование строки для запроса в блоке where
         if (is_array($columnValue)) {
             $condition = [];
             foreach ($columnValue as $key => $value) {
@@ -153,7 +163,7 @@ class sql
         } elseif (is_string($columnValue)){
             $condition = "AND id = " . $columnValue  ;
         }
-
+            //виполнение запроса и возврат true в случае успеха иначе false
             $sql = "UPDATE $table SET " . $values . "  WHERE 1=1 " . $condition;
             echo $sql;
             $result = $db->query($sql);
@@ -166,6 +176,7 @@ class sql
 
         }
 
+        //не использующаяся функция по удалению
         public
         static function delete($table, $columnValue = null)
         {
