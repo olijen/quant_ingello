@@ -9,10 +9,9 @@
 </head>
 <body>
 <form action="/reg/add_pers" method="post" >
-    Форма добавления строки в БД<br>
-    <input name="user" type="text" placeholder="Введите ваш логин" /><br>
-    <input name="email"  placeholder="Введите ваш email" /><br>
-    <input name="password" type="password" placeholder="Введите пароль"  /><br>
+    Форма регистрации пользователя<br>
+    <!--передаем сгенерированную форму по модели персони-->
+    <?=$data?>
     <input type="submit" /><br>
 </form>
 

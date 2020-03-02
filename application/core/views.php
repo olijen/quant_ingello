@@ -24,4 +24,6 @@ class View
     {
         include 'render-object.php';
     }
+
+
 }

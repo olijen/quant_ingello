@@ -5,6 +5,7 @@ class Controller_authoriz extends Controller
     //метод для форми авторизации
     function action_authoriz_form()
     {
+
         $this->view->generate('authoriz_view.php', 'template_view.php');
     }
 

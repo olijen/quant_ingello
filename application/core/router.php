@@ -58,6 +58,7 @@ Class Route
         //если существует метод контроллера - используем его
         //также если визивается один из разрешенних в if имен контроллера он также визовется, к остальним доступ дается
         //при наличии токена
+
         if (method_exists($controller, $action)) {
             if (self::checkAuth() == true || $controller_name == 'Controller_authoriz' || $controller_name == 'Controller_reg') {
                 // вызываем действие контроллера

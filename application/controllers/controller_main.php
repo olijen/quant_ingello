@@ -4,7 +4,7 @@ include $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "application" . DIRECT
 
 class Controller_Main extends Controller
 {
-    function action_index()
+    public function action_index()
     {
 
         $product = new Model_Product();
@@ -22,27 +22,29 @@ class Controller_Main extends Controller
         );
     }
 
-    function search(){
+    public function search(){
         $product = new Model_Product();
         $product ->findAll($_POST);
     }
 
-    function action_add_record_form()//insert
+    public function action_add_record_form()//insert
     {
-        $this->view->generate('addrecord_view.php', 'template_view.php');
+        $product = new Model_Product();
+        $htmlForm = $product->generateForm();
+        $this->view->generate('addrecord_view.php', 'template_view.php', $htmlForm);
     }
 
-    function action_add_record()//insert
+    public function action_add_record()//insert
     {
         $product = new Model_Product();// {title: null, price: null}
         $product->load($_POST);// {title: qweqwe, price: 120}
-        $product->save();
+        $product->newSave();
     }
 
 
 
 
-    function action_update_record_form()
+    public function action_update_record_form()
     {
 
         // $product = SQL::select('product', ['id' => $_GET['id']]);
@@ -52,7 +54,7 @@ class Controller_Main extends Controller
             'template_view.php', $mass[0]);
     }
 
-    function action_update_record()
+    public function action_update_record()
     {
         $product = new Model_Product();// {title: null, price: null}
         $product->findOne(['id' => $_POST['id']]);// {title: qweqwe, price: 120}

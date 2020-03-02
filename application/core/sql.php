@@ -31,6 +31,7 @@ class sql
         //из переданного массива
         $values = [];
         $fields = [];
+
         //собираем поля и их значения для запроса insert из переданного в параметре массива
         foreach ($fieldValue as $key => $value) {
             if (is_numeric($value)) {
@@ -46,6 +47,7 @@ class sql
 
         //строим запрос и виполняем его
         $sql = "INSERT INTO $table (" . $fields1 . ") VALUES (" . $values1 . ")";
+        echo $sql;
         $query = $db->query($sql);
 
         //если запрос виполнен успешно - возвращаем последний id ( insert_id - встроенное свойство класса mysqli)

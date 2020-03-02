@@ -34,13 +34,10 @@ abstract class Model
 
     function load($fieldData = null)
     {
-
-        // заполняем значения разбивая массив
+        //заполняем модель данних через массив переданний методу
         foreach ($fieldData as $key => $value) {
-            $this->$key = $value;
+            $this->$key['value'] = $value;
         }
-        //de($this);
-
     }
 
     function save($updateValue = [])
@@ -48,18 +45,47 @@ abstract class Model
         $updateValue = $this->get_object_mass();
         $fieldValue = $this->get_object_mass();
         $table = $this->getClassName();
-        if (is_null($fieldValue['id'])) {
+        if (is_null($fieldValue['id']['value'])) {
             array_shift($fieldValue);
             $insertId= sql::insert($table, $fieldValue);
             $this->load($fieldValue);
             $this->id = $insertId;
         } elseif ($fieldValue['id']) {
-            //de($this);
+            echo "update";
             sql::update($table,$updateValue, $fieldValue['id']);
             $this->load($updateValue);
         } else {
             return false;
         }
+    }
+
+    function newSave(){
+        //получаем все доступние свойства класса, таблицу, с которой будем работать и переменние которие подлежат ручному вводу
+        $updateValue =  $fieldValue = $this->get_object_mass();
+        $table = $this->getClassName();
+        $manualInputVars = $this->getManualInputVars();
+        //если не существует id - создаем запись, иначе обновляем, в случае аномального результата условия викидиваем false
+        if (is_null($fieldValue['id']['value'])) {
+            //валидация переменних, которие подлежат ручному вводу
+            $check = $this->validation($manualInputVars);
+            //если валидация прошла, тогда формируем массив "ключ" => "значение" для запроса insert
+            if($check){
+                $fieldValueForInsert = [];
+                foreach ($manualInputVars as $key => $keyArray) {
+                    $fieldValueForInsert[$key] = $keyArray['value'];
+                }
+                $insertId= sql::insert($table, $fieldValueForInsert);
+                $this->id['value'] = $insertId;
+            }
+            else return false;
+        } elseif ($fieldValue['id']['value']) {
+            echo "update";
+            sql::update($table,$updateValue, $fieldValue['id']['value']);
+            $this->load($updateValue);
+        } else {
+            return false;
+        }
+        return true;
     }
 
     function get_object_mass()
@@ -73,6 +99,45 @@ abstract class Model
         $mass = strtolower(explode("Model_", get_class($this))[1]);
         return $mass;
 
+    }
+
+    protected function validation($arrayForCheck){
+        foreach($arrayForCheck as $key => $keyArray){
+            $checkValue = $keyArray['value'];
+            if(strlen($checkValue) < 1){ echo "Задано пустое значение в поле: $key<br />"; return false;}
+            if(gettype($checkValue) != $keyArray['validation']['type']){
+                if($keyArray['validation']['type'] == 'numeric' && !is_numeric($checkValue)) {
+                    echo gettype($checkValue), '-  тип значения; тип в указании обьекта', $keyArray['validation']['type'];
+                    echo "Не корректное значение введено в поле: " . $key;
+                    return false;
+                }
+            }
+            if(strlen($checkValue) > $keyArray['validation']['maxLength']){
+                echo "Не корректное значение введено в поле: ".$key;
+                return false;
+            }
+        }
+        return true;
+    }
+
+    protected function getManualInputVars(){
+        $allObjectVars = get_object_vars($this);
+        $manualInputObjectVars = [];
+        foreach($allObjectVars as $key => $keyArray){
+            if($keyArray['manualInput'] === true) $manualInputObjectVars[$key] = $allObjectVars[$key];
+        }
+        return $manualInputObjectVars;
+    }
+
+    public function generateForm(){
+        $manualInputVars = $this->getManualInputVars();
+        $htmlForm = "";
+        foreach($manualInputVars as $key => $keyArray){
+            if($keyArray['form'] == 'input'){
+                $htmlForm .= "<input type='input' name = '$key' placeholder='Enter your $key'><br />";
+            }
+        }
+        return $htmlForm;
     }
 
 }
