@@ -141,7 +141,6 @@ class sql
 
         $sql .= self::whereBuild($columnValue);
 
-        echo $sql;
 
         //проверка на то, что нужно витащить либо одну запись из таблици либо все
         if ($one) {
@@ -201,7 +200,7 @@ class sql
         }
             //виполнение запроса и возврат true в случае успеха иначе false
             $sql = "UPDATE $table SET " . $values . "  WHERE 1=1 " . $condition;
-            echo $sql;
+
             $result = $db->query($sql);
             //de($sql);
             if ($result == false) {

@@ -30,7 +30,11 @@ class Controller_authoriz extends Controller
             //4. "Отдаём" токен пользователю - через куки
             setcookie("token", $token, time()+3600, "/");
 
-            echo "Аунтефикация пройдена <a href=\"/authoriz/authoriz_form\">Аутентификация</a>";
+            $response = "Авторизация пройдена";
+
+            $this->view->generate('message_view.php', 'template_view.php', ['message' => $response]);
+
+
         }
     }
 

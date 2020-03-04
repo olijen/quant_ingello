@@ -12,39 +12,59 @@ Class Model_Dove extends Model
         'value' => null,
         'manualInput' => false
     ];
-    public $title = [
+    public $name = [
         'value' => null,
         'validation' => [
             'type' => 'string',
-            'maxLength' => 255
+            'maxLength' => 62
         ],
         'form' => 'input',
         'manualInput' => true,
     ];
-    public $price = [
+    public $age = [
         'value' => null,
         'validation' => [
             'type' => 'numeric',
-            'maxLength' => 11
+            'maxLength' => 2
         ],
         'form' => 'input',
         'manualInput' => true,
     ];
-    public $isset = [
+    public $color = [
         'value' => null,
         'validation' => [
-            'type' => 'int',
-            'maxLength' => 1
+            'type' => 'string',
+            'maxLength' => 6
         ],
-        'form' => 'checkbox',
+        'form' => 'input',
         'manualInput' => true
     ];
+    public $sex = [
+        'value' => null,
+        'validation' => [
+            'type' => 'numeric',
+            'maxLength' => 1
+        ],
+        'form' => 'input',
+        'manualInput' => true,
+    ];
+    public $wedding_count = [
+        'value' => null,
+        'validation' => [
+            'type' => 'numeric',
+            'maxLength' => 10
+        ],
+        'form' => 'input',
+        'manualInput' => true,
+    ];
 
-    public function map($product_data){
-        $this->id['value'] = $product_data['id'];
-        $this->title['value'] = $product_data['title'];
-        $this->price['value'] = $product_data['price'];
-        $this->isset['value'] = $product_data['isset'];
+    public function map($dove_data){
+        $this->id['value'] = $dove_data['id'];
+        $this->name['value'] = $dove_data['name'];
+        $this->age['value'] = $dove_data['age'];
+        $this->sex['value'] = $dove_data['sex'];
+        $this->color['value'] = $dove_data['color'];
+        $this->wedding_count['value'] = $dove_data['wedding_count'];
     }
 }
 

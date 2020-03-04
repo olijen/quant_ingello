@@ -88,7 +88,6 @@ Class Route
             //de($_COOKIE['token']);
             $access = self::checkInDb($_COOKIE['token']);
             if ($access == $_COOKIE['token']) {
-                echo 'токен есть';
                 return true;
             }
         } else {

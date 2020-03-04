@@ -56,7 +56,7 @@ class Controller_Main extends Controller
     {
         $product = new Model_Product();
         $htmlForm = $product->generateForm();
-        $this->view->generate('addrecord_view.php', 'template_view.php', $htmlForm);
+        $this->view->generate('addrecord_view.php', 'template_view.php', ['htmlForm' => $htmlForm, 'path' => '/main/add_product']);
     }
 
     //метод добавления продукта в базу
@@ -75,7 +75,7 @@ class Controller_Main extends Controller
         $product->map($product_template);
         $htmlForm = $product->generateForm(true);
         $this->view->generate('update_view.php',
-            'template_view.php', $htmlForm);
+            'template_view.php', ['htmlForm' => $htmlForm, 'path' => '/main/update_product']);
     }
 
     //метод для обновления информации о форме
