@@ -37,8 +37,15 @@ Class Model_Product extends Model
             'maxLength' => 1
         ],
         'form' => 'checkbox',
-        'manualInput' => false
+        'manualInput' => true
     ];
+
+    public function map($product_data){
+        $this->id['value'] = $product_data['id'];
+        $this->title['value'] = $product_data['title'];
+        $this->price['value'] = $product_data['price'];
+        $this->isset['value'] = $product_data['isset'];
+    }
 }
 
 

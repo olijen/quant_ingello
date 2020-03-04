@@ -141,6 +141,7 @@ class sql
         //формируем поля и значения, которие будем менять в запросе
         $values = [];
         foreach ($fieldValue as $key => $value) {
+            if(is_null($value)) $value = '0';
             if (is_numeric($value)) {
                 $values[] = $key . " = " . $value;
             } else {
@@ -154,6 +155,8 @@ class sql
         if (is_array($columnValue)) {
             $condition = [];
             foreach ($columnValue as $key => $value) {
+
+                //if(is_null($value))
                 if (is_numeric($value)) {
                     $condition[] = " AND " . $key . " = " . $value;
                 } else {

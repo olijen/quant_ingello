@@ -4,22 +4,44 @@ include $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "application" . DIRECT
 
 class Controller_Main extends Controller
 {
+    //!!!!!!!!!!!!!!!!
+    //любой метод виполняется здесь только при условии, что существует токен авторизации
+    //!!!!!!!!!!!!!!!!
+
+    //метод для показа всех продуктов
     public function action_index()
     {
 
         $product = new Model_Product();
         $products = $product->findAll();
-        //$products = SQL::select('product', []);
 
         if ($products === false) {
-
+            echo 'Продавать нечего!';
         }
-        $this->view->generate(
-            'main_view.php',
-            'main_view.php',
-            ['title' => 'Продукты', 'objects' => $products]
+        else {
+            $this->view->generate(
+                'products_view.php',
+                'template_view.php',
+                ['title' => 'Продукты', 'products' => $products]
+            );
+        }
+    }
 
-        );
+    //показивем продукт, id получаем из GET массива
+    public function action_product_show(){
+        if(isset($_GET['id']) && is_numeric($_GET['id'])){
+            $product_id = $_GET['id'];
+            $product = new Model_Product();
+            $product_template = $product->findOne(['id' => $product_id]);
+            $this->view->generate(
+                'product_view.php',
+                'template_view.php',
+                ['product' => $product_template]
+            );
+        }
+        else {
+            echo "Не вибран соответствующий продукт";
+        }
     }
 
     public function search(){
@@ -41,24 +63,34 @@ class Controller_Main extends Controller
         $product->newSave();
     }
 
-
-
-
-    public function action_update_record_form()
+    public function action_update_product_form()
     {
-
-        // $product = SQL::select('product', ['id' => $_GET['id']]);
         $product = new Model_Product();
-        $mass = $product->findAll(['id' => $_GET['id']]);
+        $product_template = $product->findOne(['id' => $_GET['id']]);
+        $product->map($product_template);
+        $htmlForm = $product->generateForm(true);
         $this->view->generate('update_view.php',
-            'template_view.php', $mass[0]);
+            'template_view.php', $htmlForm);
     }
 
-    public function action_update_record()
+    public function action_update_product()
     {
         $product = new Model_Product();// {title: null, price: null}
-        $product->findOne(['id' => $_POST['id']]);// {title: qweqwe, price: 120}
+        //$product->findOne(['id' => $_POST['id']]);// {title: qweqwe, price: 120}
         $product->load($_POST);
-        $product->save();
+        $product->newSave();
+    }
+
+    public function action_delete_product(){
+        if(isset($_GET['id']) && is_numeric($_GET['id'])){
+            $product_id = $_GET['id'];
+            $product = new Model_Product();
+            $product_template = $product->findOne(['id' => $product_id]);
+            $product->load($product_template);
+            $product->delete();
+        }
+        else {
+            echo "Не вибран соответствующий продукт";
+        }
     }
 }
