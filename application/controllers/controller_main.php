@@ -13,18 +13,19 @@ class Controller_Main extends Controller
     {
 
         $product = new Model_Product();
-        $products = $product->findAll();
-
-        if ($products === false) {
-            echo 'Продавать нечего!';
+        $products = [];
+        if(isset($_GET['page'], $_GET['products'])){
+            $products = $product->findWithLimit();
         }
         else {
-            $this->view->generate(
-                'products_view.php',
-                'template_view.php',
-                ['title' => 'Продукты', 'products' => $products]
-            );
+            $products = $product->findAll();
         }
+
+        $this->view->generate(
+        'products_view.php',
+        'template_view.php',
+        ['title' => 'Продукты', 'products' => $products]
+        );
     }
 
     //показивем продукт, id получаем из GET массива
@@ -44,11 +45,13 @@ class Controller_Main extends Controller
         }
     }
 
+    //неиспользуемий метод поиска продуктов
     public function search(){
         $product = new Model_Product();
         $product ->findAll($_POST);
     }
 
+    //метод для генерации форми добавления записи о продукте
     public function action_add_record_form()//insert
     {
         $product = new Model_Product();
@@ -56,6 +59,7 @@ class Controller_Main extends Controller
         $this->view->generate('addrecord_view.php', 'template_view.php', $htmlForm);
     }
 
+    //метод добавления продукта в базу
     public function action_add_record()//insert
     {
         $product = new Model_Product();// {title: null, price: null}
@@ -63,6 +67,7 @@ class Controller_Main extends Controller
         $product->newSave();
     }
 
+    //метод для генерации форми обновления продукта в базе
     public function action_update_product_form()
     {
         $product = new Model_Product();
@@ -73,6 +78,7 @@ class Controller_Main extends Controller
             'template_view.php', $htmlForm);
     }
 
+    //метод для обновления информации о форме
     public function action_update_product()
     {
         $product = new Model_Product();// {title: null, price: null}
@@ -81,6 +87,7 @@ class Controller_Main extends Controller
         $product->newSave();
     }
 
+    //метод для удаления продукта из бази данних
     public function action_delete_product(){
         if(isset($_GET['id']) && is_numeric($_GET['id'])){
             $product_id = $_GET['id'];

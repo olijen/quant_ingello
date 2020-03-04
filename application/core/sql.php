@@ -71,13 +71,7 @@ class sql
         }
     }
 
-    public static function select($table, $columnValue = [], $one = false)
-    {
-        //подключение к БД
-        $db = Db::getConnection();
-
-        // $condition = self::each($columnValue);
-
+    private static function whereBuild($columnValue = []){
         $condition = [];
         //построение запроса в инструкции where
         foreach ($columnValue as $key => $value) {
@@ -91,8 +85,61 @@ class sql
         $condition = implode(" ", $condition);
 
         //составление окончательного запроса
+        return "WHERE 1=1 " . $condition;
+    }
+
+    private static function buildResultRows($result){
+        //  de($sql);
+        //составляем массив из полученних данних
+        $rows = [];
+        if ($result == false) {
+            $rows = false;
+        } else {
+            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                $rows[] = $row;
+            }
+        }
+
+        //если в bootstrap прописан DUMP_SQL = true
+        if (DUMP_SQL) {
+            var_dump($rows);
+            echo '<hr>';
+        }
+        //возвращаем результат
+        return $rows;
+    }
+
+    public static function selectWithLimit($table, $columnValue = [], $quantity = []){
+        $db = Db::getConnection();
+
         $sql = "SELECT * FROM $table ";
-        $sql .= "WHERE 1=1 " . $condition;
+        $sql .= self::whereBuild($columnValue);
+
+        //если массив с лимитами передан в нормальних размерах 1 или 2 єлемента, тогда составляем лимит условие
+        if(count($quantity) > 2 || count($quantity) < 1){
+
+        }
+        else {
+            $sql .= ' LIMIT ';
+            for($i = 0; $i < count($quantity); $i++){
+                if($i == count($quantity)-1) $sql .= $quantity[$i];
+                else $sql .= $quantity[$i].', ';
+            }
+        }
+        echo $sql;
+
+        $result = $db->query($sql);
+
+        return self::buildResultRows($result);
+    }
+
+    public static function select($table, $columnValue = [], $one = false)
+    {
+        //подключение к БД
+        $db = Db::getConnection();
+        $sql = "SELECT * FROM $table ";
+
+        $sql .= self::whereBuild($columnValue);
 
         echo $sql;
 
@@ -109,23 +156,7 @@ class sql
         //получаем результат запроса
         $result = $db->query($sql);
 
-        //  de($sql);
-        //составляем массив из полученних данних
-        $rows = [];
-        if ($result == false) {
-            $rows = false;
-        } else {
-            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                $rows[] = $row;
-            }
-        }
-
-        if (DUMP_SQL) {
-            var_dump($rows);
-            echo '<hr>';
-        }
-        //возвращаем результат
-        return $rows;
+        return self::buildResultRows($result);
     }
 
     public static function update($table, $fieldValue = [], $columnValue = [])//, $columnValue = null

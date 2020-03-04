@@ -12,4 +12,5 @@
         <hr>
 <?php
     }
+    //if isset get parametres products and page, then show {products} quantity products and links to pages
     ?>
