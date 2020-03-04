@@ -1,19 +1,17 @@
 <?php
 
-return array(
-    'host' => 'localhost',
-    'dbname' => 'product',
+/*return array(
+    'host' => '127.0.0.1',
+    'dbname' => 'applan',
     'user' => 'root',
-    'password' => '',
-    'dbport' => 3306,
-);
+    'password' => 'root',
+    'dbport' => 3304,
+);*/
 
-/*
- * return array(
-    'host' => 'http://applan.ingello.com',
-    'dbname' => 'product',
+return array(
+    'host' => 'ingello.com',
+    'dbname' => 'quant',
     'user' => 'root',
     'password' => 'root',
     'dbport' => 3304,
 );
- */

@@ -77,3 +77,18 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2020-02-26 13:28:21
+
+
+-- olijen 2020-03-04 12:59
+
+CREATE TABLE dove
+				(
+				id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+				name varchar(62),
+				age tinyint(2),
+				color varchar(6) DEFAULT 'bcc3d6',
+				sex tinyint(1) DEFAULT 0,
+				wedding_count int
+				)
+
+CREATE UNIQUE INDEX dove_id_uindex ON dove (id)

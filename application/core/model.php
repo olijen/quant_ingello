@@ -42,6 +42,7 @@ abstract class Model
         }
     }
 
+    //todo: проверить и удалить, если не используется.
     function save($updateValue = [])
     {
         $updateValue = $this->get_object_mass();
@@ -63,6 +64,7 @@ abstract class Model
         }
     }
 
+    //todo: переименовать в save()
     function newSave(){
         //получаем все доступние свойства класса, таблицу, с которой будем работать и переменние которие подлежат ручному вводу
         $updateValue =  $fieldValue = $this->get_object_mass();
@@ -85,11 +87,13 @@ abstract class Model
             }
             else return false;
         } elseif ($fieldValue['id']['value']) {
+            //todo: удалить echo
             echo "update";
             $fieldValueForUpdate = [];
             foreach ($manualInputVars as $key => $keyArray) {
                 $fieldValueForUpdate[$key] = $keyArray['value'];
             }
+            //todo: удалить
             var_dump($fieldValueForUpdate);
             sql::update($table, $fieldValueForUpdate, $fieldValue['id']['value']);
             $this->load($updateValue);
@@ -141,6 +145,7 @@ abstract class Model
         }
         return $manualInputObjectVars;
     }
+
 
     public function generateForm($values = false){
         $manualInputVars = $this->getManualInputVars();
