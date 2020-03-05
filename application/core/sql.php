@@ -211,7 +211,6 @@ class sql
 
         }
 
-        //не использующаяся функция по удалению
         public
         static function delete($table, $columnValue = null)
         {
@@ -229,5 +228,13 @@ class sql
             $sql = "DELETE FROM $table WHERE 1 = 1 " . $condition;
             $result = $db->query($sql);
 
+        }
+
+        public static function count($table, $field){
+            $db = Db::getConnection();
+
+            $sql = "select count($field) from $table";
+            $result = $db->query($sql);
+            return $result;
         }
     }

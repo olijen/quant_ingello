@@ -15,7 +15,7 @@ class Controller_Main extends Controller
         $product = new Model_Product();
         $products = [];
         if(isset($_GET['page'], $_GET['products'])){
-            $products = $product->findWithLimit();
+            $products = $product->findWithLimit(8, 6);
         }
         else {
             $products = $product->findAll();

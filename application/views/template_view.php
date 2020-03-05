@@ -21,6 +21,9 @@
             padding-left: 10px;
             width: 85%;
         }
+        form span {
+            display: block;
+        }
     </style>
 </head>
 <body>

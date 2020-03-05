@@ -48,7 +48,8 @@ Class Route
         if (file_exists($controller_path)) {
             include $controller_path;
         } else {
-            throw new Exception('[ERROR! Controller ' . $controller_file . '. IS NOT EXSIST! ]<hr/>');
+
+            //throw new Exception('[ERROR! Controller ' . $controller_file . '. IS NOT EXSIST! ]<hr/>');
         }
 
         // создаем контроллер
@@ -67,7 +68,8 @@ Class Route
             } else {
                 // здесь также разумнее было бы кинуть исключение
                 echo'все плохо';
-                throw new Exception('[ERROR! Action ' . $controller_file . ' ' . $action . ' IS NOT EXSIST! ]<hr/>');
+
+                //throw new Exception('[ERROR! Action ' . $controller_file . ' ' . $action . ' IS NOT EXSIST! ]<hr/>');
             }
 
         }
@@ -113,7 +115,7 @@ Class Route
     {
         $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';
         header('HTTP/1.1 404 Not Found');
-        header("Status: 404 Not Found");
-        header('Location:' . $host . '404');
+        //header("Status: 404 Not Found");
+        //header('Location:' . $host . '404');
     }
 }

@@ -8,12 +8,27 @@ class Controller_Dove extends Controller
     //любой метод виполняется здесь только при условии, что существует токен авторизации
     //!!!!!!!!!!!!!!!!
 
-    //метод для показа всех продуктов
+    //метод для показа всех обьектов
     public function action_index()
     {
 
         $dove = new Model_Dove();
-        $doves = $dove->findAll();
+
+        $doves = [];
+        if(isset($_GET['page'], $_GET['doves'])){
+            //узнаем сколько обьектов в таблице
+            $allPages = $dove->countRows('id');
+            $allPages = $allPages->fetch_assoc()["count(id)"];
+
+            $doves_limit = $_GET['doves'];
+            $offset = ($_GET['page']-1)*$doves_limit;
+            $doves = $dove->findWithLimit($doves_limit, $offset);
+        }
+        else {
+            $doves = $dove->findAll();
+        }
+
+        var_dump($doves);
 
         if ($doves === false) {
             echo 'Голубить нечего!';
@@ -27,7 +42,7 @@ class Controller_Dove extends Controller
         }
     }
 
-    //показивем продукт, id получаем из GET массива
+    //показивем обьект, id получаем из GET массива
     public function action_dove_show(){
         if(isset($_GET['id']) && is_numeric($_GET['id'])){
             $dove_id = $_GET['id'];
@@ -66,7 +81,7 @@ class Controller_Dove extends Controller
     public function action_add_dove_form()//insert
     {
         $dove = new Model_Dove();
-        $htmlForm = $dove->generateForm();
+        $htmlForm = $this->view->generateForm($dove);
         $this->view->generate('addrecord_view.php', 'template_view.php',
             ['htmlForm' => $htmlForm, 'path' => '/dove/add_dove']);
     }
@@ -75,9 +90,16 @@ class Controller_Dove extends Controller
     {
         $dove = new Model_Dove();// {title: null, price: null}
         $dove->load($_POST);// {title: qweqwe, price: 120}
-        $dove->newSave();
-        $response = "Добавили голубя!";
-        $this->view->generate('message_view.php', 'template_view.php', ['message' => $response]);
+        $added = $dove->newSave();
+        if($added){
+            $response = "Добавили голубя!";
+            $this->view->generate('message_view.php', 'template_view.php', ['message' => $response]);
+        }
+        else {
+            $htmlForm = $htmlForm = $this->view->generateForm($dove, true);
+            $this->view->generate('addrecord_view.php', 'template_view.php',
+                ['htmlForm' => $htmlForm, 'path' => '/dove/add_dove']);
+        }
     }
 
     public function action_update_dove_form()
@@ -86,7 +108,7 @@ class Controller_Dove extends Controller
         $dove_template = $dove->findOne(['id' => $_GET['id']]);
         $dove->map($dove_template);
         //$htmlForm = "<input type='hidden' name='id' value='".$_GET['id']."'>";
-        $htmlForm = $dove->generateForm(true);
+        $htmlForm = $this->view->generateForm($dove, true);
         $this->view->generate('update_view.php',
             'template_view.php', ['htmlForm' => $htmlForm, 'path' => '/dove/update_dove']);
     }
@@ -95,8 +117,13 @@ class Controller_Dove extends Controller
     {
         $dove = new Model_Dove();// {title: null, price: null}
         $dove->load($_POST);
-        $dove->newSave();
-        header("Location: /dove/dove_show?id={$_POST['id']}");
+        $updated = $dove->newSave();
+        if($updated) header("Location: /dove/dove_show?id={$_POST['id']}");
+        else {
+            $htmlForm = $this->view->generateForm($dove, true);
+            $this->view->generate('update_view.php',
+                'template_view.php', ['htmlForm' => $htmlForm, 'path' => '/dove/update_dove']);
+        }
     }
 
     public function action_delete_dove(){
