@@ -11,24 +11,26 @@ class Controller_Dove extends Controller
     //метод для показа всех обьектов
     public function action_index()
     {
-
         $dove = new Model_Dove();
+        $allPages = 0;
+        $activePage = 0;
+        $doves_limit = 0;
 
         $doves = [];
-        if(isset($_GET['page'], $_GET['doves'])){
+        if(isset($_GET['page'], $_GET['doves']) && $_GET['page'] > 0 && $_GET['doves'] > 0){
+            $doves_limit = $_GET['doves'];
+            $offset = ($_GET['page']-1)*$doves_limit;
+
             //узнаем сколько обьектов в таблице
             $allPages = $dove->countRows('id');
             $allPages = $allPages->fetch_assoc()["count(id)"];
+            $allPages = ceil($allPages/$doves_limit);
 
-            $doves_limit = $_GET['doves'];
-            $offset = ($_GET['page']-1)*$doves_limit;
             $doves = $dove->findWithLimit($doves_limit, $offset);
         }
         else {
             $doves = $dove->findAll();
         }
-
-        var_dump($doves);
 
         if ($doves === false) {
             echo 'Голубить нечего!';
@@ -37,7 +39,8 @@ class Controller_Dove extends Controller
             $this->view->generate(
                 'dove_list_view.php',
                 'template_view.php',
-                ['title' => 'Продукты', 'doves' => $doves]
+                ['title' => 'Голуби', 'doves' => $doves, 'pages' => $allPages, 'dovesOnPage' => $doves_limit
+                , 'activePage' => $activePage]
             );
         }
     }

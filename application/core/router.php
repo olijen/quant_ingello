@@ -48,7 +48,10 @@ Class Route
         if (file_exists($controller_path)) {
             include $controller_path;
         } else {
-
+            include $_SERVER['DOCUMENT_ROOT'] . '/application/controllers/controller_404.php';
+            $controller = new Controller_404();
+            $controller->wrongPage();
+            return;
             //throw new Exception('[ERROR! Controller ' . $controller_file . '. IS NOT EXSIST! ]<hr/>');
         }
 
@@ -67,7 +70,9 @@ Class Route
 
             } else {
                 // здесь также разумнее было бы кинуть исключение
-                echo'все плохо';
+                include $_SERVER['DOCUMENT_ROOT'] . '/application/controllers/controller_404.php';
+                $controller = new Controller_404();
+                $controller->forAuthorizedUsers();
 
                 //throw new Exception('[ERROR! Action ' . $controller_file . ' ' . $action . ' IS NOT EXSIST! ]<hr/>');
             }

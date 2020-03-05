@@ -8,3 +8,6 @@
 <a href="/dove/update_dove_form?id=<?=$data['dove']['id']?>">Обновить данние по голубю</a>
 <br>
 <a href="/dove/delete_dove?id=<?=$data['dove']['id']?>">Обезвредить голубя</a>
+
+<!---<h1><=$data['dove']->name?></h1>
+<h1><=$data['dove']->person->name?></h1>-->

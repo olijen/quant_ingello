@@ -13,3 +13,9 @@
         <a href="/dove/delete_dove?id=<?=$dove['id']?>">Обезвредить голубя</a>
         <hr>
 <?php endforeach; ?>
+<?php if(isset($pages)) :
+    for($i = 1; $i <= $pages; $i++) :
+        if($i == $activePage){ echo "<span>$i</span>"; continue;}
+    ?>
+        <a href="/dove/index?page=<?=$i?>&doves=<?=$dovesOnPage?>"><?=$i?></a>
+<?php endfor; endif ?>
