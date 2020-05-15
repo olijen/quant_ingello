@@ -1,6 +1,6 @@
-<form action="/main/add_record" method="post" >
+<form action="<?=$data['path']?>" method="post" >
     Форма добавления строки в БД<br>
-    <?=$data?>
+    <?=$data['htmlForm']?>
     <input type="submit" /><br>
 </form>
 

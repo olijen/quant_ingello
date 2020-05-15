@@ -48,7 +48,11 @@ Class Route
         if (file_exists($controller_path)) {
             include $controller_path;
         } else {
-            throw new Exception('[ERROR! Controller ' . $controller_file . '. IS NOT EXSIST! ]<hr/>');
+            include $_SERVER['DOCUMENT_ROOT'] . '/application/controllers/controller_404.php';
+            $controller = new Controller_404();
+            $controller->wrongPage();
+            return;
+            //throw new Exception('[ERROR! Controller ' . $controller_file . '. IS NOT EXSIST! ]<hr/>');
         }
 
         // создаем контроллер
@@ -66,8 +70,11 @@ Class Route
 
             } else {
                 // здесь также разумнее было бы кинуть исключение
-                echo'все плохо';
-                throw new Exception('[ERROR! Action ' . $controller_file . ' ' . $action . ' IS NOT EXSIST! ]<hr/>');
+                include $_SERVER['DOCUMENT_ROOT'] . '/application/controllers/controller_404.php';
+                $controller = new Controller_404();
+                $controller->forAuthorizedUsers();
+
+                //throw new Exception('[ERROR! Action ' . $controller_file . ' ' . $action . ' IS NOT EXSIST! ]<hr/>');
             }
 
         }
@@ -88,7 +95,6 @@ Class Route
             //de($_COOKIE['token']);
             $access = self::checkInDb($_COOKIE['token']);
             if ($access == $_COOKIE['token']) {
-                echo 'токен есть';
                 return true;
             }
         } else {
@@ -114,7 +120,7 @@ Class Route
     {
         $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';
         header('HTTP/1.1 404 Not Found');
-        header("Status: 404 Not Found");
-        header('Location:' . $host . '404');
+        //header("Status: 404 Not Found");
+        //header('Location:' . $host . '404');
     }
 }

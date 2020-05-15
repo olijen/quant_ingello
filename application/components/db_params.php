@@ -9,9 +9,9 @@
 );*/
 
 return array(
-    'host' => 'ingello.com',
-    'dbname' => 'quant',
+    'host' => 'localhost',
+    'dbname' => 'product',
     'user' => 'root',
-    'password' => 'root',
+    'password' => '',
     'dbport' => 3304,
 );
