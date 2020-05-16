@@ -1,13 +1,9 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: Михаил
- * Date: 2/4/2020
- * Time: 12:17 PM
+ * Class Route цель - http://localhost/controller/action -> Controller::action()
  */
-
-
-Class Route
+class Route
 {
 
     static function start()
@@ -16,6 +12,7 @@ Class Route
         $controller_name = 'reg';
         $action_name = 'add_pers_form';
 
+        /// '/controller/action' => ['', 'controller', 'action']
         $routers = explode('/', parse_url($_SERVER['REQUEST_URI'])['path']); // РАЗДЕЛИЛИ ЮРЛЬ
 
         //если после разделения урли у нас есть несколько елементов для маршрута, то подставляем єти значения
@@ -28,12 +25,12 @@ Class Route
             $action_name = $routers[2];
         }
 
-        // добавил префикс
         $controller_name = 'Controller_' . $controller_name;
         $action_name = 'action_' . $action_name;
         $model_name = 'Model_' . $controller_name;
 
         //подцепил модель
+        //todo: это вообще используется?
         $model_file = strtolower($model_name) . '.php';
         $model_path = "application/models/" . $model_file;
         if (file_exists($model_path)) {
@@ -56,7 +53,12 @@ Class Route
         }
 
         // создаем контроллер
+
+        //$controller = new $controller_name;
+        //$controller = new 'Controller_dove';
+        //$controller = new Controller_dove;
         $controller = new $controller_name;
+
         $action = $action_name;
 
         //если существует метод контроллера - используем его
@@ -66,7 +68,18 @@ Class Route
         if (method_exists($controller, $action)) {
             if (self::checkAuth() == true || $controller_name == 'Controller_authoriz' || $controller_name == 'Controller_reg') {
                 // вызываем действие контроллера
-                $controller->$action();
+                //$controller->{'action_delete'}();
+                //$controller->action_delete();
+
+                ###################################################
+                ####################################################
+                #####################################################
+
+                        $controller->$action();
+
+                #####################################################
+                ####################################################
+                ###################################################
 
             } else {
                 // здесь также разумнее было бы кинуть исключение

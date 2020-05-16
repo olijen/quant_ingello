@@ -150,6 +150,14 @@ abstract class Model
         return true;
     }
 
+    public function delete(){
+        $table = $this->getClassName();
+        $delete = sql::delete($table, ['id' => $this->id['value']]);
+        return "Удалено!";
+    }
+
+    //--------------- VIEW
+
     public function getManualInputVars(){
         $allObjectVars = get_object_vars($this);
         $manualInputObjectVars = [];
@@ -174,12 +182,6 @@ abstract class Model
             }
         }
         return $htmlForm;
-    }
-
-    public function delete(){
-        $table = $this->getClassName();
-        $delete = sql::delete($table, ['id' => $this->id['value']]);
-        return "Удалено!";
     }
 
 }

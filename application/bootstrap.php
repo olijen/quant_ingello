@@ -17,22 +17,19 @@
 // todo:
 //
 
-
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
-define('DUMP_SQL', false);
+define('DUMP_SQL', true);
 
 require_once 'core/controller.php';
 require_once 'core/model.php';
 require_once 'core/views.php';
-//require_once 'controllers/controller_authoriz.php';
 require_once 'core/sql.php';
 require_once 'components/Db.php';
-
-
 require_once 'core/router.php';
+
 Route::start();
 
 function de($var){
