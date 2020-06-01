@@ -3,7 +3,7 @@
 
 <html lang="ru">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset=utf-8">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link rel = "stylesheet" href = "/vendor.css">
     <link rel = "stylesheet" href = "/main.css">

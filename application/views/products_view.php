@@ -1,10 +1,12 @@
-<form action="">
-<h1><a href="/main/add_record"> Добавить продукт</a></h1>
-</form>
+    <!--<form action="/main/add_record_form" method="post">-->
+    <!--    <input type="submit" value="-->
+    <!--Добавить Продукт" class="btn btn-size-md">-->
+    <!--</form>-->
 <h1>Продукти</h1>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 
 <?php
+
 
     foreach($data['products'] as $index_product => $product){
         ?>

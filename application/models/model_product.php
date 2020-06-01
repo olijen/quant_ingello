@@ -30,17 +30,10 @@ Class Model_Product extends Model
         'form' => 'input',
         'manualInput' => true,
     ];
-    public $isset = [
-        'value' => null,
-        'validation' => [
-            'type' => 'int',
-            'maxLength' => 1
-        ],
-        'form' => 'checkbox',
-        'manualInput' => true
-    ];
+
 
     public function map($product_data){
+
         $this->id['value'] = $product_data['id'];
         $this->title['value'] = $product_data['title'];
         $this->price['value'] = $product_data['price'];

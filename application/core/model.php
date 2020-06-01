@@ -59,30 +59,9 @@ abstract class Model
         }
     }
 
-    //todo: проверить и удалить, если не используется.
-    function save($updateValue = [])
-    {
-        $updateValue = $this->get_object_mass();
-        $fieldValue = $this->get_object_mass();
-        $table = $this->getClassName();
-        if (is_null($fieldValue['id']['value'])) {
-            array_shift($fieldValue);
-            var_dump($fieldValue);
-            $insertId= sql::insert($table, $fieldValue);
-            $this->load($fieldValue);
-            $this->id = $insertId;
-        } elseif ($fieldValue['id']) {
-            echo "update";
-            var_dump($fieldValue);
-            sql::update($table,$fieldValue, $fieldValue['id']['value']);
-            $this->load($updateValue);
-        } else {
-            return false;
-        }
-    }
-
     //todo: переименовать в save()
     function newSave(){
+
         //получаем все доступние свойства класса, таблицу, с которой будем работать и переменние которие подлежат ручному вводу
         $updateValue =  $fieldValue = $this->get_object_mass();
         $table = $this->getClassName();
@@ -96,16 +75,22 @@ abstract class Model
         if (is_null($fieldValue['id']['value'])) {
             //формируем массив "ключ" => "значение" для запроса insert
             if($check){
+
                 $fieldValueForInsert = [];
+
                 foreach ($manualInputVars as $key => $keyArray) {
+
                     $fieldValueForInsert[$key] = $keyArray['value'];
+
                 }
                 $insertId= sql::insert($table, $fieldValueForInsert);
                 $this->id['value'] = $insertId;
+
             }
             else return false;
         } elseif ($fieldValue['id']['value']) {
             $fieldValueForUpdate = [];
+
             foreach ($manualInputVars as $key => $keyArray) {
                 $fieldValueForUpdate[$key] = $keyArray['value'];
             }
@@ -152,11 +137,17 @@ abstract class Model
 
     public function getManualInputVars(){
         $allObjectVars = get_object_vars($this);
+
         $manualInputObjectVars = [];
+
         foreach($allObjectVars as $key => $keyArray){
+
+
             if($keyArray['manualInput'] === true) $manualInputObjectVars[$key] = $allObjectVars[$key];
+
         }
         return $manualInputObjectVars;
+
     }
 
 

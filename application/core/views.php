@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Михаил
- * Date: 2/4/2020
- * Time: 12:18 PM
- */
-
 class View
 {
     //public $template_view; // здесь можно указать общий вид по умолчанию.
@@ -13,6 +6,7 @@ class View
     public function generate($content_view, $template_view, $data = null)
     {
         if (is_array($data)) {
+
             //преобразуем элементы массива в переменные
             extract($data);
         }
@@ -29,6 +23,7 @@ class View
         $manualInputVars = $model->getManualInputVars();
         $htmlForm = "";
         foreach($manualInputVars as $key => $keyArray){
+
             $value = ($values === true) ? $keyArray['value'] : '';
             if($keyArray['form'] == 'input'){
                 $htmlForm .= "<span>$key:</span><input type='input' name = '$key' placeholder='Enter your $key' value='$value'><br />";
