@@ -18,6 +18,21 @@
 --
 -- Table structure for table `person`
 --
+CREATE DATABASE testDB;
+ALTER DATABASE `testDB` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ;
+
+
+CREATE TABLE comment(
+id int not null auto_increment,
+text varchar(255) not null,
+product_id int not null ,
+date datetime
+name varchar(255) not null ,
+email varchar (255) not null,
+rating int not null,
+primary key(id),
+foreign key(product_id) references person(id)
+)
 
 DROP TABLE IF EXISTS `person`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -25,9 +40,9 @@ DROP TABLE IF EXISTS `person`;
 CREATE TABLE `person` (
   `id` int NOT NULL AUTO_INCREMENT,
   `user` varchar(255) NOT NULL,
-  `password` int NOT NULL,
+  `password` varchar (255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
+  `token` varchar(255),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

@@ -23,8 +23,8 @@ class Model_person extends Model {
     public $password = [
         'value' => null,
         'validation' => [
-            'type' => 'numeric',
-            'maxLength' => 11
+            'type' => 'string',
+            'maxLength' => 255
         ],
         'form' => 'input',
         'manualInput' => true

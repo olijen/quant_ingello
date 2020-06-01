@@ -14,7 +14,8 @@ class Db
 
 
         // Устанавливаем соединение
-        $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname'], $params['dbport']);
+        $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
         return $db;
     }
+
 }

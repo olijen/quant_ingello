@@ -36,8 +36,10 @@ require_once 'core/router.php';
 Route::start();
 
 function de($var){
+    echo '<pre>';
     var_dump($var);
     exit('интересно');
+    echo '</pre>';
 }
 
 //function product($a=1,$b=3){

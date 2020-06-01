@@ -10,8 +10,9 @@
 
 return array(
     'host' => 'localhost',
-    'dbname' => 'product',
+    'dbname' => 'testDB',
     'user' => 'root',
-    'password' => '',
-    'dbport' => 3304,
+    'password' => '123456',
+    'charset' => 'utf8_general_ci',
+
 );
