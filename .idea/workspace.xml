@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:newbranch" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8113ca79-bf59-461b-a5cf-88dec80f34db" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/any_files/reg.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/model_comment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/commentShow_view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/comment_view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/empty_view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/productShow_view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/vendor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor.js" afterDir="false" />
+    <list default="true" id="8113ca79-bf59-461b-a5cf-88dec80f34db" name="Default" comment="Исправил баг с update  на продуктах, в прошлый комит не внес controller_main.php  с комментариями. Так исправленна кодировка бд, можно вносить русские буквы и вывод будет корректным">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/components/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/components/Db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/components/db_params.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/components/db_params.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/controller_authoriz.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/controller_authoriz.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/controller_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/controller_main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/controller_reg.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/controller_reg.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/core/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/core/views.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/views.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/model_person.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/model_person.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/model_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/model_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/addrecord_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/addrecord_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/product_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/product_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/products_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/products_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/template_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ingello.sql" beforeDir="false" afterPath="$PROJECT_DIR$/ingello.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +77,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Projects/TestFruncModule" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.reStructuredText" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -105,7 +110,7 @@
       <workItem from="1589809835119" duration="5000" />
       <workItem from="1590137477932" duration="17194000" />
       <workItem from="1590483299738" duration="33576000" />
-      <workItem from="1590658762080" duration="34463000" />
+      <workItem from="1590658762080" duration="42185000" />
     </task>
     <task id="LOCAL-00001" summary="Контроллер голубей, модель голубей, список голубей, миграции данных для голубей.">
       <created>1583321191622</created>
@@ -114,7 +119,21 @@
       <option name="project" value="LOCAL" />
       <updated>1583321191622</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавил шаблон, добавил коментарии и рейтинг продукта. Дописал файл sql для других програмистов с новыми sql запросами">
+      <created>1591008790713</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591008790713</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Исправил баг с update  на продуктах, в прошлый комит не внес controller_main.php  с комментариями. Так исправленна кодировка бд, можно вносить русские буквы и вывод будет корректным">
+      <created>1591014684320</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1591014684320</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -134,7 +153,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="newbranch" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -143,33 +174,43 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Контроллер голубей, модель голубей, список голубей, миграции данных для голубей." />
-    <option name="LAST_COMMIT_MESSAGE" value="Контроллер голубей, модель голубей, список голубей, миграции данных для голубей." />
+    <MESSAGE value="Добавил шаблон, добавил коментарии и рейтинг продукта. Дописал файл sql для других програмистов с новыми sql запросами" />
+    <MESSAGE value="Исправил баг с update  на продуктах, в прошлый комит не внес controller_main.php  с комментариями. Так исправленна кодировка бд, можно вносить русские буквы и вывод будет корректным" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил баг с update  на продуктах, в прошлый комит не внес controller_main.php  с комментариями. Так исправленна кодировка бд, можно вносить русские буквы и вывод будет корректным" />
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590755389174">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1590755389174" />
+    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2" timestamp="1591016933016">
+      <screen x="59" y="27" width="1861" height="1053" />
+    </state>
+    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1591016933016" />
+    <state x="235" y="116" width="1488" height="872" key="DiffContextDialog" timestamp="1591017312465">
+      <screen x="59" y="27" width="1861" height="1053" />
+    </state>
+    <state x="235" y="116" width="1488" height="872" key="DiffContextDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1591017312465" />
     <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1590741018870">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl/59.27.1861.1053@59.27.1861.1053" timestamp="1590741018870" />
-    <state width="1328" height="278" key="GridCell.Tab.0.bottom" timestamp="1590761508451">
+    <state width="1328" height="278" key="GridCell.Tab.0.bottom" timestamp="1591015696897">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="278" key="GridCell.Tab.0.bottom/59.27.1861.1053@59.27.1861.1053" timestamp="1590761508451" />
-    <state width="1328" height="278" key="GridCell.Tab.0.center" timestamp="1590761508449">
+    <state width="1328" height="278" key="GridCell.Tab.0.bottom/59.27.1861.1053@59.27.1861.1053" timestamp="1591015696897" />
+    <state width="1328" height="278" key="GridCell.Tab.0.center" timestamp="1591015696894">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="278" key="GridCell.Tab.0.center/59.27.1861.1053@59.27.1861.1053" timestamp="1590761508449" />
-    <state width="1328" height="278" key="GridCell.Tab.0.left" timestamp="1590761508447">
+    <state width="1328" height="278" key="GridCell.Tab.0.center/59.27.1861.1053@59.27.1861.1053" timestamp="1591015696894" />
+    <state width="1328" height="278" key="GridCell.Tab.0.left" timestamp="1591015696893">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="278" key="GridCell.Tab.0.left/59.27.1861.1053@59.27.1861.1053" timestamp="1590761508447" />
-    <state width="1328" height="278" key="GridCell.Tab.0.right" timestamp="1590761508450">
+    <state width="1328" height="278" key="GridCell.Tab.0.left/59.27.1861.1053@59.27.1861.1053" timestamp="1591015696893" />
+    <state width="1328" height="278" key="GridCell.Tab.0.right" timestamp="1591015696896">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="278" key="GridCell.Tab.0.right/59.27.1861.1053@59.27.1861.1053" timestamp="1590761508450" />
+    <state width="1328" height="278" key="GridCell.Tab.0.right/59.27.1861.1053@59.27.1861.1053" timestamp="1591015696896" />
     <state x="724" y="272" width="521" height="561" key="NewPhpClassDialog" timestamp="1590743168507">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
@@ -178,10 +219,18 @@
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="785" y="478" width="399" height="149" key="NewPhpFileDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1591007155582" />
-    <state x="478" y="187" key="SettingsEditor" timestamp="1590492497066">
+    <state x="478" y="187" key="SettingsEditor" timestamp="1591013734007">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="478" y="187" key="SettingsEditor/59.27.1861.1053@59.27.1861.1053" timestamp="1590492497066" />
+    <state x="478" y="187" key="SettingsEditor/59.27.1861.1053@59.27.1861.1053" timestamp="1591013734007" />
+    <state x="234" y="467" width="1501" height="171" key="VCS.ChangelistChooser" timestamp="1591016973198">
+      <screen x="59" y="27" width="1861" height="1053" />
+    </state>
+    <state x="234" y="467" width="1501" height="171" key="VCS.ChangelistChooser/59.27.1861.1053@59.27.1861.1053" timestamp="1591016973198" />
+    <state x="584" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1591016913446">
+      <screen x="59" y="27" width="1861" height="1053" />
+    </state>
+    <state x="584" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/59.27.1861.1053@59.27.1861.1053" timestamp="1591016913446" />
     <state x="774" y="427" width="420" height="280" key="com.intellij.database.actions.DdlActions$CommentOnObjectAction$1" timestamp="1590488503999">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
@@ -202,10 +251,10 @@
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="653" y="253" key="run.anything.popup/59.27.1861.1053@59.27.1861.1053" timestamp="1590670801507" />
-    <state x="653" y="198" width="672" height="676" key="search.everywhere.popup" timestamp="1590759499149">
+    <state x="653" y="198" width="672" height="676" key="search.everywhere.popup" timestamp="1591013730708">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="653" y="198" width="672" height="676" key="search.everywhere.popup/59.27.1861.1053@59.27.1861.1053" timestamp="1590759499149" />
+    <state x="653" y="198" width="672" height="676" key="search.everywhere.popup/59.27.1861.1053@59.27.1861.1053" timestamp="1591013730708" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

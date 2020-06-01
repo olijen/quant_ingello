@@ -19,7 +19,7 @@
 -- Table structure for table `person`
 --
 CREATE DATABASE testDB;
-ALTER DATABASE `testDB` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ;
+ALTER DATABASE `testDB` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
 
 
 CREATE TABLE comment(

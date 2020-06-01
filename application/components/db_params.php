@@ -11,8 +11,8 @@
 return array(
     'host' => 'localhost',
     'dbname' => 'testDB',
-    'user' => 'root',
-    'password' => '123456',
-    'charset' => 'utf8_general_ci',
+    'user' => '',
+    'password' => '',
+    'charset' => '',
 
 );

@@ -39,7 +39,7 @@ class Controller_authoriz extends Controller
     }
 
     //получить человека
-    public function getPerson()
+    public function  getPerson()
     {
         return sql::selectOne('person', $_POST);
     }
