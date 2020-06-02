@@ -25,9 +25,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8113ca79-bf59-461b-a5cf-88dec80f34db" name="Default" comment="Изменил параметры дб на путсые(каждый из заполяет локально)">
+    <list default="true" id="8113ca79-bf59-461b-a5cf-88dec80f34db" name="Default" comment="Подключил шрифты">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/components/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/components/Db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/components/db_params.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/components/db_params.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/controller_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/controller_main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/core/sql.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/sql.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +74,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Projects/TestFruncModule" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
@@ -107,7 +110,7 @@
       <workItem from="1589809835119" duration="5000" />
       <workItem from="1590137477932" duration="17194000" />
       <workItem from="1590483299738" duration="33576000" />
-      <workItem from="1590658762080" duration="44217000" />
+      <workItem from="1590658762080" duration="57084000" />
     </task>
     <task id="LOCAL-00001" summary="Контроллер голубей, модель голубей, список голубей, миграции данных для голубей.">
       <created>1583321191622</created>
@@ -137,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591017497596</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Подключил шрифты">
+      <created>1591086190831</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1591086190831</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -181,41 +191,46 @@
     <MESSAGE value="Добавил шаблон, добавил коментарии и рейтинг продукта. Дописал файл sql для других програмистов с новыми sql запросами" />
     <MESSAGE value="Исправил баг с update  на продуктах, в прошлый комит не внес controller_main.php  с комментариями. Так исправленна кодировка бд, можно вносить русские буквы и вывод будет корректным" />
     <MESSAGE value="Изменил параметры дб на путсые(каждый из заполяет локально)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменил параметры дб на путсые(каждый из заполяет локально)" />
+    <MESSAGE value="Подключил шрифты" />
+    <option name="LAST_COMMIT_MESSAGE" value="Подключил шрифты" />
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590755389174">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1590755389174" />
-    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2" timestamp="1591017497483">
+    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2" timestamp="1591086190689">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1591017497483" />
+    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1591086190689" />
+    <state x="672" y="310" width="624" height="484" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1591093998492">
+      <screen x="59" y="27" width="1861" height="1053" />
+    </state>
+    <state x="672" y="310" width="624" height="484" key="DUMP_DIALOG_DIMENSION_KEY/59.27.1861.1053@59.27.1861.1053" timestamp="1591093998492" />
     <state x="235" y="116" width="1488" height="872" key="DiffContextDialog" timestamp="1591018221744">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="235" y="116" width="1488" height="872" key="DiffContextDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1591018221744" />
-    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1590741018870">
+    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1591104874461">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl/59.27.1861.1053@59.27.1861.1053" timestamp="1590741018870" />
-    <state width="1328" height="278" key="GridCell.Tab.0.bottom" timestamp="1591015696897">
+    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl/59.27.1861.1053@59.27.1861.1053" timestamp="1591104874461" />
+    <state width="1328" height="343" key="GridCell.Tab.0.bottom" timestamp="1591104726847">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="278" key="GridCell.Tab.0.bottom/59.27.1861.1053@59.27.1861.1053" timestamp="1591015696897" />
-    <state width="1328" height="278" key="GridCell.Tab.0.center" timestamp="1591015696894">
+    <state width="1328" height="343" key="GridCell.Tab.0.bottom/59.27.1861.1053@59.27.1861.1053" timestamp="1591104726847" />
+    <state width="1328" height="343" key="GridCell.Tab.0.center" timestamp="1591104726845">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="278" key="GridCell.Tab.0.center/59.27.1861.1053@59.27.1861.1053" timestamp="1591015696894" />
-    <state width="1328" height="278" key="GridCell.Tab.0.left" timestamp="1591015696893">
+    <state width="1328" height="343" key="GridCell.Tab.0.center/59.27.1861.1053@59.27.1861.1053" timestamp="1591104726845" />
+    <state width="1328" height="343" key="GridCell.Tab.0.left" timestamp="1591104726843">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="278" key="GridCell.Tab.0.left/59.27.1861.1053@59.27.1861.1053" timestamp="1591015696893" />
-    <state width="1328" height="278" key="GridCell.Tab.0.right" timestamp="1591015696896">
+    <state width="1328" height="343" key="GridCell.Tab.0.left/59.27.1861.1053@59.27.1861.1053" timestamp="1591104726843" />
+    <state width="1328" height="343" key="GridCell.Tab.0.right" timestamp="1591104726847">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="278" key="GridCell.Tab.0.right/59.27.1861.1053@59.27.1861.1053" timestamp="1591015696896" />
+    <state width="1328" height="343" key="GridCell.Tab.0.right/59.27.1861.1053@59.27.1861.1053" timestamp="1591104726847" />
     <state x="724" y="272" width="521" height="561" key="NewPhpClassDialog" timestamp="1590743168507">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
@@ -232,26 +247,30 @@
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="234" y="467" width="1501" height="171" key="VCS.ChangelistChooser/59.27.1861.1053@59.27.1861.1053" timestamp="1591016973198" />
-    <state x="584" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1591086026687">
+    <state x="584" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1591086615029">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="584" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/59.27.1861.1053@59.27.1861.1053" timestamp="1591086026687" />
+    <state x="584" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/59.27.1861.1053@59.27.1861.1053" timestamp="1591086615029" />
     <state x="774" y="427" width="420" height="280" key="com.intellij.database.actions.DdlActions$CommentOnObjectAction$1" timestamp="1590488503999">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="774" y="427" width="420" height="280" key="com.intellij.database.actions.DdlActions$CommentOnObjectAction$1/59.27.1861.1053@59.27.1861.1053" timestamp="1590488503999" />
-    <state x="842" y="427" width="367" height="254" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1590673256067">
+    <state x="842" y="427" width="367" height="254" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1591104086346">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="842" y="427" width="367" height="254" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/59.27.1861.1053@59.27.1861.1053" timestamp="1590673256067" />
+    <state x="842" y="427" width="367" height="254" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/59.27.1861.1053@59.27.1861.1053" timestamp="1591104086345" />
     <state x="725" y="466" width="484" height="371" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1590670327949">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="725" y="466" width="484" height="371" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1590670327949" />
-    <state x="995" y="269" width="908" height="567" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1591007949959">
+    <state x="633" y="265" width="908" height="567" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1591103990204">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="995" y="269" width="908" height="567" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1591007949959" />
+    <state x="633" y="265" width="908" height="567" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1591103990204" />
+    <state x="680" y="262" width="618" height="580" key="find.popup" timestamp="1591102224403">
+      <screen x="59" y="27" width="1861" height="1053" />
+    </state>
+    <state x="680" y="262" width="618" height="580" key="find.popup/59.27.1861.1053@59.27.1861.1053" timestamp="1591102224403" />
     <state x="653" y="253" key="run.anything.popup" timestamp="1590670801507">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
