@@ -21,18 +21,18 @@
 CREATE DATABASE testDB;
 ALTER DATABASE `testDB` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
 
-
-CREATE TABLE comment(
-id int not null auto_increment,
-text varchar(255) not null,
-product_id int not null ,
-date datetime
-name varchar(255) not null ,
-email varchar (255) not null,
-rating int not null,
-primary key(id),
-foreign key(product_id) references person(id)
-)
+CREATE TABLE `comment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `text` varchar(255) NOT NULL,
+  `date` datetime NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `rating` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `product__fk` (`product_id`),
+  CONSTRAINT `product__fk` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=121 DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `person`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

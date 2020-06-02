@@ -52,6 +52,15 @@
         </div>
     </div>
 </div><br><br><br><br>
+<section class="page-title-area bg-color" data-bg-color="#f4f4f4" style="background-color: rgb(244, 244, 244);">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="page-title">QUANT INGELLO</h1>
+            </div>
+        </div>
+    </div>
+</section><br><br>
 <style>
     body{
         font-family: 'Poppins', sans-serif;  ;

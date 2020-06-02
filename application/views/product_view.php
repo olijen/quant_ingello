@@ -8,6 +8,15 @@
     <title>Document</title>
 </head>
 <body>
+<section class="page-title-area bg-color" data-bg-color="#f4f4f4" style="background-color: rgb(244, 244, 244);">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="page-title">Product Details</h1>
+            </div>
+        </div>
+    </div>
+</section><br><br>
 
 <a href="/main/index">Ко всем продуктам</a>
 <form action="/main/add_comment" method="get">

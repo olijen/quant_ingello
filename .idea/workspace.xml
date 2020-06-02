@@ -27,10 +27,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8113ca79-bf59-461b-a5cf-88dec80f34db" name="Default" comment="Подключил шрифты">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/components/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/components/Db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/components/db_params.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/components/db_params.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/controller_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/controller_main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/core/sql.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/sql.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/product_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/product_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/products_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/products_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/template_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ingello.sql" beforeDir="false" afterPath="$PROJECT_DIR$/ingello.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +113,7 @@
       <workItem from="1589809835119" duration="5000" />
       <workItem from="1590137477932" duration="17194000" />
       <workItem from="1590483299738" duration="33576000" />
-      <workItem from="1590658762080" duration="57084000" />
+      <workItem from="1590658762080" duration="58467000" />
     </task>
     <task id="LOCAL-00001" summary="Контроллер голубей, модель голубей, список голубей, миграции данных для голубей.">
       <created>1583321191622</created>
@@ -147,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591086190831</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Добавил кодировку">
+      <created>1591106018913</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1591106018913</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -192,17 +202,18 @@
     <MESSAGE value="Исправил баг с update  на продуктах, в прошлый комит не внес controller_main.php  с комментариями. Так исправленна кодировка бд, можно вносить русские буквы и вывод будет корректным" />
     <MESSAGE value="Изменил параметры дб на путсые(каждый из заполяет локально)" />
     <MESSAGE value="Подключил шрифты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Подключил шрифты" />
+    <MESSAGE value="Добавил кодировку" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил кодировку" />
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590755389174">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1590755389174" />
-    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2" timestamp="1591086190689">
+    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2" timestamp="1591106018597">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1591086190689" />
+    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1591106018597" />
     <state x="672" y="310" width="624" height="484" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1591093998492">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
@@ -215,22 +226,22 @@
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl/59.27.1861.1053@59.27.1861.1053" timestamp="1591104874461" />
-    <state width="1328" height="343" key="GridCell.Tab.0.bottom" timestamp="1591104726847">
+    <state width="1328" height="343" key="GridCell.Tab.0.bottom" timestamp="1591107345981">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="343" key="GridCell.Tab.0.bottom/59.27.1861.1053@59.27.1861.1053" timestamp="1591104726847" />
-    <state width="1328" height="343" key="GridCell.Tab.0.center" timestamp="1591104726845">
+    <state width="1328" height="343" key="GridCell.Tab.0.bottom/59.27.1861.1053@59.27.1861.1053" timestamp="1591107345981" />
+    <state width="1328" height="343" key="GridCell.Tab.0.center" timestamp="1591107345979">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="343" key="GridCell.Tab.0.center/59.27.1861.1053@59.27.1861.1053" timestamp="1591104726845" />
-    <state width="1328" height="343" key="GridCell.Tab.0.left" timestamp="1591104726843">
+    <state width="1328" height="343" key="GridCell.Tab.0.center/59.27.1861.1053@59.27.1861.1053" timestamp="1591107345979" />
+    <state width="1328" height="343" key="GridCell.Tab.0.left" timestamp="1591107345978">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="343" key="GridCell.Tab.0.left/59.27.1861.1053@59.27.1861.1053" timestamp="1591104726843" />
-    <state width="1328" height="343" key="GridCell.Tab.0.right" timestamp="1591104726847">
+    <state width="1328" height="343" key="GridCell.Tab.0.left/59.27.1861.1053@59.27.1861.1053" timestamp="1591107345978" />
+    <state width="1328" height="343" key="GridCell.Tab.0.right" timestamp="1591107345980">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="343" key="GridCell.Tab.0.right/59.27.1861.1053@59.27.1861.1053" timestamp="1591104726847" />
+    <state width="1328" height="343" key="GridCell.Tab.0.right/59.27.1861.1053@59.27.1861.1053" timestamp="1591107345980" />
     <state x="724" y="272" width="521" height="561" key="NewPhpClassDialog" timestamp="1590743168507">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
@@ -247,10 +258,10 @@
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="234" y="467" width="1501" height="171" key="VCS.ChangelistChooser/59.27.1861.1053@59.27.1861.1053" timestamp="1591016973198" />
-    <state x="584" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1591086615029">
+    <state x="584" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1591106105198">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="584" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/59.27.1861.1053@59.27.1861.1053" timestamp="1591086615029" />
+    <state x="584" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/59.27.1861.1053@59.27.1861.1053" timestamp="1591106105198" />
     <state x="774" y="427" width="420" height="280" key="com.intellij.database.actions.DdlActions$CommentOnObjectAction$1" timestamp="1590488503999">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
