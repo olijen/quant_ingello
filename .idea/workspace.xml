@@ -25,15 +25,103 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8113ca79-bf59-461b-a5cf-88dec80f34db" name="Default" comment="Подключил шрифты">
+    <list default="true" id="8113ca79-bf59-461b-a5cf-88dec80f34db" name="Default" comment="Поправил шаблон">
+      <change afterPath="$PROJECT_DIR$/assets/img/banner/banner-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/banner/banner-02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/banner/banner-bg-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/bg/blog-breadcrumb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-06-350x236.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-06-400x350.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-06-560x345.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-07-350x236.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-07-560x345.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-08-350x236.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-08-560x345.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-08.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-09-350x236.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-09-560x345.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-09.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-10-350x236.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-10-560x345.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-11-350x236.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/blog/blog-11-560x345.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/icons/cross.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/icons/grid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/icons/list.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/icons/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/icons/marker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/icons/play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/icons/video-play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/icons/vimeo-play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/icons/youtube-play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/logo/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/others/avatar-large-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/others/client-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/others/client-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/others/client-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/others/comment-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/others/comment-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/others/comment-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/others/team-04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-01-500x466.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-02-500x575.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-03-270x300.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-03-500x555.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-04-270x300.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-04-500x555.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-05-270x300.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-05-500x555.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-06-270x300.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-06-500x555.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-07-270x300.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-08-270x300.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-09-270x300.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-10-270x300.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-11-123x127.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-11-321x450.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-11-70x88.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-11-90x90.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-12-123x127.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-12-321x450.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-12-70x88.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-12-90x90.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-13-123x127.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-13-321x450.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-13-70x88.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-13-90x90.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-14-500x575.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-15-500x466.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-16-321x450.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-17-349x388.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-18-349x388.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-19-349x388.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/products/product-20-270x300.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/slider/slider-bg-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/slider/slider-bg-02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/slider/slider-image-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/slider/slider-image-02.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/any_files/reg.php" beforeDir="false" afterPath="$PROJECT_DIR$/any_files/reg.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/components/db_params.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/components/db_params.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/controller_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/controller_main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/core/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/core/sql.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/sql.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/authoriz_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/authoriz_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/commentShow_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/commentShow_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/product_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/product_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/products_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/products_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/reg_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/reg_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/template_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ingello.sql" beforeDir="false" afterPath="$PROJECT_DIR$/ingello.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/vendor.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,23 +165,26 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/js" />
+      <recent name="$PROJECT_DIR$/css" />
+      <recent name="$PROJECT_DIR$/any_files" />
+      <recent name="$PROJECT_DIR$/application/views" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/application" />
       <recent name="$PROJECT_DIR$/application/views" />
       <recent name="$PROJECT_DIR$/application/models" />
-      <recent name="$PROJECT_DIR$/application/controllers" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/any_files" />
-      <recent name="$PROJECT_DIR$/application/views" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -113,7 +204,8 @@
       <workItem from="1589809835119" duration="5000" />
       <workItem from="1590137477932" duration="17194000" />
       <workItem from="1590483299738" duration="33576000" />
-      <workItem from="1590658762080" duration="58467000" />
+      <workItem from="1590658762080" duration="83493000" />
+      <workItem from="1591367399159" duration="2015000" />
     </task>
     <task id="LOCAL-00001" summary="Контроллер голубей, модель голубей, список голубей, миграции данных для голубей.">
       <created>1583321191622</created>
@@ -157,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591106018913</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Поправил шаблон, дополнил файл sql">
+      <created>1591107680761</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1591107680761</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -203,45 +302,47 @@
     <MESSAGE value="Изменил параметры дб на путсые(каждый из заполяет локально)" />
     <MESSAGE value="Подключил шрифты" />
     <MESSAGE value="Добавил кодировку" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил кодировку" />
+    <MESSAGE value="Поправил шаблон" />
+    <MESSAGE value="Поправил шаблон, дополнил файл sql" />
+    <option name="LAST_COMMIT_MESSAGE" value="Поправил шаблон, дополнил файл sql" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590755389174">
+    <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591368217795">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1590755389174" />
-    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2" timestamp="1591106018597">
+    <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1591368217795" />
+    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2" timestamp="1591107680561">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1591106018597" />
+    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1591107680561" />
     <state x="672" y="310" width="624" height="484" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1591093998492">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="672" y="310" width="624" height="484" key="DUMP_DIALOG_DIMENSION_KEY/59.27.1861.1053@59.27.1861.1053" timestamp="1591093998492" />
-    <state x="235" y="116" width="1488" height="872" key="DiffContextDialog" timestamp="1591018221744">
+    <state x="235" y="116" width="1488" height="872" key="DiffContextDialog" timestamp="1591107641816">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="235" y="116" width="1488" height="872" key="DiffContextDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1591018221744" />
-    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1591104874461">
+    <state x="235" y="116" width="1488" height="872" key="DiffContextDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1591107641816" />
+    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1591367423225">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl/59.27.1861.1053@59.27.1861.1053" timestamp="1591104874461" />
-    <state width="1328" height="343" key="GridCell.Tab.0.bottom" timestamp="1591107345981">
+    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl/59.27.1861.1053@59.27.1861.1053" timestamp="1591367423225" />
+    <state width="1328" height="343" key="GridCell.Tab.0.bottom" timestamp="1591107546586">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="343" key="GridCell.Tab.0.bottom/59.27.1861.1053@59.27.1861.1053" timestamp="1591107345981" />
-    <state width="1328" height="343" key="GridCell.Tab.0.center" timestamp="1591107345979">
+    <state width="1328" height="343" key="GridCell.Tab.0.bottom/59.27.1861.1053@59.27.1861.1053" timestamp="1591107546586" />
+    <state width="1328" height="343" key="GridCell.Tab.0.center" timestamp="1591107546585">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="343" key="GridCell.Tab.0.center/59.27.1861.1053@59.27.1861.1053" timestamp="1591107345979" />
-    <state width="1328" height="343" key="GridCell.Tab.0.left" timestamp="1591107345978">
+    <state width="1328" height="343" key="GridCell.Tab.0.center/59.27.1861.1053@59.27.1861.1053" timestamp="1591107546585" />
+    <state width="1328" height="343" key="GridCell.Tab.0.left" timestamp="1591107546584">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="343" key="GridCell.Tab.0.left/59.27.1861.1053@59.27.1861.1053" timestamp="1591107345978" />
-    <state width="1328" height="343" key="GridCell.Tab.0.right" timestamp="1591107345980">
+    <state width="1328" height="343" key="GridCell.Tab.0.left/59.27.1861.1053@59.27.1861.1053" timestamp="1591107546584" />
+    <state width="1328" height="343" key="GridCell.Tab.0.right" timestamp="1591107546585">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="343" key="GridCell.Tab.0.right/59.27.1861.1053@59.27.1861.1053" timestamp="1591107345980" />
+    <state width="1328" height="343" key="GridCell.Tab.0.right/59.27.1861.1053@59.27.1861.1053" timestamp="1591107546585" />
     <state x="724" y="272" width="521" height="561" key="NewPhpClassDialog" timestamp="1590743168507">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
@@ -286,10 +387,10 @@
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="653" y="253" key="run.anything.popup/59.27.1861.1053@59.27.1861.1053" timestamp="1590670801507" />
-    <state x="653" y="198" width="672" height="676" key="search.everywhere.popup" timestamp="1591013730708">
+    <state x="653" y="198" width="672" height="676" key="search.everywhere.popup" timestamp="1591365942829">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="653" y="198" width="672" height="676" key="search.everywhere.popup/59.27.1861.1053@59.27.1861.1053" timestamp="1591013730708" />
+    <state x="653" y="198" width="672" height="676" key="search.everywhere.popup/59.27.1861.1053@59.27.1861.1053" timestamp="1591365942829" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
