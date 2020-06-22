@@ -21,8 +21,8 @@ class Controller_reg extends Controller {
     {
         if (empty($_POST))
         $person = new Model_person();
-        $htmlForm = $person->generateForm();
-        $this->view->generate('reg_view.php', 'template_view.php', $htmlForm);
+//        $htmlForm = $person->generateForm();
+        $this->view->generate('login_view.php', 'template_view.php');
     }
 
     //метод добавления человека в форму
