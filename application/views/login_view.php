@@ -299,10 +299,12 @@
                                         <label class="form__label" for="username_email">Username <span class="required">*</span></label>
                                         <input class="form__input" id="login" name="user" type="text" placeholder="Введите ваш логин"/><br>
                                     </div>
+                                    <br>
                                     <div class="form__group mb--20">
                                         <label class="form__label" for="login_password">Password <span class="required">*</span></label>
                                         <input class="form__input" id="login" name="password" type="password" placeholder="Введите пароль"  /><br>
                                     </div>
+
                                     Token: <?= @$_COOKIE['token'] ?> </hr><br>
                                     <div class="form__group mr--30">
                                         <input type="submit" value="Log in" class="btn btn-size-sm">
@@ -318,16 +320,16 @@
                             <form action="/reg/add_pers" class="form form--login" method="post">
                                 <div class="form__group mb--20">
                                     <label class="form__label" for="username_email">Your email<span class="required">*</span></label>
-                                    <input class="form__input" id="login" name="email" type="email" placeholder="Введите ваш email"/></br>
+                                    <input class="form__input" id="login" name="email" type="email" placeholder="Введите ваш email"/></br></br>
                                 </div>
                                 <div class="form__group mb--20">
                                    <label class="form__label" for="username_email">Username<span class="required">*</span></label>
-                                    <input class="form__input" id="login" name="user" type="text" placeholder="Введите ваш логин" />
+                                    <input class="form__input" id="login" name="user" type="text" placeholder="Введите ваш логин"/></br></br>
 
                                 </div>
                                 <div class="form__group mb--20">
                                     <label class="form__label" for="register_password">Password <span class="required">*</span></label>
-                                    <input class="form__input" id="login" name="password" type="password" placeholder="Введите пароль"/></br>
+                                    <input class="form__input" id="login" name="password" type="password" placeholder="Введите пароль"/></br></br>
                                 </div>
                                 <div class="form__group">
                                     <input type="submit" value="Register" class="btn btn-size-sm">

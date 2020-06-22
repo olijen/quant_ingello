@@ -26,8 +26,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8113ca79-bf59-461b-a5cf-88dec80f34db" name="Default" comment="Поправил шаблон">
-      <change afterPath="$PROJECT_DIR$/any_files/home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/views/login_view.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/assets/fonts/Billy Ohio.eot" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/assets/fonts/Billy Ohio.woff2" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/assets/fonts/BillyOhio.svg" afterDir="false" />
@@ -50,21 +48,15 @@
       <change afterPath="$PROJECT_DIR$/assets/fonts/lg.svg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/assets/fonts/lg.ttf" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/assets/fonts/lg.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/any_files/reg.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/components/db_params.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/components/db_params.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/controller_authoriz.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/controller_authoriz.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/controller_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/controller_main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/controller_reg.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/controller_reg.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/core/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/core/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/core/sql.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/sql.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/authoriz_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/authoriz_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/commentShow_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/commentShow_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/login_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/login_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/product_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/product_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/products_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/products_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/reg_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/reg_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/template_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +101,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Projects/TestFruncModule" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Рабочий стол/Payne" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -151,7 +143,7 @@
       <workItem from="1590658762080" duration="83493000" />
       <workItem from="1591367399159" duration="3845000" />
       <workItem from="1592209516385" duration="24602000" />
-      <workItem from="1592386661745" duration="11341000" />
+      <workItem from="1592386661745" duration="21837000" />
     </task>
     <task id="LOCAL-00001" summary="Контроллер голубей, модель голубей, список голубей, миграции данных для голубей.">
       <created>1583321191622</created>
@@ -209,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591369481568</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Сделал асторизацию и регистрацию на одной странице">
+      <created>1592816261323</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1592816261323</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -258,17 +257,18 @@
     <MESSAGE value="Поправил шаблон" />
     <MESSAGE value="Поправил шаблон, дополнил файл sql" />
     <MESSAGE value="Подключил стили, сделал страницу продуктов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Подключил стили, сделал страницу продуктов" />
+    <MESSAGE value="Сделал асторизацию и регистрацию на одной странице" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал асторизацию и регистрацию на одной странице" />
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591368217795">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1591368217795" />
-    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2" timestamp="1591369481165">
+    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2" timestamp="1592816289589">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1591369481165" />
+    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1592816289589" />
     <state x="672" y="310" width="624" height="484" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1591093998492">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
@@ -277,26 +277,26 @@
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="235" y="116" width="1488" height="872" key="DiffContextDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1591107641816" />
-    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1592386675706">
+    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1592817224367">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl/59.27.1861.1053@59.27.1861.1053" timestamp="1592386675706" />
-    <state width="1328" height="343" key="GridCell.Tab.0.bottom" timestamp="1592476670878">
+    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl/59.27.1861.1053@59.27.1861.1053" timestamp="1592817224367" />
+    <state width="1328" height="67" key="GridCell.Tab.0.bottom" timestamp="1592822011103">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="343" key="GridCell.Tab.0.bottom/59.27.1861.1053@59.27.1861.1053" timestamp="1592476670878" />
-    <state width="1328" height="343" key="GridCell.Tab.0.center" timestamp="1592476670878">
+    <state width="1328" height="67" key="GridCell.Tab.0.bottom/59.27.1861.1053@59.27.1861.1053" timestamp="1592822011103" />
+    <state width="1328" height="67" key="GridCell.Tab.0.center" timestamp="1592822011101">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="343" key="GridCell.Tab.0.center/59.27.1861.1053@59.27.1861.1053" timestamp="1592476670878" />
-    <state width="1328" height="343" key="GridCell.Tab.0.left" timestamp="1592476670877">
+    <state width="1328" height="67" key="GridCell.Tab.0.center/59.27.1861.1053@59.27.1861.1053" timestamp="1592822011101" />
+    <state width="1328" height="67" key="GridCell.Tab.0.left" timestamp="1592822011099">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="343" key="GridCell.Tab.0.left/59.27.1861.1053@59.27.1861.1053" timestamp="1592476670877" />
-    <state width="1328" height="343" key="GridCell.Tab.0.right" timestamp="1592476670878">
+    <state width="1328" height="67" key="GridCell.Tab.0.left/59.27.1861.1053@59.27.1861.1053" timestamp="1592822011099" />
+    <state width="1328" height="67" key="GridCell.Tab.0.right" timestamp="1592822011102">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="343" key="GridCell.Tab.0.right/59.27.1861.1053@59.27.1861.1053" timestamp="1592476670878" />
+    <state width="1328" height="67" key="GridCell.Tab.0.right/59.27.1861.1053@59.27.1861.1053" timestamp="1592822011102" />
     <state x="724" y="272" width="521" height="561" key="NewPhpClassDialog" timestamp="1590743168507">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
@@ -341,10 +341,10 @@
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="653" y="253" key="run.anything.popup/59.27.1861.1053@59.27.1861.1053" timestamp="1590670801507" />
-    <state x="653" y="198" width="672" height="676" key="search.everywhere.popup" timestamp="1591365942829">
+    <state x="653" y="198" width="672" height="676" key="search.everywhere.popup" timestamp="1592822226938">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="653" y="198" width="672" height="676" key="search.everywhere.popup/59.27.1861.1053@59.27.1861.1053" timestamp="1591365942829" />
+    <state x="653" y="198" width="672" height="676" key="search.everywhere.popup/59.27.1861.1053@59.27.1861.1053" timestamp="1592822226938" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
