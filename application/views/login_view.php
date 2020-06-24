@@ -41,7 +41,7 @@
                 <div class="container">
                     <div class="header__main">
                         <div class="header__col header__left">
-                            <a href="index.html" class="logo">
+                            <a href="/any_files/home.php" class="logo">
                                 <figure class="logo--normal">
                                     <img src="/assets/img/logo/logo.png" alt="Logo">
                                 </figure>
@@ -263,7 +263,6 @@
                     </div>
                 </div>
             </div>
-            <div class="header-sticky-height"></div>
         </div>
     </header>
     <!-- Header End -->
@@ -297,19 +296,18 @@
                                 <div class="login-box">
                                     <div class="form__group mb--20">
                                         <label class="form__label" for="username_email">Username <span class="required">*</span></label>
-                                        <input class="form__input" id="login" name="user" type="text" placeholder="Введите ваш логин"/><br>
+                                        <input class="form__input" id="login" name="user" type="text" placeholder="Введите ваш логин"/>
                                     </div>
-                                    <br>
                                     <div class="form__group mb--20">
                                         <label class="form__label" for="login_password">Password <span class="required">*</span></label>
-                                        <input class="form__input" id="login" name="password" type="password" placeholder="Введите пароль"  /><br>
+                                        <input class="form__input" id="login" name="password" type="password" placeholder="Введите пароль"  />
                                     </div>
-
-                                    Token: <?= @$_COOKIE['token'] ?> </hr><br>
+                                    Token: <?= @$_COOKIE['token'] ?> <br><br>
                                     <div class="form__group mr--30">
                                         <input type="submit" value="Log in" class="btn btn-size-sm">
                                     </div>
                                 </div>
+                                <br>
                                 <a class="forgot-pass" href="#">Lost your password?</a>
                             </form>
                         </div>
@@ -320,16 +318,16 @@
                             <form action="/reg/add_pers" class="form form--login" method="post">
                                 <div class="form__group mb--20">
                                     <label class="form__label" for="username_email">Your email<span class="required">*</span></label>
-                                    <input class="form__input" id="login" name="email" type="email" placeholder="Введите ваш email"/></br></br>
+                                    <input class="form__input" id="login" name="email" type="email" placeholder="Введите ваш email"/>
                                 </div>
                                 <div class="form__group mb--20">
                                    <label class="form__label" for="username_email">Username<span class="required">*</span></label>
-                                    <input class="form__input" id="login" name="user" type="text" placeholder="Введите ваш логин"/></br></br>
+                                    <input class="form__input" id="login" name="user" type="text" placeholder="Введите ваш логин"/>
 
                                 </div>
                                 <div class="form__group mb--20">
                                     <label class="form__label" for="register_password">Password <span class="required">*</span></label>
-                                    <input class="form__input" id="login" name="password" type="password" placeholder="Введите пароль"/></br></br>
+                                    <input class="form__input" id="login" name="password" type="password" placeholder="Введите пароль"/>
                                 </div>
                                 <div class="form__group">
                                     <input type="submit" value="Register" class="btn btn-size-sm">

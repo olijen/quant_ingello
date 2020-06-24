@@ -2,29 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <title>Payne</title>
     <link rel="stylesheet" href="/assets/css/vendor.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-<section class="page-title-area bg-color" data-bg-color="#f4f4f4" style="background-color: rgb(244, 244, 244);">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="page-title">Shop Fullwidth</h1>
-                <ul class="breadcrumb">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="current"><span>Shop Fullwidth</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
 <div class="shop-page-wrapper shop-fullwidth ptb--80">
     <div class="container">
         <div class="row mb--50">
@@ -104,13 +89,34 @@
                                     </div>
                                 </div>
                                 <div class="product__info--right">
-                                            <span class="product__rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </span>
+                                          <?php
+                                          $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
+                                          $params = include($paramsPath);
+                                          $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
+                                          $db->set_charset("utf8");
+                                          $sql = 'select * from comment ';
+                                          $id = 'where product_id =' . $product['id'];
+                                          $sql = $sql . $id;
+                                          $result = $db->query($sql);
+
+                                          $a = 0;
+                                          $b = 0;
+                                          while ($rows = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+                                              $a += $rows['rating'];
+                                              if ($rows['rating']) {
+                                                  $b += 1;
+                                              }
+                                              $avg = $a / $b;
+                                          }
+                                          $rating = round($avg,0);
+                                          for ($i = 0; $i < 5; $i++){
+                                              if($rating == $i) {
+                                                  break;
+                                              }else{
+                                                  echo '<span><i class="fa fa-star"></i></span>';
+                                              }
+                                          }
+                                          ?>
                                 </div>
                             </div>
                         </div>
@@ -139,5 +145,10 @@
 <!--<div class="row">-->
 
 <!--</div>-->
+<!-- jQuery JS -->
+<!--<script src="/assets/js/vendor.js"></script>-->
+<!---->
+<!-- Main JS -->
+<!--<script src="/assets/js/main.js"></script>-->
 </body>
 </html>

@@ -8,8 +8,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicons -->
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="assets/img/icon.png">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/assets/img/icon.png">
 
     <!-- ************************* CSS Files ************************* -->
 
@@ -30,141 +30,86 @@
         <div class="ft-child ft-bounce3"></div>
     </div>
 </div>
-<!-- Preloader End -->
 
-<!-- Main Wrapper Start -->
-<!--<div class="header__inner header--fixed">-->
-<!--    <div class="container">-->
-<!--        <div class="header__main">-->
-<!--            <div class="header__col header__center">-->
-<!--                <nav class="main-navigation d-none d-lg-block">-->
-<!--                    <ul class="mainmenu">-->
-<!--                        <li class="mainmenu__item menu-item-has-children position-relative">-->
-<!--                            <a href="/any_files/reg.php" class="mainmenu__link">Home</a>-->
-<!--                        </li>-->
-<!--                        <li class="mainmenu__item menu-item-has-children position-static">-->
-<!--                            <a href="/main/index" class="mainmenu__link">Shop</a>-->
-<!--                            <div class="inner-menu megamenu-holder">-->
-<!--                                <ul class="megamenu">-->
-<!--                                    <li>-->
-<!--                                        <a class="megamenu-title" href="#">Show all Product</a>-->
-<!--                                    </li>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="mainmenu__item menu-item-has-children position-relative">-->
-<!--                            <a href="#" class="mainmenu__link">Pages</a>-->
-<!---->
-<!--                        </li>-->
-<!--                        <li class="mainmenu__item menu-item-has-children position-relative">-->
-<!--                            <a href="#" class="mainmenu__link">Blog</a>-->
-<!---->
-<!--                        </li>-->
-<!--                        <li class="mainmenu__item">-->
-<!--                            <a href="contact-us.html" class="mainmenu__link">Contact Us</a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </nav>-->
-<!--            </div>-->
-<!---->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!-- Breadcrumb area Start -->
-<section class="page-title-area bg-color" data-bg-color="#f4f4f4">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="page-title">Product Details</h1>
-                <ul class="breadcrumb">
-                    <li><a href="/any_files/home.php">Home</a></li>
-                    <li class="current"><span>Product Details</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Breadcrumb area End -->
-
-<!-- Main Content Wrapper Start -->
-<div class="main-content-wrapper">
-    <div class="page-content-inner pt--80 pt-md--60">
-        <div class="container">
-            <div class="row no-gutters mb--80 mb-md--57">
-                <div class="col-lg-7 product-main-image">
-                    <div class="product-image">
-                        <div class="product-gallery vertical-slide-nav">
-                            <div class="product-gallery__large-image mb-sm--30">
-                                <div class="product-gallery__wrapper">
-                                    <div class="element-carousel main-slider image-popup" data-slick-options='{
+<div class="wrapper">
+    <div class="main-content-wrapper">
+        <div class="page-content-inner pt--80 pt-md--60">
+            <div class="container">
+                <div class="row no-gutters mb--80 mb-md--57">
+                    <div class="col-lg-7 product-main-image">
+                        <div class="product-image">
+                            <div class="product-gallery vertical-slide-nav">
+                                <div class="product-gallery__large-image mb-sm--30">
+                                    <div class="product-gallery__wrapper">
+                                        <div class="element-carousel main-slider image-popup" data-slick-options='{
                                                 "slidesToShow": 1,
                                                 "slidesToScroll": 1,
                                                 "infinite": true,
                                                 "arrows": false,
                                                 "asNavFor": ".nav-slider"
                                             }'>
-                                        <div class="item">
-                                            <figure class="product-gallery__image zoom">
-                                                <img src="/assets/img/products/product-03-500x555.png"
-                                                     alt="Product">
-                                                <span class="product-badge sale">Sale</span>
-                                                <div class="product-gallery__actions">
-                                                    <button class="action-btn btn-zoom-popup"><i
-                                                                class="fa fa-eye"></i></button>
-                                                    <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM"
-                                                       class="action-btn video-popup"><i
-                                                                class="fa fa-play"></i></a>
-                                                </div>
-                                            </figure>
-                                        </div>
-
-                                        <div class="item">
-                                            <figure class="product-gallery__image zoom">
-                                                <img src="/assets/img/products/product-04-500x555.png"
-                                                     alt="Product">
-                                                <span class="product-badge sale">Sale</span>
-                                                <div class="product-gallery__actions">
-                                                    <button class="action-btn btn-zoom-popup"><i
-                                                                class="fa fa-eye"></i></button>
-                                                    <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM"
-                                                       class="action-btn video-popup"><i
-                                                                class="fa fa-play"></i></a>
-                                                </div>
-                                            </figure>
-                                        </div>
-                                        <div class="item">
-                                            <figure class="product-gallery__image zoom">
-                                                <img src="/assets/img/products/product-05-500x555.png"
-                                                     alt="Product">
-                                                <span class="product-badge sale">Sale</span>
-                                                <div class="product-gallery__actions">
-                                                    <button class="action-btn btn-zoom-popup"><i
-                                                                class="fa fa-eye"></i></button>
-                                                    <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM"
-                                                       class="action-btn video-popup"><i
-                                                                class="fa fa-play"></i></a>
-                                                </div>
-                                            </figure>
-                                        </div>
-                                        <div class="item">
-                                            <figure class="product-gallery__image zoom">
-                                                <img src="/assets/img/products/product-06-500x555.png"
-                                                     alt="Product">
-                                                <span class="product-badge sale">Sale</span>
-                                                <div class="product-gallery__actions">
-                                                    <button class="action-btn btn-zoom-popup"><i
-                                                                class="fa fa-eye"></i></button>
-                                                    <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM"
-                                                       class="action-btn video-popup"><i
-                                                                class="fa fa-play"></i></a>
-                                                </div>
-                                            </figure>
+                                            <div class="item">
+                                                <figure class="product-gallery__image zoom">
+                                                    <img src="/assets/img/products/product-03-500x555.png"
+                                                         alt="Product">
+                                                    <span class="product-badge sale">Sale</span>
+                                                    <div class="product-gallery__actions">
+                                                        <button class="action-btn btn-zoom-popup"><i
+                                                                    class="fa fa-eye"></i></button>
+                                                        <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM"
+                                                           class="action-btn video-popup"><i
+                                                                    class="fa fa-play"></i></a>
+                                                    </div>
+                                                </figure>
+                                            </div>
+                                            <div class="item">
+                                                <figure class="product-gallery__image zoom">
+                                                    <img src="/assets/img/products/product-04-500x555.png"
+                                                         alt="Product">
+                                                    <span class="product-badge sale">Sale</span>
+                                                    <div class="product-gallery__actions">
+                                                        <button class="action-btn btn-zoom-popup"><i
+                                                                    class="fa fa-eye"></i></button>
+                                                        <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM"
+                                                           class="action-btn video-popup"><i
+                                                                    class="fa fa-play"></i></a>
+                                                    </div>
+                                                </figure>
+                                            </div>
+                                            <div class="item">
+                                                <figure class="product-gallery__image zoom">
+                                                    <img src="/assets/img/products/product-05-500x555.png"
+                                                         alt="Product">
+                                                    <span class="product-badge sale">Sale</span>
+                                                    <div class="product-gallery__actions">
+                                                        <button class="action-btn btn-zoom-popup"><i
+                                                                    class="fa fa-eye"></i></button>
+                                                        <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM"
+                                                           class="action-btn video-popup"><i
+                                                                    class="fa fa-play"></i></a>
+                                                    </div>
+                                                </figure>
+                                            </div>
+                                            <div class="item">
+                                                <figure class="product-gallery__image zoom">
+                                                    <img src="/assets/img/products/product-06-500x555.png"
+                                                         alt="Product">
+                                                    <span class="product-badge sale">Sale</span>
+                                                    <div class="product-gallery__actions">
+                                                        <button class="action-btn btn-zoom-popup"><i
+                                                                    class="fa fa-eye"></i></button>
+                                                        <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM"
+                                                           class="action-btn video-popup"><i
+                                                                    class="fa fa-play"></i></a>
+                                                    </div>
+                                                </figure>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="product-gallery__nav-image">
-                                <div class="element-carousel nav-slider product-slide-nav slick-center-bottom"
-                                     data-slick-options='{
+                                <div class="product-gallery__nav-image">
+                                    <div class="element-carousel nav-slider product-slide-nav slick-center-bottom"
+                                         data-slick-options='{
                                             "spaceBetween": 10,
                                             "slidesToShow": 3,
                                             "slidesToScroll": 1,
@@ -212,45 +157,41 @@
                                                 }
                                             }
                                         ]'>
-                                    <div class="item">
-                                        <figure class="product-gallery__nav-image--single">
-                                            <img src="/assets/img/products/product-03-270x300.jpg"
-                                                 alt="Products">
-                                        </figure>
-                                    </div>
-                                    <div class="item">
-                                        <figure class="product-gallery__nav-image--single">
-                                            <img src="/assets/img/products/product-04-270x300.jpg"
-                                                 alt="Products">
-                                        </figure>
-                                    </div>
-                                    <div class="item">
-                                        <figure class="product-gallery__nav-image--single">
-                                            <img src="/assets/img/products/product-05-270x300.jpg"
-                                                 alt="Products">
-                                        </figure>
-                                    </div>
-                                    <div class="item">
-                                        <figure class="product-gallery__nav-image--single">
-                                            <img src="/assets/img/products/product-06-270x300.jpg"
-                                                 alt="Products">
-                                        </figure>
+                                        <div class="item">
+                                            <figure class="product-gallery__nav-image--single">
+                                                <img src="/assets/img/products/product-03-270x300.jpg"
+                                                     alt="Products">
+                                            </figure>
+                                        </div>
+                                        <div class="item">
+                                            <figure class="product-gallery__nav-image--single">
+                                                <img src="/assets/img/products/product-04-270x300.jpg"
+                                                     alt="Products">
+                                            </figure>
+                                        </div>
+                                        <div class="item">
+                                            <figure class="product-gallery__nav-image--single">
+                                                <img src="/assets/img/products/product-05-270x300.jpg"
+                                                     alt="Products">
+                                            </figure>
+                                        </div>
+                                        <div class="item">
+                                            <figure class="product-gallery__nav-image--single">
+                                                <img src="/assets/img/products/product-06-270x300.jpg"
+                                                     alt="Products">
+                                            </figure>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4 offset-xl-1 col-lg-5 product-main-details mt-md--50">
-                    <div class="product-summary pl-lg--30 pl-md--0">
-                        <div class="product-navigation text-right mb--20">
-                            <a href="#" class="prev"><i class="fa fa-angle-double-left"></i></a>
-                            <a href="#" class="next"><i class="fa fa-angle-double-right"></i></a>
-                        </div>
-                        <div class="product-rating d-flex mb--20">
-<!--                            <div class="star-rating star-four">-->
-<!--                                <span>Rated <strong class="rating">5.00</strong> out of 5</span>-->
-<!--                            </div>-->
+                    <div class="col-xl-4 offset-xl-1 col-lg-5 product-main-details mt-md--50">
+                        <div class="product-summary pl-lg--30 pl-md--0">
+                            <div class="product-navigation text-right mb--20">
+                                <a href="#" class="prev"><i class="fa fa-angle-double-left"></i></a>
+                                <a href="#" class="next"><i class="fa fa-angle-double-right"></i></a>
+                            </div>
                             <p>
                                 <?php
                                 $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
@@ -260,250 +201,247 @@
                                 $sql = 'select * from comment ';
                                 $id = 'where product_id =' . $data['product']['id'];
                                 $sql = $sql . $id;
-
                                 $result = $db->query($sql);
-                                //    $sum += $product['quant'];
-                                //        $sumCom += count($product['comment']);
-                                $a = 0;
-                                $b = 0;
-                                while ($rows = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-                                    $a += $rows['rating'];
-                                    if ($rows['rating']) {
-                                        $b += 1;
-                                    }
-                                    $avg = $a / $b;
+                                $ratingSum = 0;
+                                $commentsCount = 0;
+                                while ($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                                    $ratingSum += $rows['rating'];
+                                    $commentsCount += 1;
                                 }
-                                $rating = round($avg,0);
-                                for ($i = 0; $i < 5; $i++){
-                                    if($rating == $i) {
+                                $avg = $ratingSum / $commentsCount;
+                                $rating = round($avg, 0);
+                                for ($i = 0; $i < 5; $i++) {
+                                    if ($rating == $i) {
                                         break;
-                                    }else{
+                                    } else {
                                         echo '<span><i class="fa fa-star"></i></span>';
                                     }
                                 }
-
                                 ?></p>
-                        </div>
-                        <h3 class="product-title mb--20"><?= $data['product']['title'] ?></h3>
-                        <p class="product-short-description mb--20">Donec accumsan auctor iaculis. Sed suscipit
-                            arcu ligula, at egestas magna molestie a. Proin ac ex maximus, ultrices justo eget,
-                            sodales orci. Aliquam egestas libero ac turpis pharetra, in vehicula lacus
-                            scelerisque. Vestibulum ut sem laoreet, feugiat tellus at, hendrerit arcu.</p>
-                        <div class="product-price-wrapper mb--25">
-                            <span class="money"><?= $data['product']['price'] ?>$</span>
-                        </div>
-                        <form action="#" class="variation-form mb--20">
-                            <div class="product-size-variations d-flex align-items-center mb--15">
-                                <p class="variation-label">Size:</p>
-                                <div class="product-size-variation variation-wrapper">
-                                    <div class="variation">
-                                        <a class="product-size-variation-btn selected" data-toggle="tooltip"
-                                           data-placement="top" title="S">
-                                            <span class="product-size-variation-label">S</span>
-                                        </a>
-                                    </div>
-                                    <div class="variation">
-                                        <a class="product-size-variation-btn" data-toggle="tooltip"
-                                           data-placement="top" title="M">
-                                            <span class="product-size-variation-label">M</span>
-                                        </a>
-                                    </div>
-                                    <div class="variation">
-                                        <a class="product-size-variation-btn" data-toggle="tooltip"
-                                           data-placement="top" title="L">
-                                            <span class="product-size-variation-label">L</span>
-                                        </a>
-                                    </div>
-                                    <div class="variation">
-                                        <a class="product-size-variation-btn" data-toggle="tooltip"
-                                           data-placement="top" title="XL">
-                                            <span class="product-size-variation-label">XL</span>
-                                        </a>
+                            <h3 class="product-title mb--20"><?= $data['product']['title'] ?></h3>
+                            <p class="product-short-description mb--20">Donec accumsan auctor iaculis. Sed suscipit
+                                arcu ligula, at egestas magna molestie a. Proin ac ex maximus, ultrices justo eget,
+                                sodales orci. Aliquam egestas libero ac turpis pharetra, in vehicula lacus
+                                scelerisque. Vestibulum ut sem laoreet, feugiat tellus at, hendrerit arcu.</p>
+                            <div class="product-price-wrapper mb--25">
+                                <span class="money"><?= $data['product']['price'] ?>$</span>
+
+                            </div>
+                            <form action="#" class="variation-form mb--20">
+                                <div class="product-size-variations d-flex align-items-center mb--15">
+                                    <p class="variation-label">Size:</p>
+                                    <div class="product-size-variation variation-wrapper">
+                                        <div class="variation">
+                                            <a class="product-size-variation-btn selected" data-toggle="tooltip"
+                                               data-placement="top" title="S">
+                                                <span class="product-size-variation-label">S</span>
+                                            </a>
+                                        </div>
+                                        <div class="variation">
+                                            <a class="product-size-variation-btn" data-toggle="tooltip"
+                                               data-placement="top" title="M">
+                                                <span class="product-size-variation-label">M</span>
+                                            </a>
+                                        </div>
+                                        <div class="variation">
+                                            <a class="product-size-variation-btn" data-toggle="tooltip"
+                                               data-placement="top" title="L">
+                                                <span class="product-size-variation-label">L</span>
+                                            </a>
+                                        </div>
+                                        <div class="variation">
+                                            <a class="product-size-variation-btn" data-toggle="tooltip"
+                                               data-placement="top" title="XL">
+                                                <span class="product-size-variation-label">XL</span>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <a href="" class="reset_variations">Clear</a>
-                        </form>
-                        <div
-                                class="product-action d-flex flex-sm-row align-items-sm-center flex-column align-items-start mb--30">
-                            <div class="quantity-wrapper d-flex align-items-center mr--30 mr-xs--0 mb-xs--30">
-                                <label class="quantity-label" for="pro-qty">Quantity:</label>
-                                <div class="quantity">
-                                    <input type="number" class="quantity-input" name="pro-qty" id="pro-qty"
-                                           value="1" min="1">
+                                <a href="" class="reset_variations">Clear</a>
+                            </form>
+                            <div
+                                    class="product-action d-flex flex-sm-row align-items-sm-center flex-column align-items-start mb--30">
+                                <div class="quantity-wrapper d-flex align-items-center mr--30 mr-xs--0 mb-xs--30">
+                                    <label class="quantity-label" for="pro-qty">Quantity:</label>
+                                    <div class="quantity">
+                                        <input type="number" class="quantity-input" name="pro-qty" id="pro-qty"
+                                               value="1" min="1">
+                                    </div>
                                 </div>
+                                <button type="button" class="btn btn-shape-square btn-size-sm"
+                                        onclick="window.location.href='cart.html'">
+                                    Add To Cart
+                                </button>
                             </div>
-                            <button type="button" class="btn btn-shape-square btn-size-sm"
-                                    onclick="window.location.href='cart.html'">
-                                Add To Cart
-                            </button>
-                        </div>
-                        <div class="product-footer-meta">
-                            <p><span>Category:</span>
-                                <a href="shop.html">Full Sweater</a>,
-                                <a href="shop.html">SweatShirt</a>,
-                                <a href="shop.html">Jacket</a>,
-                                <a href="shop.html">Blazer</a>
-                            </p>
+                            <div class="product-footer-meta">
+                                <p><span>Category:</span>
+                                    <a href="shop.html">Full Sweater</a>,
+                                    <a href="shop.html">SweatShirt</a>,
+                                    <a href="shop.html">Jacket</a>,
+                                    <a href="shop.html">Blazer</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row justify-content-center mb--77 mb-md--57">
-                <div class="col-12">
-                    <div class="tab-style-1">
-                        <div class="nav nav-tabs mb--35 mb-sm--25" id="product-tab" role="tablist">
-                            <a class="nav-link active" id="nav-description-tab" data-toggle="tab"
-                               href="#nav-description" role="tab" aria-selected="true">
-                                <span>Description</span>
-                            </a>
-                            <a class="nav-link" id="nav-info-tab" data-toggle="tab" href="#nav-info" role="tab"
-                               aria-selected="true">
-                                <span>Additional Information</span>
-                            </a>
-                            <a class="nav-link" id="nav-reviews-tab" data-toggle="tab" href="#nav-reviews"
-                               role="tab" aria-selected="true">
-                                <span>Reviews</span>
-                            </a>
+                <div class="row justify-content-center mb--77 mb-md--57">
+                    <div class="col-12">
+                        <div class="tab-style-1">
+                            <div class="nav nav-tabs mb--35 mb-sm--25" id="product-tab" role="tablist">
+                                <a class="nav-link active" id="nav-description-tab" data-toggle="tab"
+                                   href="#nav-description" role="tab" aria-selected="true">
+                                    <span>Description</span>
+                                </a>
+                                <a class="nav-link" id="nav-info-tab" data-toggle="tab" href="#nav-info" role="tab"
+                                   aria-selected="true">
+                                    <span>Additional Information</span>
+                                </a>
+                                <a class="nav-link" id="nav-reviews-tab" data-toggle="tab" href="#nav-reviews"
+                                   role="tab" aria-selected="true">
+                                    <span>Reviews</span>
+                                </a>
+                            </div>
+                            <div class="tab-content" id="product-tabContent">
+                                <div class="tab-pane fade show active" id="nav-description" role="tabpanel"
+                                     aria-labelledby="nav-description-tab">
+                                    <div class="product-description">
+                                        <p>Lorem ipsum dolor sit amet, consec do eiusmod tincididunt ut labore et
+                                            dolore magna aliqua. Ut enim ad minim veniaLo ipsum dolor sit amet,
+                                            consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                            dolore eu fugiat nulla paExcepteur sint occaecat cupidatat non proident,
+                                            sunt in culpa qui officia deserunt mollit anim id est laborum. iatis
+                                            unde omnis iste natus error sit voluptatem accusantium </p>
 
-                        </div>
-                        <div class="tab-content" id="product-tabContent">
-                            <div class="tab-pane fade show active" id="nav-description" role="tabpanel"
-                                 aria-labelledby="nav-description-tab">
-                                <div class="product-description">
-                                    <p>Lorem ipsum dolor sit amet, consec do eiusmod tincididunt ut labore et
-                                        dolore magna aliqua. Ut enim ad minim veniaLo ipsum dolor sit amet,
-                                        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                        dolore eu fugiat nulla paExcepteur sint occaecat cupidatat non proident,
-                                        sunt in culpa qui officia deserunt mollit anim id est laborum. iatis
-                                        unde omnis iste natus error sit voluptatem accusantium </p>
+                                        <p>Lorem ipsum dolor sit amet, consec do eiusmod tincididunt ut labore et
+                                            dolore magna aliqua. Ut enim ad minim veniaLo ipsum dolor sit amet,
+                                            consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                            exercitation ullamco.</p>
 
-                                    <p>Lorem ipsum dolor sit amet, consec do eiusmod tincididunt ut labore et
-                                        dolore magna aliqua. Ut enim ad minim veniaLo ipsum dolor sit amet,
-                                        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                        exercitation ullamco.</p>
-
-                                    <h5 class="product-description__heading">Characteristics :</h5>
-                                    <ul>
-                                        <li><i class="fa fa-circle"></i><span>Rsit amet, consectetur
+                                        <h5 class="product-description__heading">Characteristics :</h5>
+                                        <ul>
+                                            <li><i class="fa fa-circle"></i><span>Rsit amet, consectetur
                                                         adipisicing elit, sed do eiusmod tempor inc.</span></li>
-                                        <li><i class="fa fa-circle"></i><span>sunt in culpa qui officia
+                                            <li><i class="fa fa-circle"></i><span>sunt in culpa qui officia
                                                         deserunt mollit anim id est laborum. </span></li>
-                                        <li><i class="fa fa-circle"></i><span>Lorem ipsum dolor sit amet,
+                                            <li><i class="fa fa-circle"></i><span>Lorem ipsum dolor sit amet,
                                                         consec do eiusmod tincididu. </span></li>
-                                    </ul>
+                                        </ul>
 
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="tab-pane fade" id="nav-info" role="tabpanel"
-                                 aria-labelledby="nav-info-tab">
-                                <div class="table-content table-responsive">
-                                    <table class="table shop_attributes">
-                                        <tbody>
-                                        <tr>
-                                            <th>Weight</th>
-                                            <td>57 kg</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Dimensions</th>
-                                            <td>160 × 152 × 110 cm</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Color</th>
-                                            <td>
-                                                <a href="shop.html">Black</a>,
-                                                <a href="shop.html">Gray</a>,
-                                                <a href="shop.html">Red</a>,
-                                                <a href="shop.html">Violet</a>,
-                                                <a href="shop.html">Yellow</a>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="tab-pane fade" id="nav-info" role="tabpanel"
+                                     aria-labelledby="nav-info-tab">
+                                    <div class="table-content table-responsive">
+                                        <table class="table shop_attributes">
+                                            <tbody>
+                                            <tr>
+                                                <th>Weight</th>
+                                                <td>57 kg</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Dimensions</th>
+                                                <td>160 × 152 × 110 cm</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Color</th>
+                                                <td>
+                                                    <a href="shop.html">Black</a>,
+                                                    <a href="shop.html">Gray</a>,
+                                                    <a href="shop.html">Red</a>,
+                                                    <a href="shop.html">Violet</a>,
+                                                    <a href="shop.html">Yellow</a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
-                            </div>
-                            <div id="nav-reviews" role="tabpanel"
-                                 aria-labelledby="nav-reviews-tab">
-                                <?php
-                                $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
-                                $params = include($paramsPath);
-                                $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
-                                $db->set_charset("utf8");
-                                $sql = 'select * from comment ';
-                                $id = 'where product_id= ' . $data['product']['id'];
-                                $sql = $sql . $id;
-                                $result = $db->query($sql);
-                                ?>
-                                <?php while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) : ?>
-                                    <ul class="review__list">
-                                        <li class="review__item">
-                                            <div class="review__container">
-                                                <img src="/assets/img/others/comment-1.jpg" alt="Review Avatar"
-                                                     class="review__avatar">
-                                                <div class="review__text">
-                                                    <div class="d-flex flex-sm-row flex-column justify-content-between">
-                                                        <div class="review__meta">
-                                                            <strong class="review__author"><?= $row['name'] ?> </strong>
-                                                            <span class="review__dash">-</span>
-                                                            <span class="review__published-date"><?= $row['date'] ?></span>
-                                                        </div>
-                                                        <div class="product-rating">
-                                                            <div class="rating">
+                                <div class="tab-pane fade" id="nav-reviews" role="tabpanel"
+                                     aria-labelledby="nav-reviews-tab">
+                                    <div class="product-reviews">
+                                        <h3 class="review__title">Review for <?= $data['product']['title'] ?> </h3>
+                                    </div>
+                                    <?php
+                                    $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
+                                    $params = include($paramsPath);
+                                    $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
+                                    $db->set_charset("utf8");
+                                    $sql = 'select * from comment ';
+                                    $id = 'where product_id= ' . $data['product']['id'];
+                                    $sql = $sql . $id;
+                                    $result = $db->query($sql);
+                                    ?>
+                                    <?php while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) : ?>
+                                    <div class="product-reviews">
+
+                                        <ul class="review__list">
+                                            <li class="review__item">
+                                                <div class="review__container">
+                                                    <img src="/assets/img/others/client-1.jpg" alt="Review Avatar"
+                                                         class="review__avatar">
+                                                    <div class="review__text">
+                                                        <div class="d-flex flex-sm-row flex-column justify-content-between">
+                                                            <div class="review__meta">
+                                                                <strong class="review__author"><?= $row['name'] ?> </strong>
+                                                                <span class="review__dash">-</span>
+                                                                <span class="review__published-date"><?= $row['date'] ?></span>
+                                                            </div>
+                                                            <div class="product-rating">
+
                                                                 <?php
-                                                                    for ($i = 0; $i < 5; $i++){
-                                                                       if($row['rating'] == $i) {
-                                                                           break;
-                                                                       }else{
-                                                                           echo '<span><i class="fa fa-star"></i></span>';
-                                                                       }
+                                                                for ($i = 0; $i < 5; $i++) {
+                                                                    if ($row['rating'] == $i) {
+                                                                        break;
+                                                                    } else {
+                                                                        echo '<span><i class="fa fa-star"></i></span>';
                                                                     }
+                                                                }
                                                                 ?>
-
                                                             </div>
                                                         </div>
+                                                        <p class="review__description"><?= $row['text'] ?></p>
                                                     </div>
-                                                    <p class="review__description"><?= $row['text'] ?></p>
                                                 </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                <?php endwhile; ?>
-
-                                <div class="product-reviews">
-                                    <div class="review-form-wrapper">
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <span class="reply-title">Add a review</span>
-                                                <form action="/main/add_comment" class="form pr--30" method="get">
-                                                    <input type="hidden" value="<?= $data['product']['title'] ?>">
-                                                    <input type="hidden" value="<?= $data['product']['id'] ?>"
-                                                           name="product_id">
-                                                    <input type="hidden" name="date"
-                                                           value="<?php echo date("Y-m-d H:i:s"); ?>">
+                                            </li>
+                                        </ul>
+                                        <?php endwhile; ?>
+                                        <div class="review-form-wrapper">
+                                            <div class="row">
+                                                <div class="col-lg-8">
+                                                    <span class="reply-title">ADD A NEW REVIEW</span>
                                                     <div class="form-notes mb--20">
                                                         <p>Your email address will not be published. Required
                                                             fields are marked <span class="required">*</span>
                                                         </p>
                                                     </div>
-                                                    <div class="form__group mb--10">
-                                                        <label class="form__label d-block mb--10">Your
-                                                            Ratings</label>
-                                                        <div class="rating-area">
-                                                            <input type="radio" id="star-5" name="rating" value="5">
-                                                            <label for="star-5" title="Оценка «5»"></label>
-                                                            <input type="radio" id="star-4" name="rating" value="4">
-                                                            <label for="star-4" title="Оценка «4»"></label>
-                                                            <input type="radio" id="star-3" name="rating" value="3">
-                                                            <label for="star-3" title="Оценка «3»"></label>
-                                                            <input type="radio" id="star-2" name="rating" value="2">
-                                                            <label for="star-2" title="Оценка «2»"></label>
-                                                            <input type="radio" id="star-1" name="rating" value="1">
-                                                            <label for="star-1" title="Оценка «1»"></label><br><br><br>
+                                                    <form action="/main/add_comment" class="form pr--30">
+                                                        <input type="hidden" value="<?= $data['product']['title'] ?>">
+                                                        <input type="hidden" value="<?= $data['product']['id'] ?>"
+                                                               name="product_id">
+                                                        <input type="hidden" name="date"
+                                                               value="<?php echo date("Y-m-d H:i:s"); ?>">
+                                                        <div class="form__group mb--10">
+                                                            <label class="form__label d-block mb--10">Your
+                                                                Ratings</label>
+                                                            <div class="rating-area" style="float:left;">
+                                                                <input type="radio" id="star-5" name="rating" value="5">
+                                                                <label for="star-5" title="Оценка «5»"></label>
+                                                                <input type="radio" id="star-4" name="rating" value="4">
+                                                                <label for="star-4" title="Оценка «4»"></label>
+                                                                <input type="radio" id="star-3" name="rating" value="3">
+                                                                <label for="star-3" title="Оценка «3»"></label>
+                                                                <input type="radio" id="star-2" name="rating" value="2">
+                                                                <label for="star-2" title="Оценка «2»"></label>
+                                                                <input type="radio" id="star-1" name="rating" value="1">
+                                                                <label for="star-1" title="Оценка «1»"></label>
+                                                            </div>
                                                         </div>
+                                                        <br>
+                                                        <br>
                                                         <style>
                                                             .rating-area {
                                                                 overflow: hidden;
@@ -554,48 +492,48 @@
                                                                 position: absolute;
                                                             }
                                                         </style>
-                                                    </div>
-                                                    <div class="form__group mb--10">
+                                                        <br>
                                                         <div class="form__group mb--10">
-                                                            <label class="form__label d-block " for="email">Your
-                                                                Review*<span class="required"></span></label>
+                                                            <label class="form__label d-block mb--10" for="email">Your
+                                                                Review<span class="required">*</span></label>
                                                             <textarea name="text" id="review"
                                                                       class="form__input form__input--textarea"></textarea>
                                                         </div>
                                                         <div class="form__group mb--20">
                                                             <label class="form__label d-block mb--10"
-                                                                   for="name">Name*<span
-                                                                        class="required"></span></label>
+                                                                   for="name">Name<span
+                                                                        class="required">*</span></label>
                                                             <input type="text" name="name" id="name"
                                                                    class="form__input">
                                                         </div>
                                                         <div class="form__group mb--20">
-                                                            <label class="form__label d-block mb--10" for="email">Ваш
-                                                                Email*<span class="required"></span></label>
+                                                            <label class="form__label d-block mb--10"
+                                                                   for="email">Email<span
+                                                                        class="required">*</span></label>
                                                             <input type="email" name="email" id="email"
                                                                    class="form__input">
                                                         </div>
-                                                    </div>
-                                                    <div class="form__group">
-                                                        <div class="form-row">
-                                                            <div class="col-12">
-                                                                <input type="submit" value="Submit Now"
-                                                                       class="btn btn-size-md">
+                                                        <div class="form__group">
+                                                            <div class="form-row">
+                                                                <div class="col-12">
+                                                                    <input type="submit" value="Submit Now"
+                                                                           class="btn btn-size-md">
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </form>
+                                                    </form>
+                                                </div>
                                             </div>
-                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
+
             </div>
+
         </div>
         <div class="row mb--77 mb-md--57">
             <div class="col-12">
@@ -825,490 +763,13 @@
             </div>
         </div>
     </div>
-</div>
-</div>
-<!-- Main Content Wrapper End -->
 
-<!-- Footer Start-->
 
-<!-- Footer End-->
 
-<!-- OffCanvas Menu Start -->
-<aside class="offcanvas-navigation" id="offcanvasnav">
-    <div class="offcanvas-navigation__inner">
-        <a href="" class="btn-close">
-            <i class="flaticon-cross"></i>
-            <span class="sr-only">Close Offcanvas Navigtion</span>
-        </a>
-        <div class="offcanvas-navigation__top">
-            <ul class="offcanvas-menu">
-                <li class="has-children">
-                    <a href="/any_files/home.php">
-                        <span class="mm-text">Home</span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="has-children">
-                            <a href="index.html">
-                                <span class="mm-text">Home One</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="shop.html">
-                        <span class="mm-text">New Arrivals</span>
-                    </a>
-                </li>
-                <li class="has-children">
-                    <a href="#">
-                        <span class="mm-text">Shop</span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="has-children">
-                            <a href="#">
-                                <span class="overlay-menu__title">Shop Layout</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="shop-fullwidth.html">
-                                        <span class="mm-text">Full Width</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">
-                                        <span class="mm-text">Left Sidebar</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="shop-right-sidebar.html">
-                                        <span class="mm-text">Right Sidebar</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="shop-three-columns.html">
-                                        <span class="mm-text">Three Columns</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="shop-four-columns.html">
-                                        <span class="mm-text">Four Columns</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="shop-list.html">
-                                        <span class="mm-text">Full Width</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="shop-list-sidebar.html">
-                                        <span class="mm-text">Left Sidebar</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="shop-list-right-sidebar.html">
-                                        <span class="mm-text">Right Sidebar</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-children">
-                            <a href="#">
-                                <span class="overlay-menu__title">Single Product</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="product-details.html">
-                                        <span class="mm-text">Tab Style 1</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="product-details-tab-style-2.html">
-                                        <span class="mm-text">Tab Style 2</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="product-details-tab-style-3.html">
-                                        <span class="mm-text">Tab Style 3</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="product-details-gallery-left.html">
-                                        <span class="mm-text">Gallery Left</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="product-details-gallery-right.html">
-                                        <span class="mm-text">Gallery Right</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="product-details-sticky-left.html">
-                                        <span class="mm-text">Sticky Left</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="product-details-sticky-right.html">
-                                        <span class="mm-text">Sticky Right</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="product-details-slider-box.html">
-                                        <span class="mm-text">Slider Box</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="product-details-slider-full-width.html">
-                                        <span class="mm-text">Slider Box Full Width</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="product-details-affiliate.html">
-                                        <span class="mm-text">Affiliate Proudct</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="product-details-variable.html">
-                                        <span class="mm-text">Variable Proudct</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="product-details-group.html">
-                                        <span class="mm-text">Group Product</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-children">
-                            <a href="#">
-                                <span class="overlay-menu__title">Shop Pages</span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="my-account.html">
-                                        <span class="mm-text">My Account</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="cart.html">
-                                        <span class="mm-text">Shopping Cart</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="checkout.html">
-                                        <span class="mm-text">Check Out</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="wishlist.html">
-                                        <span class="mm-text">Wishlist</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="order-tracking.html">
-                                        <span class="mm-text">Order tracking</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="compare.html">
-                                        <span class="mm-text">compare</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-children">
-                    <a href="#">
-                        <span class="mm-text">Pages</span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="my-account.html">
-                                <span class="mm-text">My Account</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="checkout.html">
-                                <span class="mm-text">Checkout</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="cart.html">
-                                <span class="mm-text">Cart</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="compare.html">
-                                <span class="mm-text">Compare</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="order-tracking.html">
-                                <span class="mm-text">Track Order</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="wishlist.html">
-                                <span class="mm-text">Wishlist</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="contact-us.html">
-                        <span class="mm-text">Contact Us</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</aside>
-<!-- OffCanvas Menu End -->
+    <script src="/assets/js/vendor.js"></script>
 
-<!-- Mini Cart Start -->
-<aside class="mini-cart" id="miniCart">
-    <div class="mini-cart-wrapper">
-        <div class="mini-cart__close">
-            <a href="#" class="btn-close"><i class="flaticon-cross"></i></a>
-        </div>
-        <div class="mini-cart-inner">
-            <h3 class="mini-cart__heading mb--45">Shopping Cart</h3>
-            <div class="mini-cart__content">
-                <ul class="mini-cart__list">
-                    <li class="mini-cart__product">
-                        <a href="#" class="mini-cart__product-remove">
-                            <i class="flaticon-cross"></i>
-                        </a>
-                        <div class="mini-cart__product-image">
-                            <img src="assets/img/products/product-11-90x90.jpg"
-                                 alt="products">
-                        </div>
-                        <div class="mini-cart__product-content">
-                            <a class="mini-cart__product-title"
-                               href="product-details.html">Lexbaro
-                                Begadi</a>
-                            <span class="mini-cart__product-quantity">1 x $49.00</span>
-                        </div>
-                    </li>
-                    <li class="mini-cart__product">
-                        <a href="#" class="mini-cart__product-remove">
-                            <i class="flaticon-cross"></i>
-                        </a>
-                        <div class="mini-cart__product-image">
-                            <img src="assets/img/products/product-12-90x90.jpg"
-                                 alt="products">
-                        </div>
-                        <div class="mini-cart__product-content">
-                            <a class="mini-cart__product-title"
-                               href="product-details.html">Lexbaro
-                                Begadi</a>
-                            <span class="mini-cart__product-quantity">1 x $49.00</span>
-                        </div>
-                    </li>
-                    <li class="mini-cart__product">
-                        <a href="#" class="mini-cart__product-remove">
-                            <i class="flaticon-cross"></i>
-                        </a>
-                        <div class="mini-cart__product-image">
-                            <img src="assets/img/products/product-13-90x90.jpg"
-                                 alt="products">
-                        </div>
-                        <div class="mini-cart__product-content">
-                            <a class="mini-cart__product-title"
-                               href="product-details.html">Lexbaro
-                                Begadi</a>
-                            <span class="mini-cart__product-quantity">1 x $49.00</span>
-                        </div>
-                    </li>
-                </ul>
-                <div class="mini-cart__total">
-                    <span>Subtotal</span>
-                    <span class="ammount">$98.00</span>
-                </div>
-                <div class="mini-cart__buttons">
-                    <a href="cart.html"
-                       class="btn btn-fullwidth btn-bg-primary mb--20">View
-                        Cart</a>
-                    <a href="checkout.html"
-                       class="btn btn-fullwidth btn-bg-primary">Checkout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</aside>
-<!-- Mini Cart End -->
 
-<!-- Qicuk View Modal Start -->
-<div class="modal fade product-modal" id="productModal" tabindex="-1"
-     role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal"
-                        aria-label="Close">
-                                                                    <span aria-hidden="true"><i
-                                                                                class="flaticon-cross"></i></span>
-                </button>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="element-carousel slick-vertical-center"
-                             data-slick-options='{
-                                    "slidesToShow": 1,
-                                    "slidesToScroll": 1,
-                                    "arrows": true,
-                                    "prevArrow": {"buttonClass": "slick-btn slick-prev", "iconClass": "fa fa-angle-double-left" },
-                                    "nextArrow": {"buttonClass": "slick-btn slick-next", "iconClass": "fa fa-angle-double-right" }
-                                }'>
-                            <div class="item">
-                                <figure class="product-gallery__image">
-                                    <img src="assets/img/products/product-03-270x300.jpg"
-                                         alt="Product">
-                                    <span class="product-badge sale">Sale</span>
-                                </figure>
-                            </div>
-                            <div class="item">
-                                <figure class="product-gallery__image">
-                                    <img src="assets/img/products/product-04-270x300.jpg"
-                                         alt="Product">
-                                    <span class="product-badge sale">Sale</span>
-                                </figure>
-                            </div>
-                            <div class="item">
-                                <figure class="product-gallery__image">
-                                    <img src="assets/img/products/product-05-270x300.jpg"
-                                         alt="Product">
-                                    <span class="product-badge sale">Sale</span>
-                                </figure>
-                            </div>
-                            <div class="item">
-                                <figure class="product-gallery__image">
-                                    <img src="assets/img/products/product-06-270x300.jpg"
-                                         alt="Product">
-                                    <span class="product-badge sale">Sale</span>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="modal-box product-summary">
-                            <div class="product-navigation text-right mb--20">
-                                <a href="#" class="prev"><i
-                                            class="fa fa-angle-double-left"></i></a>
-                                <a href="#" class="next"><i
-                                            class="fa fa-angle-double-right"></i></a>
-                            </div>
-                            <h3 class="product-title mb--20">Golden Easy
-                                Spot Chair.</h3>
-                            <p class="product-short-description mb--20">
-                                Donec accumsan auctor iaculis. Sed
-                                suscipit
-                                arcu ligula, at egestas magna molestie
-                                a. Proin ac ex maximus, ultrices justo
-                                eget,
-                                sodales orci. Aliquam egestas libero ac
-                                turpis pharetra, in vehicula lacus
-                                scelerisque. Vestibulum ut sem laoreet,
-                                feugiat tellus at, hendrerit arcu.</p>
-                            <div class="product-price-wrapper mb--25">
-                                <span class="money">$200.00</span>
-                                <span class="price-separator">-</span>
-                                <span class="money">$400.00</span>
-                            </div>
-                            <form action="#"
-                                  class="variation-form mb--20">
-                                <div class="product-size-variations d-flex align-items-center mb--15">
-                                    <p class="variation-label">Size:</p>
-                                    <div class="product-size-variation variation-wrapper">
-                                        <div class="variation">
-                                            <a class="product-size-variation-btn selected"
-                                               data-toggle="tooltip"
-                                               data-placement="top"
-                                               title="S">
-                                                <span class="product-size-variation-label">S</span>
-                                            </a>
-                                        </div>
-                                        <div class="variation">
-                                            <a class="product-size-variation-btn"
-                                               data-toggle="tooltip"
-                                               data-placement="top"
-                                               title="M">
-                                                <span class="product-size-variation-label">M</span>
-                                            </a>
-                                        </div>
-                                        <div class="variation">
-                                            <a class="product-size-variation-btn"
-                                               data-toggle="tooltip"
-                                               data-placement="top"
-                                               title="L">
-                                                <span class="product-size-variation-label">L</span>
-                                            </a>
-                                        </div>
-                                        <div class="variation">
-                                            <a class="product-size-variation-btn"
-                                               data-toggle="tooltip"
-                                               data-placement="top"
-                                               title="XL">
-                                                <span class="product-size-variation-label">XL</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="" class="reset_variations">Clear</a>
-                            </form>
-                            <div
-                                    class="product-action d-flex flex-sm-row align-items-sm-center flex-column align-items-start mb--30">
-                                <div
-                                        class="quantity-wrapper d-flex align-items-center mr--30 mr-xs--0 mb-xs--30">
-                                    <label class="quantity-label"
-                                           for="qty">Quantity:</label>
-                                    <div class="quantity">
-                                        <input type="number"
-                                               class="quantity-input"
-                                               name="qty" id="qty"
-                                               value="1" min="1">
-                                    </div>
-                                </div>
-                                <button type="button"
-                                        class="btn btn-shape-square btn-size-sm"
-                                        onclick="window.location.href='cart.html'">
-                                    Add To Cart
-                                </button>
-                            </div>
-                            <div class="product-footer-meta">
-                                <p><span>Category:</span>
-                                    <a href="shop.html">Full Sweater</a>,
-                                    <a href="shop.html">SweatShirt</a>,
-                                    <a href="shop.html">Jacket</a>,
-                                    <a href="shop.html">Blazer</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Qicuk View Modal End -->
-
-<!-- Global Overlay Start -->
-<div class="global-overlay"></div>
-<!-- Global Overlay End -->
-
-<!-- Scroll To Top Start -->
-<a class="scroll-to-top" href=""><i
-            class="fa fa-angle-double-up"></i></a>
-<!-- Scroll To Top End -->
-</div>
-<!-- Main Wrapper End -->
-
-<!-- ************************* JS Files ************************* -->
-
-<!-- jQuery JS -->
-<script src="/assets/js/vendor.js"></script>
-
-<!-- Main JS -->
-<script src="/assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 
 </html>
