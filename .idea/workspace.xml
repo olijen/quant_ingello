@@ -48,16 +48,20 @@
       <change afterPath="$PROJECT_DIR$/assets/fonts/lg.svg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/assets/fonts/lg.ttf" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/assets/fonts/lg.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/logo/quantlogo (3).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/logo/quantlogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/controller_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/controller_main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/core/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/core/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/core/sql.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/sql.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/authoriz_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/authoriz_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/commentShow_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/commentShow_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/login_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/login_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/product_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/product_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/products_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/products_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/template_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/others/comment-1.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/vendor.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +105,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Рабочий стол/Payne" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/img/logo" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -109,11 +113,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/img/logo" />
       <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/application" />
       <recent name="$PROJECT_DIR$/application/views" />
-      <recent name="$PROJECT_DIR$/application/models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/application/views" />
@@ -143,7 +147,7 @@
       <workItem from="1590658762080" duration="83493000" />
       <workItem from="1591367399159" duration="3845000" />
       <workItem from="1592209516385" duration="24602000" />
-      <workItem from="1592386661745" duration="21837000" />
+      <workItem from="1592386661745" duration="95219000" />
     </task>
     <task id="LOCAL-00001" summary="Контроллер голубей, модель голубей, список голубей, миграции данных для голубей.">
       <created>1583321191622</created>
@@ -208,7 +212,21 @@
       <option name="project" value="LOCAL" />
       <updated>1592816261323</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Сделал вывод средней оценки по продукту, сделал вывод оценок и коментариев">
+      <created>1592832776142</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1592832776142</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Доделал вьюхи(продукта, и списка продуктов)">
+      <created>1593011308585</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1593011308585</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -258,45 +276,47 @@
     <MESSAGE value="Поправил шаблон, дополнил файл sql" />
     <MESSAGE value="Подключил стили, сделал страницу продуктов" />
     <MESSAGE value="Сделал асторизацию и регистрацию на одной странице" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал асторизацию и регистрацию на одной странице" />
+    <MESSAGE value="Сделал вывод средней оценки по продукту, сделал вывод оценок и коментариев" />
+    <MESSAGE value="Доделал вьюхи(продукта, и списка продуктов)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Доделал вьюхи(продукта, и списка продуктов)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591368217795">
+    <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592921958684">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1591368217795" />
-    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2" timestamp="1592816289589">
+    <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1592921958684" />
+    <state x="379" y="27" width="1242" height="1053" key="CommitChangelistDialog2" timestamp="1593011307819">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="363" y="97" width="1242" height="910" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1592816289589" />
+    <state x="379" y="27" width="1242" height="1053" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1593011307819" />
     <state x="672" y="310" width="624" height="484" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1591093998492">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="672" y="310" width="624" height="484" key="DUMP_DIALOG_DIMENSION_KEY/59.27.1861.1053@59.27.1861.1053" timestamp="1591093998492" />
-    <state x="235" y="116" width="1488" height="872" key="DiffContextDialog" timestamp="1591107641816">
+    <state x="108" y="158" width="1488" height="872" key="DiffContextDialog" timestamp="1593011239303">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="235" y="116" width="1488" height="872" key="DiffContextDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1591107641816" />
-    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1592817224367">
+    <state x="108" y="158" width="1488" height="872" key="DiffContextDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1593011239303" />
+    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1592992187898">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl/59.27.1861.1053@59.27.1861.1053" timestamp="1592817224367" />
-    <state width="1328" height="67" key="GridCell.Tab.0.bottom" timestamp="1592822011103">
+    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl/59.27.1861.1053@59.27.1861.1053" timestamp="1592992187898" />
+    <state width="1328" height="434" key="GridCell.Tab.0.bottom" timestamp="1593168684406">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="67" key="GridCell.Tab.0.bottom/59.27.1861.1053@59.27.1861.1053" timestamp="1592822011103" />
-    <state width="1328" height="67" key="GridCell.Tab.0.center" timestamp="1592822011101">
+    <state width="1328" height="434" key="GridCell.Tab.0.bottom/59.27.1861.1053@59.27.1861.1053" timestamp="1593168684406" />
+    <state width="1328" height="434" key="GridCell.Tab.0.center" timestamp="1593168684404">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="67" key="GridCell.Tab.0.center/59.27.1861.1053@59.27.1861.1053" timestamp="1592822011101" />
-    <state width="1328" height="67" key="GridCell.Tab.0.left" timestamp="1592822011099">
+    <state width="1328" height="434" key="GridCell.Tab.0.center/59.27.1861.1053@59.27.1861.1053" timestamp="1593168684404" />
+    <state width="1328" height="434" key="GridCell.Tab.0.left" timestamp="1593168684402">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="67" key="GridCell.Tab.0.left/59.27.1861.1053@59.27.1861.1053" timestamp="1592822011099" />
-    <state width="1328" height="67" key="GridCell.Tab.0.right" timestamp="1592822011102">
+    <state width="1328" height="434" key="GridCell.Tab.0.left/59.27.1861.1053@59.27.1861.1053" timestamp="1593168684402" />
+    <state width="1328" height="434" key="GridCell.Tab.0.right" timestamp="1593168684405">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state width="1328" height="67" key="GridCell.Tab.0.right/59.27.1861.1053@59.27.1861.1053" timestamp="1592822011102" />
+    <state width="1328" height="434" key="GridCell.Tab.0.right/59.27.1861.1053@59.27.1861.1053" timestamp="1593168684405" />
     <state x="724" y="272" width="521" height="561" key="NewPhpClassDialog" timestamp="1590743168507">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
@@ -333,10 +353,14 @@
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="633" y="265" width="908" height="567" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1591103990204" />
-    <state x="680" y="262" width="618" height="580" key="find.popup" timestamp="1591102224403">
+    <state x="269" y="27" width="1641" height="855" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1593178300098">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="680" y="262" width="618" height="580" key="find.popup/59.27.1861.1053@59.27.1861.1053" timestamp="1591102224403" />
+    <state x="269" y="27" width="1641" height="855" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1593178300098" />
+    <state x="680" y="150" width="1030" height="692" key="find.popup" timestamp="1593007800656">
+      <screen x="59" y="27" width="1861" height="1053" />
+    </state>
+    <state x="680" y="150" width="1030" height="692" key="find.popup/59.27.1861.1053@59.27.1861.1053" timestamp="1593007800656" />
     <state x="653" y="253" key="run.anything.popup" timestamp="1590670801507">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
