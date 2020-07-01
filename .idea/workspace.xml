@@ -50,7 +50,7 @@
       <change afterPath="$PROJECT_DIR$/assets/fonts/lg.woff" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/assets/img/logo/quantlogo (3).png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/assets/img/logo/quantlogo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/components/db_params.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/components/db_params.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/controller_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/controller_main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/core/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/core/sql.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/sql.php" afterDir="false" />
@@ -148,6 +148,7 @@
       <workItem from="1591367399159" duration="3845000" />
       <workItem from="1592209516385" duration="24602000" />
       <workItem from="1592386661745" duration="95219000" />
+      <workItem from="1593591424329" duration="7397000" />
     </task>
     <task id="LOCAL-00001" summary="Контроллер голубей, модель голубей, список голубей, миграции данных для голубей.">
       <created>1583321191622</created>
@@ -353,10 +354,10 @@
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="633" y="265" width="908" height="567" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1591103990204" />
-    <state x="269" y="27" width="1641" height="855" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1593178300098">
+    <state x="269" y="27" width="1641" height="855" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1593598942133">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="269" y="27" width="1641" height="855" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1593178300098" />
+    <state x="269" y="27" width="1641" height="855" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1593598942133" />
     <state x="680" y="150" width="1030" height="692" key="find.popup" timestamp="1593007800656">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>

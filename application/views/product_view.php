@@ -1,5 +1,8 @@
 <body>
 <?php if (!empty($_GET['tab'])):?>
+<?php
+
+?>
 <div class="main-content-wrapper">
     <div class="page-content-inner pt--80 pt-md--60">
         <div class="container">
@@ -160,61 +163,109 @@
                             <a href="#" class="prev"><i class="fa fa-angle-double-left"></i></a>
                             <a href="#" class="next"><i class="fa fa-angle-double-right"></i></a>
                         </div>
-                        <p>
-                            <?php
+                        <?php
+//                        function conect(){
+//                            $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
+//                            $params = include($paramsPath);
+//                            $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
+//                            $db->set_charset("utf8");
+//                        }
+                        function avg( $data)
+                        {
                             $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
                             $params = include($paramsPath);
                             $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
                             $db->set_charset("utf8");
                             $sql = 'select * from comment ';
+
                             $id = 'where product_id =' . $data['product']['id'];
                             $sql = $sql . $id;
                             $result = $db->query($sql);
+
                             $ratingSum = 0;
                             $commentsCount = 0;
                             while ($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+
                                 $ratingSum += $rows['rating'];
                                 $commentsCount += 1;
+
                             }
                             if ($commentsCount == 0) {
-                                echo 'NO RATING';
-                            } else {
+                                $star = 'zero';
+                            }else {
+
                                 $avg = $ratingSum / $commentsCount;
 
 
                                 $rating = round($avg, 0);
-                                for ($i = 0; $i < 5; $i++) {
-                                    if ($rating == $i) {
-                                        break;
-                                    } elseif ($rating == 1) {
-                                        echo '<div class="star-rating star-one">
-                                                <span>Rated <strong class="rating">5.00</strong> out of 5</span>
-                                               </div>';
-                                        break;
-                                    } elseif ($rating == 2) {
-                                        echo '<div class="star-rating star-two">
-                                                <span>Rated <strong class="rating">2.00</strong> out of 5</span>
-                                              </div>';
-                                        break;
-                                    } elseif ($rating == 3) {
-                                        echo '<div class="star-rating star-three">
-                                                <span>Rated <strong class="rating">3.00</strong> out of 5</span>
-                                              </div>';
-                                        break;
-                                    } elseif ($rating == 4) {
-                                        echo '<div class="star-rating star-four">
-                                                <span>Rated <strong class="rating">4.00</strong> out of 5</span>
-                                              </div>';
-                                        break;
-                                    } elseif ($rating == 5) {
-                                        echo '<div class="star-rating star-five">
-                                                <span>Rated <strong class="rating">5.00</strong> out of 5</span>
-                                              </div>';
-                                        break;
-                                    }
-                                }
+
+                                echo stars($rating);
+//                                for ($i = 0; $i < 5; $i++) {
+//                                    $star = '';
+//
+//                                    if ($rating == 0) {
+//                                        $star = 'zero';
+//
+//                                        break;
+//                                    } elseif ($rating == 1) {
+//                                        $star = 'one';
+//                                        break;
+//                                    } elseif ($rating == 2) {
+//                                        $star = 'two';
+//                                        break;
+//                                    } elseif ($rating == 3) {
+//                                        $star = 'three';
+//                                        break;
+//                                    } elseif ($rating == 4) {
+//                                        $star = 'four';
+//                                        break;
+//                                    } elseif ($rating == 5) {
+//                                      $star = 'five';
+//                                       break;
+//                                    }
+//                                }
                             }
-                            ?></p>
+                        }
+                        function stars($rating){
+                            for ($i = 0; $i < 5; $i++) {
+                                $star = '';
+
+                                if ($rating == 0) {
+                                    $star = 'zero';
+                                    echo rating($star);
+                                    break;
+                                } elseif ($rating == 1) {
+                                    $star = 'one';
+                                    echo rating($star);
+                                    break;
+                                } elseif ($rating == 2) {
+                                    $star = 'two';
+                                    echo rating($star);
+                                    break;
+                                } elseif ($rating == 3) {
+                                    $star = 'three';
+                                    echo rating($star);
+                                    break;
+                                } elseif ($rating == 4) {
+                                    $star = 'four';
+                                    echo rating($star);
+                                    break;
+                                } elseif ($rating == 5) {
+                                    $star = 'five';
+                                    echo rating($star);
+                                    break;
+                                }
+
+                            }
+                        }
+                        function rating($star){
+                            return $star;
+                        }
+                        ?>
+                        <div class="star-rating star-<?php echo avg($data); ?>">
+                            <span>Rated <strong class="rating"></strong></span>
+                        </div>
+                        <br>
                         <h3 class="product-title mb--20"><?= $data['product']['title'] ?></h3>
                         <p class="product-short-description mb--20">Donec accumsan auctor iaculis. Sed suscipit
                             arcu ligula, at egestas magna molestie a. Proin ac ex maximus, ultrices justo eget,
@@ -366,6 +417,7 @@
                                 </div>
 
                                 <?php
+                                function commentsRating($data){
                                 $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
                                 $params = include($paramsPath);
                                 $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
@@ -381,6 +433,7 @@
                                 $id = "where product_id= " .$data['product']['id'] . ' limit ' . $from.','.$notesOnePage;
                                 $sql = $sql . $id;
                                 $result = $db->query($sql);
+
                                 ?>
                                 <?php while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) : ?>
                                 <div class="product-reviews">
@@ -397,16 +450,32 @@
                                                             <span class="review__published-date"><?= $row['date'] ?></span>
                                                         </div>
                                                         <div class="product-rating">
-
                                                             <?php
                                                             for ($i = 0; $i < 5; $i++) {
+                                                                $stars = '';
                                                                 if ($row['rating'] == $i) {
                                                                     break;
-                                                                } else {
-                                                                    echo '<span><i class="fa fa-star"></i></span>';
+                                                                } elseif($row['rating'] == 1){
+                                                                    $stars = 'one';
+                                                                    break;
+                                                                }elseif($row['rating'] == 2){
+                                                                    $stars = 'two';
+                                                                    break;
+                                                                }elseif($row['rating'] == 3){
+                                                                    $stars = 'three';
+                                                                    break;
+                                                                }elseif($row['rating'] == 4){
+                                                                    $stars = 'four';
+                                                                    break;
+                                                                }elseif($row['rating'] == 5){
+                                                                    $stars = 'five';
+                                                                    break;
                                                                 }
                                                             }
                                                             ?>
+                                                            <div class="star-rating star-<?php echo $stars; ?>">
+                                                                <span>Rated <strong class="rating"></strong></span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <p class="review__description"><?= $row['text'] ?></p>
@@ -421,6 +490,7 @@
                                     $sec_sql = $sec_sql . $sec_id;
                                     $result_sec = $db->query($sec_sql);
                                     $count = mysqli_fetch_assoc($result_sec)['count'];
+
                                     $pagesCount = ceil($count / $notesOnePage);
                                     echo '<div style="text-align: center; font-size: 20px">';
                                     if ($page != 1) {
@@ -443,6 +513,8 @@
                                         echo "<a> >></a>";
                                     }
                                     echo '</div><hr/><br>';
+                                    }
+                                    echo commentsRating($data);
                                     ?>
                                     <div class="review-form-wrapper">
                                         <div class="row">
@@ -728,61 +800,103 @@
                                         <a href="#" class="prev"><i class="fa fa-angle-double-left"></i></a>
                                         <a href="#" class="next"><i class="fa fa-angle-double-right"></i></a>
                                     </div>
-                                    <p>
-                                        <?php
+                                    <?php
+                                    function avg( $data)
+                                    {
                                         $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
                                         $params = include($paramsPath);
                                         $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
                                         $db->set_charset("utf8");
                                         $sql = 'select * from comment ';
+
                                         $id = 'where product_id =' . $data['product']['id'];
                                         $sql = $sql . $id;
                                         $result = $db->query($sql);
+
                                         $ratingSum = 0;
                                         $commentsCount = 0;
                                         while ($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+
                                             $ratingSum += $rows['rating'];
                                             $commentsCount += 1;
+
                                         }
                                         if ($commentsCount == 0) {
-                                            echo 'NO RATING';
-                                        } else {
+                                            $star = 'zero';
+                                        }else {
+
                                             $avg = $ratingSum / $commentsCount;
 
 
                                             $rating = round($avg, 0);
-                                            for ($i = 0; $i < 5; $i++) {
-                                                if ($rating == $i) {
-                                                    break;
-                                                } elseif ($rating == 1) {
-                                                    echo '<div class="star-rating star-one">
-                                                <span>Rated <strong class="rating">5.00</strong> out of 5</span>
-                                               </div>';
-                                                    break;
-                                                } elseif ($rating == 2) {
-                                                    echo '<div class="star-rating star-two">
-                                                <span>Rated <strong class="rating">2.00</strong> out of 5</span>
-                                              </div>';
-                                                    break;
-                                                } elseif ($rating == 3) {
-                                                    echo '<div class="star-rating star-three">
-                                                <span>Rated <strong class="rating">3.00</strong> out of 5</span>
-                                              </div>';
-                                                    break;
-                                                } elseif ($rating == 4) {
-                                                    echo '<div class="star-rating star-four">
-                                                <span>Rated <strong class="rating">4.00</strong> out of 5</span>
-                                              </div>';
-                                                    break;
-                                                } elseif ($rating == 5) {
-                                                    echo '<div class="star-rating star-five">
-                                                <span>Rated <strong class="rating">5.00</strong> out of 5</span>
-                                              </div>';
-                                                    break;
-                                                }
-                                            }
+
+                                            echo stars($rating);
+//                                for ($i = 0; $i < 5; $i++) {
+//                                    $star = '';
+//
+//                                    if ($rating == 0) {
+//                                        $star = 'zero';
+//
+//                                        break;
+//                                    } elseif ($rating == 1) {
+//                                        $star = 'one';
+//                                        break;
+//                                    } elseif ($rating == 2) {
+//                                        $star = 'two';
+//                                        break;
+//                                    } elseif ($rating == 3) {
+//                                        $star = 'three';
+//                                        break;
+//                                    } elseif ($rating == 4) {
+//                                        $star = 'four';
+//                                        break;
+//                                    } elseif ($rating == 5) {
+//                                      $star = 'five';
+//                                       break;
+//                                    }
+//                                }
                                         }
-                                        ?></p>
+                                    }
+                                    function stars($rating){
+                                        for ($i = 0; $i < 5; $i++) {
+                                            $star = '';
+
+                                            if ($rating == 0) {
+                                                $star = 'zero';
+                                                echo rating($star);
+                                                break;
+                                            } elseif ($rating == 1) {
+                                                $star = 'one';
+                                                echo rating($star);
+                                                break;
+                                            } elseif ($rating == 2) {
+                                                $star = 'two';
+                                                echo rating($star);
+                                                break;
+                                            } elseif ($rating == 3) {
+                                                $star = 'three';
+                                                echo rating($star);
+                                                break;
+                                            } elseif ($rating == 4) {
+                                                $star = 'four';
+                                                echo rating($star);
+                                                break;
+                                            } elseif ($rating == 5) {
+                                                $star = 'five';
+                                                echo rating($star);
+                                                break;
+                                            }
+
+                                        }
+                                    }
+                                    function rating($star){
+                                        return $star;
+                                    }
+                                    ?>
+                                    <div class="star-rating star-<?php echo avg($data); ?>">
+                                        <span>Rated <strong class="rating"></strong></span>
+                                    </div>
+                                    <br>
                                     <h3 class="product-title mb--20"><?= $data['product']['title'] ?></h3>
                                     <p class="product-short-description mb--20">Donec accumsan auctor iaculis. Sed suscipit
                                         arcu ligula, at egestas magna molestie a. Proin ac ex maximus, ultrices justo eget,
@@ -933,17 +1047,25 @@
                                                 <h3 class="review__title">Review for <?= $data['product']['title'] ?> </h3>
                                             </div>
                                             <?php
+                                            function commentsRating($data){
                                             $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
                                             $params = include($paramsPath);
                                             $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
                                             $db->set_charset("utf8");
+                                            if(isset($_GET['page'])) {
+                                                $page = $_GET['page'];
+                                            }else{
+                                                $page = 1;
+                                            }
+                                            $notesOnePage = 4;
+                                            $from = ($page - 1) * $notesOnePage;
                                             $sql = 'select * from comment ';
-                                            $id = 'where product_id= ' . $data['product']['id'];
+                                            $id = "where product_id= " .$data['product']['id'] . ' limit ' . $from.','.$notesOnePage;
                                             $sql = $sql . $id;
                                             $result = $db->query($sql);
+
                                             ?>
                                             <?php while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) : ?>
-
                                             <div class="product-reviews">
                                                 <ul class="review__list">
                                                     <li class="review__item">
@@ -958,16 +1080,32 @@
                                                                         <span class="review__published-date"><?= $row['date'] ?></span>
                                                                     </div>
                                                                     <div class="product-rating">
-
                                                                         <?php
                                                                         for ($i = 0; $i < 5; $i++) {
+                                                                            $stars = '';
                                                                             if ($row['rating'] == $i) {
                                                                                 break;
-                                                                            } else {
-                                                                                echo '<span><i class="fa fa-star"></i></span>';
+                                                                            } elseif($row['rating'] == 1){
+                                                                                $stars = 'one';
+                                                                                break;
+                                                                            }elseif($row['rating'] == 2){
+                                                                                $stars = 'two';
+                                                                                break;
+                                                                            }elseif($row['rating'] == 3){
+                                                                                $stars = 'three';
+                                                                                break;
+                                                                            }elseif($row['rating'] == 4){
+                                                                                $stars = 'four';
+                                                                                break;
+                                                                            }elseif($row['rating'] == 5){
+                                                                                $stars = 'five';
+                                                                                break;
                                                                             }
                                                                         }
                                                                         ?>
+                                                                        <div class="star-rating star-<?php echo $stars; ?>">
+                                                                            <span>Rated <strong class="rating"></strong></span>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                 <p class="review__description"><?= $row['text'] ?></p>
@@ -976,6 +1114,38 @@
                                                     </li>
                                                 </ul>
                                                 <?php endwhile; ?>
+                                                <?php
+                                                $sec_sql = 'select count(*) as count from comment ';
+                                                $sec_id = "where product_id= " . $data['product']['id'];
+                                                $sec_sql = $sec_sql . $sec_id;
+                                                $result_sec = $db->query($sec_sql);
+                                                $count = mysqli_fetch_assoc($result_sec)['count'];
+
+                                                $pagesCount = ceil($count / $notesOnePage);
+                                                echo '<div style="text-align: center; font-size: 20px">';
+                                                if ($page != 1) {
+                                                    $pred = $page - 1;
+                                                    echo "<a style='text-align:center' id='pages' href=\"product_show?id=" . $data['product']['id'] . "&tab=review&page=$pred\"><< </a>";
+
+                                                } elseif ($page = 1) {
+                                                    echo "<a><< </a>";
+                                                }
+                                                for ($i = 1; $i <= $pagesCount; $i++) {
+                                                    echo "<a class='' href=\"product_show?id=" . $data['product']['id'] . "&tab=review&page=$i\">$i  </a>";
+
+                                                }
+                                                if ($page != $pagesCount) {
+                                                    $next = $page + 1;
+                                                    echo "<a href=\"product_show?id=" . $data['product']['id'] . "&tab=review&page=$next\"> >></a>";
+
+
+                                                } elseif ($page == $pagesCount) {
+                                                    echo "<a> >></a>";
+                                                }
+                                                echo '</div><hr/><br>';
+                                                }
+                                                echo commentsRating($data);
+                                                ?>
                                                 <div class="review-form-wrapper">
                                                     <div class="row">
                                                         <div class="col-lg-8">
@@ -1100,9 +1270,9 @@
                             </div>
                         </div>
                         <?php endif;?>
-            <div class="row mb--77 mb-md--57">
-                <div class="col-12">
-                    <div class="element-carousel slick-vertical-center" data-slick-options='{
+                        <div class="row mb--77 mb-md--57">
+                            <div class="col-12">
+                                <div class="element-carousel slick-vertical-center" data-slick-options='{
                                 "spaceBetween": 30,
                                 "slidesToShow": 4,
                                 "slidesToScroll": 1,
@@ -1120,45 +1290,45 @@
                                     "slidesToShow": 1
                                 }}
                             ]'>
-                        <div class="item">
-                            <div class="payne-product">
-                                <div class="product__inner">
-                                    <div class="product__image">
-                                        <figure class="product__image--holder">
-                                            <img src="/assets/img/products/product-03-270x300.jpg" alt="Product">
-                                        </figure>
-                                        <a href="product-details.html" class="product__overlay"></a>
-                                        <div class="product__action">
-                                            <a data-toggle="modal" data-target="#productModal"
-                                               class="action-btn">
-                                                <i class="fa fa-eye"></i>
-                                                <span class="sr-only">Quick View</span>
-                                            </a>
-                                            <a href="wishlist.html" class="action-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <span class="sr-only">Add to wishlist</span>
-                                            </a>
-                                            <a href="compare.html" class="action-btn">
-                                                <i class="fa fa-repeat"></i>
-                                                <span class="sr-only">Add To Compare</span>
-                                            </a>
-                                            <a href="cart.html" class="action-btn">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <span class="sr-only">Add To Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product__info">
-                                        <div class="product__info--left">
-                                            <h3 class="product__title">
-                                                <a href="product-details.html">Lexbaro Begadi</a>
-                                            </h3>
-                                            <div class="product__price">
-                                                <span class="money">132.00</span>
-                                                <span class="sign">$</span>
-                                            </div>
-                                        </div>
-                                        <div class="product__info--right">
+                                    <div class="item">
+                                        <div class="payne-product">
+                                            <div class="product__inner">
+                                                <div class="product__image">
+                                                    <figure class="product__image--holder">
+                                                        <img src="/assets/img/products/product-03-270x300.jpg" alt="Product">
+                                                    </figure>
+                                                    <a href="product-details.html" class="product__overlay"></a>
+                                                    <div class="product__action">
+                                                        <a data-toggle="modal" data-target="#productModal"
+                                                           class="action-btn">
+                                                            <i class="fa fa-eye"></i>
+                                                            <span class="sr-only">Quick View</span>
+                                                        </a>
+                                                        <a href="wishlist.html" class="action-btn">
+                                                            <i class="fa fa-heart-o"></i>
+                                                            <span class="sr-only">Add to wishlist</span>
+                                                        </a>
+                                                        <a href="compare.html" class="action-btn">
+                                                            <i class="fa fa-repeat"></i>
+                                                            <span class="sr-only">Add To Compare</span>
+                                                        </a>
+                                                        <a href="cart.html" class="action-btn">
+                                                            <i class="fa fa-shopping-cart"></i>
+                                                            <span class="sr-only">Add To Cart</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="product__info">
+                                                    <div class="product__info--left">
+                                                        <h3 class="product__title">
+                                                            <a href="product-details.html">Lexbaro Begadi</a>
+                                                        </h3>
+                                                        <div class="product__price">
+                                                            <span class="money">132.00</span>
+                                                            <span class="sign">$</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__info--right">
                                                     <span class="product__rating">
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
@@ -1166,50 +1336,50 @@
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
                                                     </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="payne-product">
-                                <div class="product__inner">
-                                    <div class="product__image">
-                                        <figure class="product__image--holder">
-                                            <img src="/assets/img/products/product-05-270x300.jpg" alt="Product">
-                                        </figure>
-                                        <a href="product-details.html" class="product-overlay"></a>
-                                        <div class="product__action">
-                                            <a data-toggle="modal" data-target="#productModal"
-                                               class="action-btn">
-                                                <i class="fa fa-eye"></i>
-                                                <span class="sr-only">Quick View</span>
-                                            </a>
-                                            <a href="wishlist.html" class="action-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <span class="sr-only">Add to wishlist</span>
-                                            </a>
-                                            <a href="wishlist.html" class="action-btn">
-                                                <i class="fa fa-repeat"></i>
-                                                <span class="sr-only">Add To Compare</span>
-                                            </a>
-                                            <a href="cart.html" class="action-btn">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <span class="sr-only">Add To Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product__info">
-                                        <div class="product__info--left">
-                                            <h3 class="product__title">
-                                                <a href="product-details.html">Lexbaro Begadi</a>
-                                            </h3>
-                                            <div class="product__price">
-                                                <span class="money">132.00</span>
-                                                <span class="sign">$</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="product__info--right">
+                                    </div>
+                                    <div class="item">
+                                        <div class="payne-product">
+                                            <div class="product__inner">
+                                                <div class="product__image">
+                                                    <figure class="product__image--holder">
+                                                        <img src="/assets/img/products/product-05-270x300.jpg" alt="Product">
+                                                    </figure>
+                                                    <a href="product-details.html" class="product-overlay"></a>
+                                                    <div class="product__action">
+                                                        <a data-toggle="modal" data-target="#productModal"
+                                                           class="action-btn">
+                                                            <i class="fa fa-eye"></i>
+                                                            <span class="sr-only">Quick View</span>
+                                                        </a>
+                                                        <a href="wishlist.html" class="action-btn">
+                                                            <i class="fa fa-heart-o"></i>
+                                                            <span class="sr-only">Add to wishlist</span>
+                                                        </a>
+                                                        <a href="wishlist.html" class="action-btn">
+                                                            <i class="fa fa-repeat"></i>
+                                                            <span class="sr-only">Add To Compare</span>
+                                                        </a>
+                                                        <a href="cart.html" class="action-btn">
+                                                            <i class="fa fa-shopping-cart"></i>
+                                                            <span class="sr-only">Add To Cart</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="product__info">
+                                                    <div class="product__info--left">
+                                                        <h3 class="product__title">
+                                                            <a href="product-details.html">Lexbaro Begadi</a>
+                                                        </h3>
+                                                        <div class="product__price">
+                                                            <span class="money">132.00</span>
+                                                            <span class="sign">$</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__info--right">
                                                     <span class="product__rating">
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
@@ -1217,50 +1387,50 @@
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
                                                     </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="payne-product">
-                                <div class="product__inner">
-                                    <div class="product__image">
-                                        <figure class="product__image--holder">
-                                            <img src="/assets/img/products/product-06-270x300.jpg" alt="Product">
-                                        </figure>
-                                        <a href="product-details.html" class="product-overlay"></a>
-                                        <div class="product__action">
-                                            <a data-toggle="modal" data-target="#productModal"
-                                               class="action-btn">
-                                                <i class="fa fa-eye"></i>
-                                                <span class="sr-only">Quick View</span>
-                                            </a>
-                                            <a href="wishlist.html" class="action-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <span class="sr-only">Add to wishlist</span>
-                                            </a>
-                                            <a href="wishlist.html" class="action-btn">
-                                                <i class="fa fa-repeat"></i>
-                                                <span class="sr-only">Add To Compare</span>
-                                            </a>
-                                            <a href="cart.html" class="action-btn">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <span class="sr-only">Add To Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product__info">
-                                        <div class="product__info--left">
-                                            <h3 class="product__title">
-                                                <a href="product-details.html">Lexbaro Begadi</a>
-                                            </h3>
-                                            <div class="product__price">
-                                                <span class="money">132.00</span>
-                                                <span class="sign">$</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="product__info--right">
+                                    </div>
+                                    <div class="item">
+                                        <div class="payne-product">
+                                            <div class="product__inner">
+                                                <div class="product__image">
+                                                    <figure class="product__image--holder">
+                                                        <img src="/assets/img/products/product-06-270x300.jpg" alt="Product">
+                                                    </figure>
+                                                    <a href="product-details.html" class="product-overlay"></a>
+                                                    <div class="product__action">
+                                                        <a data-toggle="modal" data-target="#productModal"
+                                                           class="action-btn">
+                                                            <i class="fa fa-eye"></i>
+                                                            <span class="sr-only">Quick View</span>
+                                                        </a>
+                                                        <a href="wishlist.html" class="action-btn">
+                                                            <i class="fa fa-heart-o"></i>
+                                                            <span class="sr-only">Add to wishlist</span>
+                                                        </a>
+                                                        <a href="wishlist.html" class="action-btn">
+                                                            <i class="fa fa-repeat"></i>
+                                                            <span class="sr-only">Add To Compare</span>
+                                                        </a>
+                                                        <a href="cart.html" class="action-btn">
+                                                            <i class="fa fa-shopping-cart"></i>
+                                                            <span class="sr-only">Add To Cart</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="product__info">
+                                                    <div class="product__info--left">
+                                                        <h3 class="product__title">
+                                                            <a href="product-details.html">Lexbaro Begadi</a>
+                                                        </h3>
+                                                        <div class="product__price">
+                                                            <span class="money">132.00</span>
+                                                            <span class="sign">$</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__info--right">
                                                     <span class="product__rating">
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
@@ -1268,50 +1438,50 @@
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
                                                     </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="payne-product">
-                                <div class="product__inner">
-                                    <div class="product__image">
-                                        <figure class="product__image--holder">
-                                            <img src="/assets/img/products/product-08-270x300.jpg" alt="Product">
-                                        </figure>
-                                        <a href="product-details.html" class="product-overlay"></a>
-                                        <div class="product__action">
-                                            <a data-toggle="modal" data-target="#productModal"
-                                               class="action-btn">
-                                                <i class="fa fa-eye"></i>
-                                                <span class="sr-only">Quick View</span>
-                                            </a>
-                                            <a href="wishlist.html" class="action-btn">
-                                                <i class="fa fa-heart-o"></i>
-                                                <span class="sr-only">Add to wishlist</span>
-                                            </a>
-                                            <a href="wishlist.html" class="action-btn">
-                                                <i class="fa fa-repeat"></i>
-                                                <span class="sr-only">Add To Compare</span>
-                                            </a>
-                                            <a href="cart.html" class="action-btn">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <span class="sr-only">Add To Cart</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product__info">
-                                        <div class="product__info--left">
-                                            <h3 class="product__title">
-                                                <a href="product-details.html">Lexbaro Begadi</a>
-                                            </h3>
-                                            <div class="product__price">
-                                                <span class="money">132.00</span>
-                                                <span class="sign">$</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="product__info--right">
+                                    </div>
+                                    <div class="item">
+                                        <div class="payne-product">
+                                            <div class="product__inner">
+                                                <div class="product__image">
+                                                    <figure class="product__image--holder">
+                                                        <img src="/assets/img/products/product-08-270x300.jpg" alt="Product">
+                                                    </figure>
+                                                    <a href="product-details.html" class="product-overlay"></a>
+                                                    <div class="product__action">
+                                                        <a data-toggle="modal" data-target="#productModal"
+                                                           class="action-btn">
+                                                            <i class="fa fa-eye"></i>
+                                                            <span class="sr-only">Quick View</span>
+                                                        </a>
+                                                        <a href="wishlist.html" class="action-btn">
+                                                            <i class="fa fa-heart-o"></i>
+                                                            <span class="sr-only">Add to wishlist</span>
+                                                        </a>
+                                                        <a href="wishlist.html" class="action-btn">
+                                                            <i class="fa fa-repeat"></i>
+                                                            <span class="sr-only">Add To Compare</span>
+                                                        </a>
+                                                        <a href="cart.html" class="action-btn">
+                                                            <i class="fa fa-shopping-cart"></i>
+                                                            <span class="sr-only">Add To Cart</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="product__info">
+                                                    <div class="product__info--left">
+                                                        <h3 class="product__title">
+                                                            <a href="product-details.html">Lexbaro Begadi</a>
+                                                        </h3>
+                                                        <div class="product__price">
+                                                            <span class="money">132.00</span>
+                                                            <span class="sign">$</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product__info--right">
                                                     <span class="product__rating">
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
@@ -1319,6 +1489,9 @@
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
                                                     </span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1327,12 +1500,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 
-<script src="/assets/js/vendor.js"></script>
+            <script src="/assets/js/vendor.js"></script>
 
 
-<script src="/assets/js/main.js"></script>
+            <script src="/assets/js/main.js"></script>
 </body>
