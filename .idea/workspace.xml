@@ -58,7 +58,6 @@
       <change beforePath="$PROJECT_DIR$/application/views/commentShow_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/commentShow_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/product_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/product_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/products_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/products_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/template_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template_view.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/img/others/comment-1.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/vendor.js" afterDir="false" />
@@ -105,7 +104,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/img/logo" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Рабочий стол/Payne" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -148,7 +147,7 @@
       <workItem from="1591367399159" duration="3845000" />
       <workItem from="1592209516385" duration="24602000" />
       <workItem from="1592386661745" duration="95219000" />
-      <workItem from="1593591424329" duration="7397000" />
+      <workItem from="1593591424329" duration="21440000" />
     </task>
     <task id="LOCAL-00001" summary="Контроллер голубей, модель голубей, список голубей, миграции данных для голубей.">
       <created>1583321191622</created>
@@ -227,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593011308585</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Разбил скрип на функции и сократил толщину кода">
+      <created>1593599058346</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1593599058347</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -279,17 +285,18 @@
     <MESSAGE value="Сделал асторизацию и регистрацию на одной странице" />
     <MESSAGE value="Сделал вывод средней оценки по продукту, сделал вывод оценок и коментариев" />
     <MESSAGE value="Доделал вьюхи(продукта, и списка продуктов)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Доделал вьюхи(продукта, и списка продуктов)" />
+    <MESSAGE value="Разбил скрип на функции и сократил толщину кода" />
+    <option name="LAST_COMMIT_MESSAGE" value="Разбил скрип на функции и сократил толщину кода" />
   </component>
   <component name="WindowStateProjectService">
     <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592921958684">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1592921958684" />
-    <state x="379" y="27" width="1242" height="1053" key="CommitChangelistDialog2" timestamp="1593011307819">
+    <state x="379" y="27" width="1242" height="1053" key="CommitChangelistDialog2" timestamp="1593599057747">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="379" y="27" width="1242" height="1053" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1593011307819" />
+    <state x="379" y="27" width="1242" height="1053" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1593599057747" />
     <state x="672" y="310" width="624" height="484" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1591093998492">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
@@ -298,10 +305,10 @@
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="108" y="158" width="1488" height="872" key="DiffContextDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1593011239303" />
-    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1592992187898">
+    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1593682645884">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl/59.27.1861.1053@59.27.1861.1053" timestamp="1592992187898" />
+    <state x="772" y="310" width="424" height="484" key="FileChooserDialogImpl/59.27.1861.1053@59.27.1861.1053" timestamp="1593682645884" />
     <state width="1328" height="434" key="GridCell.Tab.0.bottom" timestamp="1593168684406">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>

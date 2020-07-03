@@ -53,157 +53,170 @@
             </div>
             <div class="container-fluid shop-products">
                 <div class="row">
+                    <?php
+                    function allAvg($product)
+                    {
+                        $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
+                        $params = include($paramsPath);
+                        $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
+                        $db->set_charset("utf8");
+                        $sql = 'select * from comment ';
+                        $id = 'where product_id = ' . $product['id'];
+                        $sql = $sql . $id;
+
+                        $result = $db->query($sql);
+                        $ratingSum = 0;
+                        $commentsCount = 0;
+                        while ($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                            $ratingSum += $rows['rating'];
+                            $commentsCount += 1;
+
+                        }
+                        $rating = '';
+                        if ($commentsCount == 0) {
+                            $avg = 0;
+                            $rating = round( $avg, 0);
+                            echo stars($rating);
+
+                        } elseif ($commentsCount > 0) {
+                            $avg = $ratingSum / $commentsCount;
+                            $rating = round($avg, 0);
+
+                            echo stars($rating);
+                        }
+                    }
+
+                    function stars($rating)
+                    {
+                        for ($i = 0; $i < 5; $i++) {
+                            $star = '';
+                            if ($rating == $i) {
+                                $star = 'zero';
+                                echo rating($star);
+                                break;
+                            } elseif ($rating == 1) {
+                                $star = 'one';
+                                echo rating($star);
+                                break;
+                            } elseif ($rating == 2) {
+                                $star = 'two';
+                                echo rating($star);
+                                break;
+                            } elseif ($rating == 3) {
+                                $star = 'three';
+                                echo rating($star);
+                                break;
+                            } elseif ($rating == 4) {
+                                $star = 'four';
+                                echo rating($star);
+                                break;
+                            } elseif ($rating == 5) {
+                                $star = 'five';
+                                echo rating($star);
+                                break;
+                            }
+
+                        }
+                    }
+
+                    function rating($star)
+                    {
+                        return $star;
+                    }
+
+                    ?>
                     <?php foreach ($data['products'] as $index_product => $product) : ?>
-                    <div class="col-xl-3 col-md-4 col-sm-6 mb--50">
-                        <div class="payne-product">
-                            <div class="product__inner">
-                                <div class="product__image">
-                                    <figure class="product__image--holder">
-                                        <img src="/assets/img/products/product-03-270x300.jpg" alt="Product">
-                                    </figure>
-                                    <a href="/main/product_show?id=<?= $product['id'] ?>" class="product__overlay"></a>
-                                    <div class="product__action">
-                                        <a data-toggle="modal" data-target="#productModal" class="action-btn">
-                                            <i class="fa fa-eye"></i>
-                                            <span class="sr-only">Quick View</span>
-                                        </a>
-                                        <a href="wishlist.html" class="action-btn">
-                                            <i class="fa fa-heart-o"></i>
-                                            <span class="sr-only">Add to wishlist</span>
-                                        </a>
-                                        <a href="compare.html" class="action-btn">
-                                            <i class="fa fa-repeat"></i>
-                                            <span class="sr-only">Add To Compare</span>
-                                        </a>
-                                        <a href="cart.html" class="action-btn">
-                                            <i class="fa fa-shopping-cart"></i>
-                                            <span class="sr-only">Add To Cart</span>
-                                        </a>
+
+                        <div class="col-xl-3 col-md-4 col-sm-6 mb--50">
+                            <div class="payne-product">
+                                <div class="product__inner">
+                                    <div class="product__image">
+                                        <figure class="product__image--holder">
+                                            <img src="/assets/img/products/product-03-270x300.jpg" alt="Product">
+                                        </figure>
+                                        <a href="/main/product_show?id=<?= $product['id'] ?>"
+                                           class="product__overlay"></a>
+                                        <div class="product__action">
+                                            <a data-toggle="modal" data-target="#productModal" class="action-btn">
+                                                <i class="fa fa-eye"></i>
+                                                <span class="sr-only">Quick View</span>
+                                            </a>
+                                            <a href="wishlist.html" class="action-btn">
+                                                <i class="fa fa-heart-o"></i>
+                                                <span class="sr-only">Add to wishlist</span>
+                                            </a>
+                                            <a href="compare.html" class="action-btn">
+                                                <i class="fa fa-repeat"></i>
+                                                <span class="sr-only">Add To Compare</span>
+                                            </a>
+                                            <a href="cart.html" class="action-btn">
+                                                <i class="fa fa-shopping-cart"></i>
+                                                <span class="sr-only">Add To Cart</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="product__info">
+                                        <div class="product__info--left">
+                                            <h3 class="product__title">
+                                                <a href="/main/product_show?id=<?= $product['id'] ?>"><?= $product['title'] ?></a>
+                                            </h3>
+                                            <div class="product__price">
+                                                <span class="money"><?= $product['price'] ?></span>
+                                                <span class="sign">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="product__info--right">
+                                            <div style="float: right" class="star-rating star-<?php echo allAvg($product);?>">
+                                                <span>Rated <strong class="rating"></strong></span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="product__info">
-                                    <div class="product__info--left">
+                            </div>
+                            <div class="payne-product-list">
+                                <div class="product__inner">
+                                    <figure class="product__image">
+                                        <a href="product-details.html" class="d-block">
+                                            <img src="/assets/img/products/product-03-270x300.jpg" alt="Products">
+                                        </a>
+                                        <div class="product__thumbnail-action">
+                                            <a data-toggle="modal" data-target="#productModal"
+                                               class="action-btn quick-view">
+                                                <i class="fa fa-eye"></i>
+                                                <span class="sr-only">Quick View</span>
+                                            </a>
+                                        </div>
+                                    </figure>
+                                    <div class="product__info">
                                         <h3 class="product__title">
-                                            <a href="/main/product_show?id=<?= $product['id'] ?>"><?= $product['title'] ?></a>
+                                            <a href="product-details.html"><?= $product['title'] ?></a>
                                         </h3>
                                         <div class="product__price">
                                             <span class="money"><?= $product['price'] ?></span>
                                             <span class="sign">$</span>
                                         </div>
-                                    </div>
-                                    <div class="product__info--right">
-                                        <?php
-                                        de($product);
-
-                                        $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
-                                        $params = include($paramsPath);
-                                        $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
-                                        $db->set_charset("utf8");
-                                        $sql = 'select * from comment ';
-                                        $id = 'where product_id =' . $product['id'];
-
-                                        $sql = $sql . $id;
-                                        $result = $db->query($sql);
-                                        $ratingSum = 0;
-                                        $commentsCount = 0;
-                                        while ($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-
-                                            $ratingSum += $rows['rating'];
-                                            $commentsCount += 1;
-                                        }
-                                        if ($commentsCount == 0) {
-                                            $star = 'zero';
-                                        } else {
-                                            $avg = $ratingSum / $commentsCount;
-                                            $rating = round($avg, 0);
-                                            for ($i = 0; $i < 5; $i++) {
-                                                $star = '';
-                                                if ($rating == $i) {
-                                                    break;
-                                                } elseif ($rating == 1) {
-                                                    $star = 'one';
-                                                    break;
-                                                } elseif ($rating == 2) {
-                                                    $star = 'two';
-                                                    break;
-                                                } elseif ($rating == 3) {
-                                                    $star = 'three';
-                                                    break;
-                                                } elseif ($rating == 4) {
-                                                    $star = 'four';
-                                                    break;
-                                                } elseif ($rating == 5) {
-                                                    $star = 'five';
-                                                    break;
-                                                }
-                                            }
-                                        }
-                                        ?>
-                                        <div style="float: right" class="star-rating star-<?php echo $star;?>">
+                                        <div style="float: left"
+                                             class="star-rating star-<?php echo allAvg($product); ?>">
                                             <span>Rated <strong class="rating"></strong></span>
+                                        </div>
+                                        <br>
+                                        <p class="product__short-description">
+                                            Donec accumsan auctor iaculis. Sed suscipit arcu ligula, at egestas magna
+                                            molestie a. Proin ac ex maximus, ultrices justo eget, sodales orci. Aliquam
+                                            egestas libero ac turpis pharetra
+                                        </p>
+                                        <div class="d-flex product__list-action">
+                                            <a href="cart.html" class="btn btn-size-sm">Add To Cart</a>
+                                            <a href="compare.html" class="action-btn">
+                                                <i class="fa fa-repeat"></i>
+                                                <span class="sr-only">Add To Compare</span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="payne-product-list">
-                            <div class="product__inner">
-                                <figure class="product__image">
-                                    <a href="product-details.html" class="d-block">
-                                        <img src="/assets/img/products/product-03-270x300.jpg" alt="Products">
-                                    </a>
-                                    <div class="product__thumbnail-action">
-                                        <a data-toggle="modal" data-target="#productModal"
-                                           class="action-btn quick-view">
-                                            <i class="fa fa-eye"></i>
-                                            <span class="sr-only">Quick View</span>
-                                        </a>
-                                    </div>
-                                </figure>
-                                <div class="product__info">
-                                    <h3 class="product__title">
-                                        <a href="product-details.html"><?= $product['title']?></a>
-                                    </h3>
-                                    <div class="product__price">
-                                        <span class="money"><?= $product['price'] ?></span>
-                                        <span class="sign">$</span>
-                                    </div>
-                                   <?php
-                                   $a = 0;
-                                   $b = 0;
-                                   while ($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                                       $a += $rows['rating'];
-                                       if ($rows['rating']) {
-                                           $b += 1;
-                                       }
-                                       $avg = $a / $b;
-                                   }
-                                   $rating = round($avg, 0);
-                                   for ($i = 0; $i < 5; $i++) {
-                                       if ($rating == $i) {
-                                           break;
-                                       } else {
-                                           echo '<span><i class="fa fa-star"></i></span>';
-                                       }
-                                   }
-                                   ?>
-                                    <p class="product__short-description">
-                                        Donec accumsan auctor iaculis. Sed suscipit arcu ligula, at egestas magna
-                                        molestie a. Proin ac ex maximus, ultrices justo eget, sodales orci. Aliquam
-                                        egestas libero ac turpis pharetra
-                                    </p>
-                                    <div class="d-flex product__list-action">
-                                        <a href="cart.html" class="btn btn-size-sm">Add To Cart</a>
-                                        <a href="compare.html" class="action-btn">
-                                            <i class="fa fa-repeat"></i>
-                                            <span class="sr-only">Add To Compare</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php endforeach;?>
+                    <?php endforeach; ?>
 
                 </div>
                 <div class="row">
