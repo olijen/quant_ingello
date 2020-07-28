@@ -53,78 +53,6 @@
             </div>
             <div class="container-fluid shop-products">
                 <div class="row">
-                    <?php
-                    function allAvg($product)
-                    {
-                        $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
-                        $params = include($paramsPath);
-                        $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
-                        $db->set_charset("utf8");
-                        $sql = 'select * from comment ';
-                        $id = 'where product_id = ' . $product['id'];
-                        $sql = $sql . $id;
-
-                        $result = $db->query($sql);
-                        $ratingSum = 0;
-                        $commentsCount = 0;
-                        while ($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                            $ratingSum += $rows['rating'];
-                            $commentsCount += 1;
-
-                        }
-                        $rating = '';
-                        if ($commentsCount == 0) {
-                            $avg = 0;
-                            $rating = round( $avg, 0);
-                            echo stars($rating);
-
-                        } elseif ($commentsCount > 0) {
-                            $avg = $ratingSum / $commentsCount;
-                            $rating = round($avg, 0);
-
-                            echo stars($rating);
-                        }
-                    }
-
-                    function stars($rating)
-                    {
-                        for ($i = 0; $i < 5; $i++) {
-                            $star = '';
-                            if ($rating == $i) {
-                                $star = 'zero';
-                                echo rating($star);
-                                break;
-                            } elseif ($rating == 1) {
-                                $star = 'one';
-                                echo rating($star);
-                                break;
-                            } elseif ($rating == 2) {
-                                $star = 'two';
-                                echo rating($star);
-                                break;
-                            } elseif ($rating == 3) {
-                                $star = 'three';
-                                echo rating($star);
-                                break;
-                            } elseif ($rating == 4) {
-                                $star = 'four';
-                                echo rating($star);
-                                break;
-                            } elseif ($rating == 5) {
-                                $star = 'five';
-                                echo rating($star);
-                                break;
-                            }
-
-                        }
-                    }
-
-                    function rating($star)
-                    {
-                        return $star;
-                    }
-
-                    ?>
                     <?php foreach ($data['products'] as $index_product => $product) : ?>
 
                         <div class="col-xl-3 col-md-4 col-sm-6 mb--50">
@@ -166,7 +94,7 @@
                                             </div>
                                         </div>
                                         <div class="product__info--right">
-                                            <div style="float: right" class="star-rating star-<?php echo allAvg($product);?>">
+                                            <div style="float: right" class="star-rating star-<?= $product['rating'] ?>">
                                                 <span>Rated <strong class="rating"></strong></span>
                                             </div>
                                         </div>
@@ -196,7 +124,7 @@
                                             <span class="sign">$</span>
                                         </div>
                                         <div style="float: left"
-                                             class="star-rating star-<?php echo allAvg($product); ?>">
+                                             class="star-rating">
                                             <span>Rated <strong class="rating"></strong></span>
                                         </div>
                                         <br>
@@ -216,9 +144,10 @@
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach; ?>
 
+                    <?php endforeach; ?>
                 </div>
+
                 <div class="row">
                     <div class="col-12">
                         <nav class="pagination-wrap mt--35 mt-md--25">

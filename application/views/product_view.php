@@ -1,7 +1,6 @@
 <body>
 <?php if (!empty($_GET['tab'])):?>
 <?php
-
 ?>
 <div class="main-content-wrapper">
     <div class="page-content-inner pt--80 pt-md--60">
@@ -163,92 +162,8 @@
                             <a href="#" class="prev"><i class="fa fa-angle-double-left"></i></a>
                             <a href="#" class="next"><i class="fa fa-angle-double-right"></i></a>
                         </div>
-                        <?php
-//                        function conect(){
-//                            $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
-//                            $params = include($paramsPath);
-//                            $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
-//                            $db->set_charset("utf8");
 
-
-
-//                        }
-                        function avg($data)
-                        {
-                            $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
-                            $params = include($paramsPath);
-                            $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
-                            $db->set_charset("utf8");
-                            $sql = 'select * from comment ';
-
-                            $id = 'where product_id =' . $data['product']['id'];
-                            $sql = $sql . $id;
-                            $result = $db->query($sql);
-                            $ratingSum = 0;
-                            $commentsCount = 0;
-                            while ($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-
-                                $ratingSum += $rows['rating'];
-                                $commentsCount += 1;
-
-                            }
-                            $rating = '';
-                            if ($commentsCount == 0) {
-                                $avg = 0;
-                                $rating = round( $avg, 0);
-                                echo stars($rating);
-                            }else {
-
-                                $avg = $ratingSum / $commentsCount;
-
-
-                                $rating = round($avg, 0);
-
-                                echo stars($rating);
-
-                            }
-                        }
-                        function stars($rating){
-                            for ($i = 0; $i < 5; $i++) {
-                                $star = '';
-
-                                if ($rating == 0) {
-                                    $star = 'zero';
-                                    echo rating($star);
-                                    break;
-                                } elseif ($rating == 1) {
-                                    $star = 'one';
-                                    echo rating($star);
-                                    break;
-                                } elseif ($rating == 2) {
-                                    $star = 'two';
-                                    echo rating($star);
-                                    break;
-                                } elseif ($rating == 3) {
-                                    $star = 'three';
-                                    echo rating($star);
-                                    break;
-                                } elseif ($rating == 4) {
-                                    $star = 'four';
-                                    echo rating($star);
-                                    break;
-                                } elseif ($rating == 5) {
-                                    $star = 'five';
-
-                                    echo rating($star);
-                                    break;
-                                }
-
-                            }
-                        }
-                        function rating($star){
-
-                            return $star;
-
-                        }
-
-                        ?>
-                        <div class="star-rating star-<?php echo avg($data); ?>">
+                        <div class="star-rating star-<?= $avg ?>">
                             <span>Rated <strong class="rating"></strong></span>
                         </div>
                         <br>
@@ -305,7 +220,7 @@
                             <button type="button" class="btn btn-shape-square btn-size-sm"
                                     onclick="window.location.href='cart.html'">
                                 Add To Cart
-                            </button>
+                                </button>
                         </div>
                         <div class="product-footer-meta">
                             <p><span>Category:</span>
@@ -401,81 +316,76 @@
                                 <div class="product-reviews">
                                     <h3 class="review__title">Review for <?= $data['product']['title'] ?> </h3>
                                 </div>
-
-                                <?php
-                                function commentsRating($data){
-                                $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
-                                $params = include($paramsPath);
-                                $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
-                                $db->set_charset("utf8");
-                                if(isset($_GET['page'])) {
-                                    $page = $_GET['page'];
-                                }else{
-                                    $page = 1;
-                                }
-                                $notesOnePage = 4;
-                                $from = ($page - 1) * $notesOnePage;
-                                $sql = 'select * from comment ';
-                                $id = "where product_id= " .$data['product']['id'] . ' limit ' . $from.','.$notesOnePage;
-                                $sql = $sql . $id;
-                                $result = $db->query($sql);
-                                ?>
-                                <?php while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) : ?>
-
                                 <div class="product-reviews">
                                     <ul class="review__list">
                                         <li class="review__item">
+                                            <?php foreach ($comments as $item): ?>
                                             <div class="review__container">
                                                 <img src="/assets/img/others/client-1.jpg" alt="Review Avatar"
                                                      class="review__avatar">
                                                 <div class="review__text">
                                                     <div class="d-flex flex-sm-row flex-column justify-content-between">
                                                         <div class="review__meta">
-                                                            <strong class="review__author"><?= $row['name'] ?> </strong>
+                                                            <strong class="review__author"><?= $item['name'] ?> </strong>
                                                             <span class="review__dash">-</span>
-                                                            <span class="review__published-date"><?= $row['date'] ?></span>
+                                                            <span class="review__published-date"><?= $item['date'] ?></span>
                                                         </div>
                                                         <div class="product-rating">
-                                                            <?php
-                                                            for ($i = 0; $i < 5; $i++) {
-                                                                $stars = '';
-                                                                if ($row['rating'] == $i) {
-                                                                    break;
-                                                                } elseif($row['rating'] == 1){
-                                                                    $stars = 'one';
-                                                                    break;
-                                                                }elseif($row['rating'] == 2){
-                                                                    $stars = 'two';
-                                                                    break;
-                                                                }elseif($row['rating'] == 3){
-                                                                    $stars = 'three';
-                                                                    break;
-                                                                }elseif($row['rating'] == 4){
-                                                                    $stars = 'four';
-                                                                    break;
-                                                                }elseif($row['rating'] == 5){
-                                                                    $stars = 'five';
-                                                                    break;
-                                                                }
+                                                            <div class="star-rating star-<?php
+                                                            if ($item['rating'] == 0){
+                                                                $item['rating'] = 'zero';
+                                                                echo $item['rating'];
+                                                            }elseif ($item['rating'] == 1){
+                                                                $item['rating'] = 'one';
+                                                                echo $item['rating'];
+                                                            }elseif ($item['rating'] == 2){
+                                                                $item['rating'] = 'two';
+                                                                echo $item['rating'];
+                                                            }elseif ($item['rating'] == 3){
+                                                                $item['rating'] = 'three';
+                                                                echo $item['rating'];
+                                                            }elseif ($item['rating'] == 4){
+                                                                $item['rating'] = 'four';
+                                                                echo $item['rating'];
+                                                            }elseif ($item['rating'] == 5){
+                                                                $item['rating'] = 'five';
+                                                                echo $item['rating'];
                                                             }
-                                                            ?>
-                                                            <div class="star-rating star-<?php echo $stars; ?>">
+                                                ?>">
                                                                 <span>Rated <strong class="rating"></strong></span>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <p class="review__description"><?= $row['text'] ?></p>
+                                                    <p class="review__description"><?= $item['text'] ?></p>
                                                 </div>
                                             </div>
+                                               <hr>
+                                            <?php endforeach; ?>
                                         </li>
                                     </ul>
-                                    <?php endwhile; ?>
+
                                     <?php
+                                    $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
+                                    $params = include($paramsPath);
+                                    $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
+                                    $db->set_charset("utf8");
+
+                                    if (isset($_GET['page'])) {
+                                        $page = $_GET['page'];
+                                    } else {
+                                       $page = 1;
+                                    }
+                                    $notesOnePage = 4;
+
+                                    $from = ($page - 1) * $notesOnePage;
                                     $sec_sql = 'select count(*) as count from comment ';
+
                                     $sec_id = "where product_id= " . $data['product']['id'];
                                     $sec_sql = $sec_sql . $sec_id;
+
                                     $result_sec = $db->query($sec_sql);
                                     $count = mysqli_fetch_assoc($result_sec)['count'];
+
 
                                     $pagesCount = ceil($count / $notesOnePage);
                                     if ($pagesCount == 0){
@@ -503,9 +413,6 @@
                                         }
                                         echo '</div><hr/><br>';
                                     }
-                                    }
-
-                                    echo commentsRating($data);
                                     ?>
                                     <div class="review-form-wrapper">
                                         <div class="row">
@@ -791,82 +698,8 @@
                                         <a href="#" class="prev"><i class="fa fa-angle-double-left"></i></a>
                                         <a href="#" class="next"><i class="fa fa-angle-double-right"></i></a>
                                     </div>
-                                    <?php
-                                    function avg($data)
-                                    {
-                                        $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
-                                        $params = include($paramsPath);
-                                        $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
-                                        $db->set_charset("utf8");
-                                        $sql = 'select * from comment ';
 
-                                        $id = 'where product_id =' . $data['product']['id'];
-                                        $sql = $sql . $id;
-                                        $result = $db->query($sql);
-                                        $ratingSum = 0;
-                                        $commentsCount = 0;
-                                        while ($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-
-                                            $ratingSum += $rows['rating'];
-                                            $commentsCount += 1;
-
-                                        }
-                                        $rating = '';
-                                        if ($commentsCount == 0) {
-                                            $avg = 0;
-                                            $rating = round( $avg, 0);
-                                            echo stars($rating);
-                                        }else {
-
-                                            $avg = $ratingSum / $commentsCount;
-
-
-                                            $rating = round($avg, 0);
-
-                                            echo stars($rating);
-
-                                        }
-                                    }
-                                    function stars($rating){
-                                        for ($i = 0; $i < 5; $i++) {
-                                            $star = '';
-
-                                            if ($rating == 0) {
-                                                $star = 'zero';
-                                                echo rating($star);
-                                                break;
-                                            } elseif ($rating == 1) {
-                                                $star = 'one';
-                                                echo rating($star);
-                                                break;
-                                            } elseif ($rating == 2) {
-                                                $star = 'two';
-                                                echo rating($star);
-                                                break;
-                                            } elseif ($rating == 3) {
-                                                $star = 'three';
-                                                echo rating($star);
-                                                break;
-                                            } elseif ($rating == 4) {
-                                                $star = 'four';
-                                                echo rating($star);
-                                                break;
-                                            } elseif ($rating == 5) {
-                                                $star = 'five';
-
-                                                echo rating($star);
-                                                break;
-                                            }
-
-                                        }
-                                    }
-                                    function rating($star){
-
-                                        return $star;
-
-                                    }
-                                    ?>
-                                    <div class="star-rating star-<?php echo avg($data); ?>">
+                                    <div class="star-rating star-<?= $avg  ?>">
                                         <span>Rated <strong class="rating"></strong></span>
                                     </div>
                                     <br>
@@ -1019,110 +852,106 @@
                                             <div class="product-reviews">
                                                 <h3 class="review__title">Review for <?= $data['product']['title'] ?> </h3>
                                             </div>
-                                            <?php
-                                            function commentsRating($data){
-                                            $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
-                                            $params = include($paramsPath);
-                                            $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
-                                            $db->set_charset("utf8");
-                                            if(isset($_GET['page'])) {
-                                                $page = $_GET['page'];
-                                            }else{
-                                                $page = 1;
-                                            }
-                                            $notesOnePage = 4;
-                                            $from = ($page - 1) * $notesOnePage;
-                                            $sql = 'select * from comment ';
-                                            $id = "where product_id= " .$data['product']['id'] . ' limit ' . $from.','.$notesOnePage;
-                                            $sql = $sql . $id;
-                                            $result = $db->query($sql);
 
-                                            ?>
-                                            <?php while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) : ?>
                                             <div class="product-reviews">
                                                 <ul class="review__list">
                                                     <li class="review__item">
+
+                                                        <?php foreach ($comments as $item): ?>
                                                         <div class="review__container">
                                                             <img src="/assets/img/others/client-1.jpg" alt="Review Avatar"
                                                                  class="review__avatar">
                                                             <div class="review__text">
                                                                 <div class="d-flex flex-sm-row flex-column justify-content-between">
                                                                     <div class="review__meta">
-                                                                        <strong class="review__author"><?= $row['name'] ?> </strong>
+                                                                        <strong class="review__author"><?= $item['name'] ?> </strong>
                                                                         <span class="review__dash">-</span>
-                                                                        <span class="review__published-date"><?= $row['date'] ?></span>
+                                                                        <span class="review__published-date"><?= $item['date'] ?></span>
                                                                     </div>
                                                                     <div class="product-rating">
-                                                                        <?php
-                                                                        for ($i = 0; $i < 5; $i++) {
-                                                                            $stars = '';
-                                                                            if ($row['rating'] == $i) {
-                                                                                break;
-                                                                            } elseif($row['rating'] == 1){
-                                                                                $stars = 'one';
-                                                                                break;
-                                                                            }elseif($row['rating'] == 2){
-                                                                                $stars = 'two';
-                                                                                break;
-                                                                            }elseif($row['rating'] == 3){
-                                                                                $stars = 'three';
-                                                                                break;
-                                                                            }elseif($row['rating'] == 4){
-                                                                                $stars = 'four';
-                                                                                break;
-                                                                            }elseif($row['rating'] == 5){
-                                                                                $stars = 'five';
-                                                                                break;
-                                                                            }
+
+                                                                        <div class="star-rating star-<?php
+                                                                        if ($item['rating'] == 0){
+                                                                            $item['rating'] = 'zero';
+                                                                            echo $item['rating'];
+                                                                        }elseif ($item['rating'] == 1){
+                                                                            $item['rating'] = 'one';
+                                                                            echo $item['rating'];
+                                                                        }elseif ($item['rating'] == 2){
+                                                                            $item['rating'] = 'two';
+                                                                            echo $item['rating'];
+                                                                        }elseif ($item['rating'] == 3){
+                                                                            $item['rating'] = 'three';
+                                                                            echo $item['rating'];
+                                                                        }elseif ($item['rating'] == 4){
+                                                                            $item['rating'] = 'four';
+                                                                            echo $item['rating'];
+                                                                        }elseif ($item['rating'] == 5){
+                                                                            $item['rating'] = 'five';
+                                                                            echo $item['rating'];
                                                                         }
-                                                                        ?>
-                                                                        <div class="star-rating star-<?php echo $stars; ?>">
+                                                                        ?>">
                                                                             <span>Rated <strong class="rating"></strong></span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <p class="review__description"><?= $row['text'] ?></p>
+                                                                <p class="review__description"><?= $item['text'] ?></p>
                                                             </div>
                                                         </div>
+                                                        <hr>
+                                                        <?php endforeach; ?>
                                                     </li>
                                                 </ul>
-                                                <?php endwhile; ?>
+
                                                 <?php
+                                                $paramsPath = $_SERVER['DOCUMENT_ROOT'] . '/application/components/db_params.php';
+                                                $params = include($paramsPath);
+                                                $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
+                                                $db->set_charset("utf8");
+
+                                                if (isset($_GET['page'])) {
+                                                    $page = $_GET['page'];
+                                                } else {
+                                                    $page = 1;
+                                                }
+                                                $notesOnePage = 4;
+
+                                                $from = ($page - 1) * $notesOnePage;
                                                 $sec_sql = 'select count(*) as count from comment ';
+
                                                 $sec_id = "where product_id= " . $data['product']['id'];
                                                 $sec_sql = $sec_sql . $sec_id;
+
                                                 $result_sec = $db->query($sec_sql);
                                                 $count = mysqli_fetch_assoc($result_sec)['count'];
+
 
                                                 $pagesCount = ceil($count / $notesOnePage);
                                                 if ($pagesCount == 0){
                                                     echo 'NO COMMENTS YET' . '<hr>';
                                                 }elseif ($pagesCount > 0) {
                                                     echo '<div style="text-align: center; font-size: 20px">';
-                                                if ($page != 1) {
-                                                    $pred = $page - 1;
-                                                    echo "<a style='text-align:center' id='pages' href=\"product_show?id=" . $data['product']['id'] . "&tab=review&page=$pred\"><< </a>";
+                                                    if ($page != 1) {
+                                                        $pred = $page - 1;
+                                                        echo "<a style='text-align:center' id='pages' href=\"product_show?id=" . $data['product']['id'] . "&tab=review&page=$pred\"><< </a>";
 
-                                                } elseif ($page = 1) {
-                                                    echo "<a><< </a>";
+                                                    } elseif ($page = 1) {
+                                                        echo "<a><< </a>";
+                                                    }
+                                                    for ($i = 1; $i <= $pagesCount; $i++) {
+                                                        echo "<a class='' href=\"product_show?id=" . $data['product']['id'] . "&tab=review&page=$i\">$i  </a>";
+
+                                                    }
+                                                    if ($page != $pagesCount) {
+                                                        $next = $page + 1;
+                                                        echo "<a href=\"product_show?id=" . $data['product']['id'] . "&tab=review&page=$next\"> >></a>";
+
+
+                                                    } elseif ($page == $pagesCount) {
+                                                        echo "<a> >></a>";
+                                                    }
+                                                    echo '</div><hr/><br>';
                                                 }
-                                                for ($i = 1; $i <= $pagesCount; $i++) {
-                                                    echo "<a class='' href=\"product_show?id=" . $data['product']['id'] . "&tab=review&page=$i\">$i  </a>";
-
-                                                }
-                                                if ($page != $pagesCount) {
-                                                    $next = $page + 1;
-                                                    echo "<a href=\"product_show?id=" . $data['product']['id'] . "&tab=review&page=$next\"> >></a>";
-
-
-                                                } elseif ($page == $pagesCount) {
-                                                    echo "<a> >></a>";
-                                                }
-                                                echo '</div><hr/><br>';
-                                                }
-                                            }
-                                                echo commentsRating($data);
-
                                                 ?>
                                                 <div class="review-form-wrapper">
                                                     <div class="row">

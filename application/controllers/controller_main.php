@@ -3,6 +3,7 @@
 include $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "application" . DIRECTORY_SEPARATOR . "models" . DIRECTORY_SEPARATOR . "model_product.php";
 include $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "application" . DIRECTORY_SEPARATOR . "models" . DIRECTORY_SEPARATOR . "model_comment.php";
 
+
 class Controller_Main extends Controller
 {
     //!!!!!!!!!!!!!!!!
@@ -12,45 +13,60 @@ class Controller_Main extends Controller
     //метод для показа всех продуктов
     public function action_index()
     {
-
         $product = new Model_Product();
         $products = [];
+        $comment = new Model_comment();
+        $comments = [];
 
-        if(isset($_GET['page'], $_GET['products'])){
+        if (isset($_GET['page'], $_GET['products'])) {
             $products = $product->findWithLimit(8, 6);
-
-        }
-        else {
+        } else {
             $products = $product->findAll();
-        }
+            foreach ($products as $value) {
+                $comment_temaplate = $comment->findAll(['product_id' => $value['id']]);
+                $avg = $product->calculeteAVG($comment_temaplate);
+                $value['rating'] = $avg;
+                $avgRating[] = $value;
 
+            }
+        }
         $this->view->generate(
-        'products_view.php',
-        'template_view.php',
-        ['title' => 'Продукты', 'products' => $products]
+            'products_view.php',
+            'template_view.php',
+            ['title' => 'Продукты', 'products' => $avgRating]
         );
     }
 
     //показивем продукт, id получаем из GET массива
-    public function action_product_show(){
+    public function action_product_show()
+    {
 
-        if(isset($_GET['id']) && is_numeric($_GET['id'])){
+        if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+
             $product_id = $_GET['id'];
             $product = new Model_Product();
+            $comment = new Model_comment();
             $product_template = $product->findOne(['id' => $product_id]);
+            $renderComments = $comment->getComments();
+            $comments = $comment->findWithLimit(4, 0, ['product_id' => $product_id]); // ищем параметр product_id через переменную в которой он соддержиться
+            $comment_temaplate = $comment->findAll(['product_id' => $product_id]);
+            $avg = $product->calculeteAVG($comment_temaplate);
             $this->view->generate(
                 'product_view.php',
                 'template_view.php',
-                ['product' => $product_template]
+                ['product' => $product_template,
+                    'avg' => $avg,
+                    'renderComments' => $renderComments,
+                    'comments' => $comments]
+
             );
-        }
-        else {
+        } else {
             echo "Не вибран соответствующий продукт";
         }
 
     }
-
     public function action_add_comment(){
+
 
         $product_id = $_GET['product_id'];
         $date = $_GET['date'];
@@ -61,28 +77,21 @@ class Controller_Main extends Controller
     $comment = new Model_comment();
     $comment->load($_GET);
     $comment->newSave();
-    $this->view->generate('comment_view.php',
-        'template_view.php',
-        ['id'=>$product_id,
-            'date'=>$date,
-            'rating'=>$rating,
-            'text'=>$text,
-            'name'=>$name,
-            'email'=>$email]);
+    header("location:/main/product_show?id=". $product_id. "&tab=review");
     }
+
+
     public function action_comment_show(){
 
         if (isset($_GET['id']) && is_numeric($_GET['id'])){
-
             $comment_id = $_GET['id'];
             $comment = new Model_comment();
             $comment_template = $comment->findAll(['product_id'=>$comment_id]);
             if (empty($comment_template)){
                 $this->view->generate('empty_view.php',
                     'template_view.php');
-
             }else{
-                $this->view->generate('commentShow_view.php',
+                $this->view->generate('product_view.php',
                     'template_view.php',['comment'=>$comment_template]);
             }
         }
