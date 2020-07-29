@@ -27,7 +27,6 @@ class sql
     public static function insert($table, $fieldValue)
     {
         $db = Db::getConnection();
-        //de($fieldValue);
         //из переданного массива
         $values = [];
         $fields = [];
@@ -44,12 +43,10 @@ class sql
         }
         $values1 = implode(" , ", $values);
         $fields1 = implode(" , ", $fields);
-
         //строим запрос и виполняем его
         $sql = "INSERT INTO $table (" . $fields1 . ") VALUES (" . $values1 . ")";
         echo $sql;
         $query = $db->query($sql);
-
         //если запрос виполнен успешно - возвращаем последний id ( insert_id - встроенное свойство класса mysqli)
         if ($query) {
             $db->insert_id;
@@ -81,15 +78,12 @@ class sql
                 $condition[] = " AND " . $key . " = '" . $value . "'";
             }
         }
-
         $condition = implode(" ", $condition);
-
         //составление окончательного запроса
         return "WHERE 1=1 " . $condition;
     }
 
     private static function buildResultRows($result){
-        //  de($sql);
         //составляем массив из полученних данних
         $rows = [];
         if ($result == false) {
@@ -99,10 +93,8 @@ class sql
                 $rows[] = $row;
             }
         }
-
         //если в bootstrap прописан DUMP_SQL = true
         if (DUMP_SQL) {
-            var_dump($rows);
             echo '<hr>';
         }
         //возвращаем результат
@@ -111,13 +103,10 @@ class sql
 
     public static function selectWithLimit($table, $columnValue = [], $quantity = []){
         $db = Db::getConnection();
-
         $sql = "SELECT * FROM $table ";
         $sql .= self::whereBuild($columnValue);
-
         //если массив с лимитами передан в нормальних размерах 1 или 2 єлемента, тогда составляем лимит условие
         if(count($quantity) > 2 || count($quantity) < 1){
-
         }
         else {
             $sql .= ' LIMIT ';
@@ -127,9 +116,7 @@ class sql
             }
         }
         echo $sql;
-
         $result = $db->query($sql);
-
         return self::buildResultRows($result);
     }
 
@@ -138,36 +125,23 @@ class sql
         //подключение к БД
         $db = Db::getConnection();
         $sql = "SELECT * FROM $table ";
-
         $sql .= self::whereBuild($columnValue);
-
-
         //проверка на то, что нужно витащить либо одну запись из таблици либо все
         if ($one) {
             $sql .= ' LIMIT 1';
         }
-
         if (DUMP_SQL) {
             //de($sql);
             echo $sql . '<br>';
         }
-
         //получаем результат запроса
         $result = $db->query($sql);
-
         return self::buildResultRows($result);
     }
 
     public static function update($table, $fieldValue = [], $columnValue = [])//, $columnValue = null
     {
         $db = Db::getConnection();
-
-//        if($fieldValue == $columnValue
-//            || $fieldValue == null
-//            || $columnValue == null ){
-//            $columnValue = $fieldValue;
-//        }
-//de($columnValue);
         //формируем поля и значения, которие будем менять в запросе
         $values = [];
         foreach ($fieldValue as $key => $value) {
@@ -179,14 +153,11 @@ class sql
             }
         }
         $values = implode(" , ", $values);
-
-
         //формирование строки для запроса в блоке where
         if (is_array($columnValue)) {
             $condition = [];
             foreach ($columnValue as $key => $value) {
 
-                //if(is_null($value))
                 if (is_numeric($value)) {
                     $condition[] = " AND " . $key . " = " . $value;
                 } else {
@@ -200,7 +171,6 @@ class sql
         }
             //виполнение запроса и возврат true в случае успеха иначе false
             $sql = "UPDATE $table SET " . $values . "  WHERE 1=1 " . $condition;
-
             $result = $db->query($sql);
             //de($sql);
             if ($result == false) {
@@ -208,11 +178,9 @@ class sql
             } else {
                 return true;
             }
-
         }
 
-        public
-        static function delete($table, $columnValue = null)
+        public static function delete($table, $columnValue = null)
         {
             $db = Db::getConnection();
 

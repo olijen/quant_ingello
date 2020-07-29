@@ -8,15 +8,22 @@
     <title>Document</title>
 </head>
 <body>
-Token: <?= @$_COOKIE['token'] ?> </hr>
 <form action="/authoriz/authoriz" method="post" >
-    Авторизация<br>
-
-    <input name="user" type="text" placeholder="Введите ваш логин" /><br>
-    <input name="password" type="password" placeholder="Введите пароль"  /><br>
-    <input type="submit"/><br>
-
-
+    <div class="login-box">
+        <h3 class="heading__tertiary mb--30">Login</h3>
+        Token: <?= @$_COOKIE['token'] ?> </hr><br><br>
+        <div>
+        <label class="form__label" for="username_email">Username or email address <span class="required">*</span></label>
+        </div>
+    <input class="form__input" id="login" name="user" type="text" placeholder="Введите ваш логин" /><br>
+        <div>
+        <label class="form__label" for="login_password">Password <span class="required">*</span></label>
+        </div>
+    <input class="form__input" id="login" name="password" type="password" placeholder="Введите пароль"  /><br>
+        <div class="form__group mr--30">
+            <input type="submit" value="Log in" class="btn btn-size-sm">
+        </div>
+    </div>
 </form>
 </body>
 </html>

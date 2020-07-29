@@ -14,7 +14,7 @@ class Db
 
 
         // Устанавливаем соединение
-        $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname']);
+        $db = new mysqli($params['host'], $params['user'], $params['password'], $params['dbname'], $params['dbport']);
         $db->set_charset("utf8");
         return $db;
     }

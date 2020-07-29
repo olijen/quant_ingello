@@ -31,7 +31,6 @@ class Model_Product extends Model
         'manualInput' => true,
     ];
 
-
     public function map($product_data)
     {
         $this->id['value'] = $product_data['id'];

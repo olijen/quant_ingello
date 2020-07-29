@@ -27,7 +27,6 @@ class Controller_Main extends Controller
                 $avg = $product->calculeteAVG($comment_temaplate);
                 $value['rating'] = $avg;
                 $avgRating[] = $value;
-
             }
         }
         $this->view->generate(
@@ -67,7 +66,6 @@ class Controller_Main extends Controller
     }
     public function action_add_comment(){
 
-
         $product_id = $_GET['product_id'];
         $date = $_GET['date'];
         $rating = $_GET['rating'];
@@ -79,7 +77,6 @@ class Controller_Main extends Controller
     $comment->newSave();
     header("location:/main/product_show?id=". $product_id. "&tab=review");
     }
-
 
     public function action_comment_show(){
 
@@ -113,12 +110,9 @@ class Controller_Main extends Controller
     //метод добавления продукта в базу
     public function action_add_record()//insert
     {
-//        $title = $_POST['title'];
-//        $price = $_POST['price'];
         $product = new Model_Product();// {title: null, price: null}
         $product->load($_POST);// {title: qweqwe, price: 120}
         $product->newSave();
-//        $this->view->generate('products_view.php','template_view.php',['title'=>$title, 'price'=>$price]);
     }
 
     //метод для генерации форми обновления продукта в базе
@@ -135,7 +129,6 @@ class Controller_Main extends Controller
     //метод для обновления информации о форме
     public function action_update_product()
     {
-
         $product_id = $_POST['id'];
         $title = $_POST['title'];
         $price = $_POST['price'];

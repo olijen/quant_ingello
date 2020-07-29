@@ -738,7 +738,7 @@
                                                     <a class="product-size-variation-btn" data-toggle="tooltip"
                                                        data-placement="top" title="XL">
                                                         <span class="product-size-variation-label">XL</span>
-                                                    </a>
+                                                       </a>
                                                 </div>
                                             </div>
                                         </div>
