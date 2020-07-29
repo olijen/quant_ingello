@@ -50,14 +50,11 @@
       <change afterPath="$PROJECT_DIR$/assets/fonts/lg.woff" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/assets/img/logo/quantlogo (3).png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/assets/img/logo/quantlogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/components/db_params.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/components/db_params.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/controller_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/controller_main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/core/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/core/sql.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/sql.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/authoriz_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/authoriz_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/commentShow_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/commentShow_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/product_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/product_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/products_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/products_view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/commentShow_view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/comment_view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/empty_view.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/img/others/comment-1.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/vendor.js" afterDir="false" />
@@ -81,6 +78,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="newbranch" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpServers">
@@ -108,7 +118,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -148,6 +158,8 @@
       <workItem from="1592209516385" duration="24602000" />
       <workItem from="1592386661745" duration="95219000" />
       <workItem from="1593591424329" duration="21440000" />
+      <workItem from="1595233148768" duration="45312000" />
+      <workItem from="1595427886310" duration="27717000" />
     </task>
     <task id="LOCAL-00001" summary="Контроллер голубей, модель голубей, список голубей, миграции данных для голубей.">
       <created>1583321191622</created>
@@ -233,7 +245,28 @@
       <option name="project" value="LOCAL" />
       <updated>1593599058347</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Сделал функции для вывода среденего рейтига по каждому продукту, была сделана пагинация для комментариев, добавлены ТАБЫ для перехода сразу к разделу комметарии">
+      <created>1595942809822</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1595942809822</updated>
+    </task>
+    <task id="LOCAL-00014" summary="убрал лишние отступы и дампы">
+      <created>1596017537305</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1596017537305</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Убрал HTML код из модели">
+      <created>1596026178553</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1596026178553</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -286,17 +319,24 @@
     <MESSAGE value="Сделал вывод средней оценки по продукту, сделал вывод оценок и коментариев" />
     <MESSAGE value="Доделал вьюхи(продукта, и списка продуктов)" />
     <MESSAGE value="Разбил скрип на функции и сократил толщину кода" />
-    <option name="LAST_COMMIT_MESSAGE" value="Разбил скрип на функции и сократил толщину кода" />
+    <MESSAGE value="Сделал функции для вывода среденего рейтига по каждому продукту, была сделана пагинация для комментариев, добавлены ТАБЫ для перехода сразу к разделу комметарии" />
+    <MESSAGE value="убрал лишние отступы и дампы" />
+    <MESSAGE value="Убрал HTML код из модели" />
+    <option name="LAST_COMMIT_MESSAGE" value="Убрал HTML код из модели" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="859" y="421" width="251" height="263" key="#Notifications" timestamp="1595942858990">
+      <screen x="59" y="27" width="1861" height="1053" />
+    </state>
+    <state x="859" y="421" width="251" height="263" key="#Notifications/59.27.1861.1053@59.27.1861.1053" timestamp="1595942858990" />
     <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592921958684">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="722" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1592921958684" />
-    <state x="379" y="27" width="1242" height="1053" key="CommitChangelistDialog2" timestamp="1593599057747">
+    <state x="373" y="27" width="1242" height="1053" key="CommitChangelistDialog2" timestamp="1596026178450">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="379" y="27" width="1242" height="1053" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1593599057747" />
+    <state x="373" y="27" width="1242" height="1053" key="CommitChangelistDialog2/59.27.1861.1053@59.27.1861.1053" timestamp="1596026178450" />
     <state x="672" y="310" width="624" height="484" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1591093998492">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
@@ -333,18 +373,18 @@
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="785" y="478" width="399" height="149" key="NewPhpFileDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1592229060431" />
-    <state x="478" y="187" key="SettingsEditor" timestamp="1591013734007">
+    <state x="478" y="187" key="SettingsEditor" timestamp="1595944855956">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="478" y="187" key="SettingsEditor/59.27.1861.1053@59.27.1861.1053" timestamp="1591013734007" />
+    <state x="478" y="187" key="SettingsEditor/59.27.1861.1053@59.27.1861.1053" timestamp="1595944855956" />
     <state x="234" y="467" width="1501" height="171" key="VCS.ChangelistChooser" timestamp="1591016973198">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="234" y="467" width="1501" height="171" key="VCS.ChangelistChooser/59.27.1861.1053@59.27.1861.1053" timestamp="1591016973198" />
-    <state x="584" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1591106105198">
+    <state x="584" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1596026187745">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="584" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/59.27.1861.1053@59.27.1861.1053" timestamp="1591106105198" />
+    <state x="584" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/59.27.1861.1053@59.27.1861.1053" timestamp="1596026187745" />
     <state x="774" y="427" width="420" height="280" key="com.intellij.database.actions.DdlActions$CommentOnObjectAction$1" timestamp="1590488503999">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
@@ -361,14 +401,22 @@
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="633" y="265" width="908" height="567" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1591103990204" />
-    <state x="269" y="27" width="1641" height="855" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1593598942133">
+    <state x="269" y="27" width="1631" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1595942322232">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
-    <state x="269" y="27" width="1641" height="855" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1593598942133" />
+    <state x="269" y="27" width="1631" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1595942322232" />
+    <state x="159" y="125" width="1661" height="855" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1595841804362">
+      <screen x="59" y="27" width="1861" height="1053" />
+    </state>
+    <state x="159" y="125" width="1661" height="855" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1595841804362" />
     <state x="680" y="150" width="1030" height="692" key="find.popup" timestamp="1593007800656">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>
     <state x="680" y="150" width="1030" height="692" key="find.popup/59.27.1861.1053@59.27.1861.1053" timestamp="1593007800656" />
+    <state x="725" y="395" key="git4idea.ui.GitTagDialog" timestamp="1595944987720">
+      <screen x="59" y="27" width="1861" height="1053" />
+    </state>
+    <state x="725" y="395" key="git4idea.ui.GitTagDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1595944987720" />
     <state x="653" y="253" key="run.anything.popup" timestamp="1590670801507">
       <screen x="59" y="27" width="1861" height="1053" />
     </state>

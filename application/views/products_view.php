@@ -124,7 +124,7 @@
                                             <span class="sign">$</span>
                                         </div>
                                         <div style="float: left"
-                                             class="star-rating">
+                                             class="star-rating star-<?= $product['rating'] ?>">
                                             <span>Rated <strong class="rating"></strong></span>
                                         </div>
                                         <br>
